@@ -4,27 +4,27 @@
 
 
 
-<html lang="">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 3.8.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.1">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.1">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.1">
-  <link rel="mask-icon" href="/images/logo.svg?v=7.4.1" color="#222">
+  <link rel="apple-touch-icon" sizes="180x180" href="/Blog/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/Blog/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/Blog/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/Blog/images/logo.svg?v=7.4.1" color="#222">
 
-<link rel="stylesheet" href="/css/main.css?v=7.4.1">
+<link rel="stylesheet" href="/Blog/css/main.css?v=7.4.1">
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+<link rel="stylesheet" href="/Blog/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
 
 
 <script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
+    root: '/Blog/',
     scheme: 'Pisces',
     version: '7.4.1',
     exturl: false,
@@ -47,26 +47,27 @@
     path: '',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
-      copy_button: 'Copy',
-      copy_success: 'Copied',
-      copy_failure: 'Copy failed'
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
     },
     sidebarPadding: 40
   };
 </script>
 
   <meta name="description" content="网络优化HTTP协议：（规范浏览器/服务器req，res信息）- 特点  1. 无连接  2. 无关媒体类型  3. 无状态 - 内容：  请求头，用来说明服务器要使用的附加信息，比较重要的信息有 Cookie Referer User-Agent等 json获取方式:     ajax 请求接口     切换手机移动h5端     app抓包获取     等等 json数据与python语言交互">
+<meta name="keywords" content="python 前端">
 <meta property="og:type" content="website">
 <meta property="og:title" content="志恒的博客">
-<meta property="og:url" content="https://yuwengeng.github.io/spider.html">
+<meta property="og:url" content="https://zhiheng.design/Blog/spider.html">
 <meta property="og:site_name" content="志恒的博客">
 <meta property="og:description" content="网络优化HTTP协议：（规范浏览器/服务器req，res信息）- 特点  1. 无连接  2. 无关媒体类型  3. 无状态 - 内容：  请求头，用来说明服务器要使用的附加信息，比较重要的信息有 Cookie Referer User-Agent等 json获取方式:     ajax 请求接口     切换手机移动h5端     app抓包获取     等等 json数据与python语言交互">
-<meta property="og:locale" content="default">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-10-11T09:49:54.005Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="志恒的博客">
 <meta name="twitter:description" content="网络优化HTTP协议：（规范浏览器/服务器req，res信息）- 特点  1. 无连接  2. 无关媒体类型  3. 无状态 - 内容：  请求头，用来说明服务器要使用的附加信息，比较重要的信息有 Cookie Referer User-Agent等 json获取方式:     ajax 请求接口     切换手机移动h5端     app抓包获取     等等 json数据与python语言交互">
-  <link rel="canonical" href="https://yuwengeng.github.io/spider">
+  <link rel="canonical" href="https://zhiheng.design/Blog/spider">
 
 
 <script id="page-configurations">
@@ -128,7 +129,7 @@
   <div class="site-meta">
 
     <div>
-      <a href="/" class="brand" rel="start">
+      <a href="/Blog/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">志恒的博客</span>
         <span class="logo-line-after"><i></i></span>
@@ -137,7 +138,7 @@
   </div>
 
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
+    <div class="toggle" aria-label="切换导航栏">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>
@@ -157,7 +158,7 @@
       
     
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+    <a href="/Blog/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
   </li>
       
@@ -170,7 +171,7 @@
       
     
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+    <a href="/Blog/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
 
   </li>
       
@@ -183,7 +184,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+    <a href="/Blog/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
 
   </li>
       
@@ -225,7 +226,7 @@
     
     
     
-    <div class="post-block" lang="default">
+    <div class="post-block" lang="zh-CN">
       <header class="post-header">
 
 <h1 class="post-title" itemprop="name headline">
@@ -474,10 +475,10 @@ Web 浏览器与 Web 服务器之间将完成下列 7 个步骤：
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          Table of Contents
+          文章目录
         </li>
         <li class="sidebar-nav-overview">
-          Overview
+          站点概览
         </li>
       </ul>
 
@@ -490,17 +491,18 @@ Web 浏览器与 Web 服务器之间将完成下列 7 个步骤：
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">John Doe</p>
-  <div class="site-description" itemprop="description">主要关于python与前端笔记</div>
+    <img class="site-author-image" itemprop="image" src="/Blog/images/icon.jpg" alt="zhiheng">
+  <p class="site-author-name" itemprop="name">zhiheng</p>
+  <div class="site-description" itemprop="description">关于python 爬虫 与 大前端的笔记</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         
-          <a href="/archives/">
+          <a href="/Blog/archives/">
         
           <span class="site-state-item-count">5</span>
-          <span class="site-state-item-name">posts</span>
+          <span class="site-state-item-name">日志</span>
         </a>
       </div>
     
@@ -509,11 +511,11 @@ Web 浏览器与 Web 服务器之间将完成下列 7 个步骤：
       <div class="site-state-item site-state-categories">
         
           
-            <a href="/categories/">
+            <a href="/Blog/categories/">
           
         
-        <span class="site-state-item-count">1</span>
-        <span class="site-state-item-name">categories</span>
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span>
         </a>
       </div>
     
@@ -522,11 +524,11 @@ Web 浏览器与 Web 服务器之间将完成下列 7 个步骤：
       <div class="site-state-item site-state-tags">
         
           
-            <a href="/tags/">
+            <a href="/Blog/tags/">
           
         
-        <span class="site-state-item-count">1</span>
-        <span class="site-state-item-name">tags</span>
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">标签</span>
         </a>
       </div>
     
@@ -555,14 +557,14 @@ Web 浏览器与 Web 服务器之间将完成下列 7 个步骤：
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">zhiheng</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0
   </div>
   <span class="post-meta-divider">|</span>
   <div class="theme-info">
       
-    Theme – <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.4.1
+    主题 – <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.4.1
   </div>
 
         
@@ -584,13 +586,13 @@ Web 浏览器与 Web 服务器之间将完成下列 7 个步骤：
   </div>
 
   
-  <script src="/lib/anime.min.js?v=3.1.0"></script>
-  <script src="/lib/pjax/pjax.min.js?v=0.2.8"></script>
-  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-<script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
-<script src="/js/schemes/pisces.js?v=7.4.1"></script>
-<script src="/js/next-boot.js?v=7.4.1"></script>
+  <script src="/Blog/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/Blog/lib/pjax/pjax.min.js?v=0.2.8"></script>
+  <script src="/Blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/Blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/Blog/js/utils.js?v=7.4.1"></script><script src="/Blog/js/motion.js?v=7.4.1"></script>
+<script src="/Blog/js/schemes/pisces.js?v=7.4.1"></script>
+<script src="/Blog/js/next-boot.js?v=7.4.1"></script>
   <script>
 var pjax = new Pjax({
   selectors: [
@@ -690,7 +692,7 @@ window.addEventListener('pjax:success', () => {
       repo: 'yuwengeng.github.io',
       owner: 'yuwengeng',
       admin: ['yuwengeng'],
-      id: '3b7dc21f3af6b1c475b81e526593390c',
+      id: 'a32fde896da7bef9f1b00e51078f6547',
         language: 'zh-CN',
       
       distractionFreeMode: 'true'
