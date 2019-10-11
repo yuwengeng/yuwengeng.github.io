@@ -25,7 +25,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Pisces',
     version: '7.4.1',
     exturl: false,
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
@@ -47,9 +47,9 @@
     path: '',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
-      copy_button: 'کپی',
-      copy_success: 'کپی شد',
-      copy_failure: 'کپی انجام نشد'
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
     },
     sidebarPadding: 40
   };
@@ -134,7 +134,7 @@
   </div>
 
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="تغییر ناوبری">
+    <div class="toggle" aria-label="Toggle navigation bar">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>
@@ -154,7 +154,7 @@
       
     
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>صفحه اصلی</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
 
   </li>
       
@@ -167,14 +167,12 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>بایگانی</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
 
   </li>
       
     
   </ul>
-
-    
 
 </nav>
 </div>
@@ -190,6 +188,8 @@
     <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
+            
+
           <div class="content">
             
 
@@ -223,13 +223,13 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">نوشته شده در</span>
+              <span class="post-meta-item-text">Posted on</span>
 
               
                 
               
 
-              <time title="ایجاد شده: 2019-09-22 16:05:47" itemprop="dateCreated datePublished" datetime="2019-09-22T16:05:47+08:00">2019-09-22</time>
+              <time title="Created: 2019-09-22 16:05:47" itemprop="dateCreated datePublished" datetime="2019-09-22T16:05:47+08:00">2019-09-22</time>
             </span>
           
             
@@ -239,8 +239,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">ویرایش شده در</span>
-                <time title="تغییر یافته: 2019-09-23 13:50:48" itemprop="dateModified" datetime="2019-09-23T13:50:48+08:00">2019-09-23</time>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-09-23 13:50:48" itemprop="dateModified" datetime="2019-09-23T13:50:48+08:00">2019-09-23</time>
               </span>
             
           
@@ -297,6 +297,9 @@
 
           </div>
           
+    
+    <div class="comments" id="gitalk-container"></div>
+  
 
         </div>
           
@@ -317,10 +320,10 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          فهرست مطالب
+          Table of Contents
         </li>
         <li class="sidebar-nav-overview">
-          نمای کلی
+          Overview
         </li>
       </ul>
 
@@ -341,7 +344,7 @@
           <a href="/archives/">
         
           <span class="site-state-item-count">5</span>
-          <span class="site-state-item-name">پست ها</span>
+          <span class="site-state-item-name">posts</span>
         </a>
       </div>
     
@@ -372,12 +375,12 @@
   </span>
   <span class="author" itemprop="copyrightHolder">John Doe</span>
 </div>
-  <div class="powered-by">قدرت گرفته از <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0
   </div>
   <span class="post-meta-divider">|</span>
   <div class="theme-info">
       
-    پوسته – <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.4.1
+    Theme – <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.4.1
   </div>
 
         
@@ -403,7 +406,7 @@
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 <script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
-<script src="/js/schemes/muse.js?v=7.4.1"></script>
+<script src="/js/schemes/pisces.js?v=7.4.1"></script>
 <script src="/js/next-boot.js?v=7.4.1"></script>
 
 
@@ -435,6 +438,25 @@
   
 
   
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID: '24ef63b5f7c6e9d3a198',
+      clientSecret: '5cceec5609a0910c5f361eaaefdbe57ae7c5d359',
+      repo: 'yuwengeng.github.io',
+      owner: 'yuwengeng',
+      admin: ['yuwengeng'],
+      id: 'e549be712f6bea00ed6871821adb73ba',
+        language: 'zh-CN',
+      
+      distractionFreeMode: 'true'
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+</script>
 
 </body>
 </html>
