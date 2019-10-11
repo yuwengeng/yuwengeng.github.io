@@ -56,13 +56,14 @@
 </script>
 
   <meta name="description" content="*倾斜***加粗**  引用 多行  嵌套引用   1234&amp;gt;引用&amp;gt;&amp;gt;多行&amp;gt;&amp;gt;嵌套引用 表格隐藏hhhh   分割线可以用三个以上的星号、减号或者底线来标识 &amp;lt;自动链接&amp;gt; [TOC] 目录DD [TOC] ml">
+<meta name="keywords" content="hexo命令行">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Markdown常用语法">
 <meta property="og:url" content="https://yuwengeng.github.io/2018/11/26/你好-Hexo/index.html">
 <meta property="og:site_name" content="志恒的博客">
 <meta property="og:description" content="*倾斜***加粗**  引用 多行  嵌套引用   1234&amp;gt;引用&amp;gt;&amp;gt;多行&amp;gt;&amp;gt;嵌套引用 表格隐藏hhhh   分割线可以用三个以上的星号、减号或者底线来标识 &amp;lt;自动链接&amp;gt; [TOC] 目录DD [TOC] ml">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-19T10:40:38.343Z">
+<meta property="og:updated_time" content="2019-10-11T11:04:45.233Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Markdown常用语法">
 <meta name="twitter:description" content="*倾斜***加粗**  引用 多行  嵌套引用   1234&amp;gt;引用&amp;gt;&amp;gt;多行&amp;gt;&amp;gt;嵌套引用 表格隐藏hhhh   分割线可以用三个以上的星号、减号或者底线来标识 &amp;lt;自动链接&amp;gt; [TOC] 目录DD [TOC] ml">
@@ -163,6 +164,19 @@
       
         
         
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+      
+    
+      
+      
+        
+        
         <li class="menu-item menu-item-archives">
       
     
@@ -240,9 +254,26 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-06-19 18:40:38" itemprop="dateModified" datetime="2019-06-19T18:40:38+08:00">2019-06-19</time>
+                <time title="Modified: 2019-10-11 19:04:45" itemprop="dateModified" datetime="2019-10-11T19:04:45+08:00">2019-10-11</time>
               </span>
             
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">hexo</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -282,6 +313,15 @@
       
 
       <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/hexo命令行/" rel="tag"># hexo命令行</a>
+            
+          </div>
+        
 
         
 
@@ -366,6 +406,32 @@
         </a>
       </div>
     
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">categories</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">tags</span>
+        </a>
+      </div>
+    
   </nav>
 </div>
 
@@ -421,11 +487,69 @@
 
   
   <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/pjax/pjax.min.js?v=0.2.8"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 <script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
 <script src="/js/schemes/pisces.js?v=7.4.1"></script>
 <script src="/js/next-boot.js?v=7.4.1"></script>
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
+    if (element.type !== 'text/javascript') {
+      return;
+    }
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.getAttribute('pjax') !== null) {
+      element.setAttribute('pjax', '');
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
 
 
 
@@ -450,6 +574,7 @@
 
 
 
+    <div id="pjax">
 
   
 
@@ -476,5 +601,6 @@
   }, window.Gitalk);
 </script>
 
+    </div>
 </body>
 </html>

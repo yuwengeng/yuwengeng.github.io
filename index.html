@@ -162,6 +162,19 @@
       
         
         
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+      
+    
+      
+      
+        
+        
         <li class="menu-item menu-item-archives">
       
     
@@ -827,9 +840,26 @@ text() 返回所有text 中间空格分开，str类型
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-06-19 18:40:38" itemprop="dateModified" datetime="2019-06-19T18:40:38+08:00">2019-06-19</time>
+                <time title="Modified: 2019-10-11 19:04:45" itemprop="dateModified" datetime="2019-10-11T19:04:45+08:00">2019-10-11</time>
               </span>
             
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">hexo</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -928,6 +958,32 @@ text() 返回所有text 中间空格分开，str类型
         </a>
       </div>
     
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">categories</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">tags</span>
+        </a>
+      </div>
+    
   </nav>
 </div>
 
@@ -983,11 +1039,69 @@ text() 返回所有text 中间空格分开，str类型
 
   
   <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/pjax/pjax.min.js?v=0.2.8"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 <script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
 <script src="/js/schemes/pisces.js?v=7.4.1"></script>
 <script src="/js/next-boot.js?v=7.4.1"></script>
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
+    if (element.type !== 'text/javascript') {
+      return;
+    }
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.getAttribute('pjax') !== null) {
+      element.setAttribute('pjax', '');
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
 
 
 
@@ -1012,6 +1126,7 @@ text() 返回所有text 中间空格分开，str类型
 
 
 
+    <div id="pjax">
 
   
 
@@ -1020,5 +1135,6 @@ text() 返回所有text 中间空格分开，str类型
   
 
 
+    </div>
 </body>
 </html>
