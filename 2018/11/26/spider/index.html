@@ -55,18 +55,18 @@
   };
 </script>
 
-  <meta name="description" content="HTTP web协议：（规范浏览器/服务器req，res信息）- 特点  1. 无连接  2. 无关媒体类型  3. 无状态 - 内容：  请求头: 以行为单位   用来说明服务器要使用的附加信息，比较重要的信息有 Cookie Referer User-Agent等">
+  <meta name="description" content="HTML 用于展示数据，而 XML 用于结构化、传输和存储数据 XML 文档必须有一个根元素；     嵌套的 HTML 元素 结构化的一种文档结构 ——&amp;gt; W3C 针对其指定了一个标准化的模型DOM">
 <meta name="keywords" content="爬虫,python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="spider">
 <meta property="og:url" content="http://yuwengeng.github.io.git/2018/11/26/spider/index.html">
 <meta property="og:site_name" content="中·庸">
-<meta property="og:description" content="HTTP web协议：（规范浏览器/服务器req，res信息）- 特点  1. 无连接  2. 无关媒体类型  3. 无状态 - 内容：  请求头: 以行为单位   用来说明服务器要使用的附加信息，比较重要的信息有 Cookie Referer User-Agent等">
+<meta property="og:description" content="HTML 用于展示数据，而 XML 用于结构化、传输和存储数据 XML 文档必须有一个根元素；     嵌套的 HTML 元素 结构化的一种文档结构 ——&amp;gt; W3C 针对其指定了一个标准化的模型DOM">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-11T11:24:29.924Z">
+<meta property="og:updated_time" content="2019-10-23T06:46:16.572Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="spider">
-<meta name="twitter:description" content="HTTP web协议：（规范浏览器/服务器req，res信息）- 特点  1. 无连接  2. 无关媒体类型  3. 无状态 - 内容：  请求头: 以行为单位   用来说明服务器要使用的附加信息，比较重要的信息有 Cookie Referer User-Agent等">
+<meta name="twitter:description" content="HTML 用于展示数据，而 XML 用于结构化、传输和存储数据 XML 文档必须有一个根元素；     嵌套的 HTML 元素 结构化的一种文档结构 ——&amp;gt; W3C 针对其指定了一个标准化的模型DOM">
   <link rel="canonical" href="http://yuwengeng.github.io.git/2018/11/26/spider/">
 
 
@@ -280,7 +280,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-10-11 19:24:29" itemprop="dateModified" datetime="2019-10-11T19:24:29+08:00">2019-10-11</time>
+                <time title="修改时间：2019-10-23 14:46:16" itemprop="dateModified" datetime="2019-10-23T14:46:16+08:00">2019-10-23</time>
               </span>
             
           
@@ -313,22 +313,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="HTTP-web协议：（规范浏览器-服务器req，res信息）"><a href="#HTTP-web协议：（规范浏览器-服务器req，res信息）" class="headerlink" title="HTTP web协议：（规范浏览器/服务器req，res信息）"></a>HTTP web协议：（规范浏览器/服务器req，res信息）</h3><pre><code>- 特点
- 1. 无连接
- 2. 无关媒体类型
- 3. 无状态
-- 内容：
- 请求头: 以行为单位
-  用来说明服务器要使用的附加信息，比较重要的信息有 Cookie Referer User-Agent等
-</code></pre><a id="more"></a><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">Response Headers 一般包含以下部分 ( 响应 ( 服务端 -&gt; 客户端 [response]))：</span><br><span class="line"></span><br><span class="line">HTTP/1.1 为响应采用的协议和版本号 200（状态码）OK（描述信息）</span><br><span class="line">Location 为服务端需要客户端访问的页面路径</span><br><span class="line">Server 为服务端的 Web 服务端名</span><br><span class="line">Content-Encoding 为服务端能够发送压缩编码类型</span><br><span class="line">Content-Length 为服务端发送的压缩数据的长度</span><br><span class="line">Content-Language 为服务端发送的语言类型</span><br><span class="line">Content-Type 为服务端发送的类型及采用的编码方式</span><br><span class="line">Last-Modified 为服务端对该资源最后修改的时间</span><br><span class="line">Refresh 为服务端要求客户端 1 秒钟后，刷新，然后访问指定的页面路径</span><br><span class="line">Content-Disposition 为服务端要求客户端以下载文件的方式打开该文件</span><br><span class="line">Transfer-Encoding 为分块传递数据到客户端</span><br><span class="line">Set-Cookie 为服务端发送到客户端的暂存数据</span><br><span class="line">Connection 为维护客户端和服务端的连接关系</span><br><span class="line"></span><br><span class="line">Request Headers 一般包含以下部分 ( 请求 ( 客户端 -&gt; 服务端[request]))：</span><br><span class="line"></span><br><span class="line">GET（请求的方式）/newcoder/hello.html（请求的目标资源）HTTP/1.1（请求采用的协议和版本号）</span><br><span class="line">Accept 为客户端能接收的资源类型</span><br><span class="line">Accept-Language 为客户端接收的语言类型</span><br><span class="line">Connection 为维护客户端和服务端的连接关系</span><br><span class="line">Host 为连接的目标主机</span><br><span class="line">Referer 告诉服务器我来自于哪里</span><br><span class="line">User-Agent 为客户端操作系统版本号等信息</span><br><span class="line">Accept-Encoding 为客户端能接收的压缩数据的类型</span><br><span class="line">If-Modified-Since 为缓存时间</span><br><span class="line">Cookie 为客户端暂存服务端的信息</span><br><span class="line">Date 为客户端请求服务端的时间</span><br></pre></td></tr></table></figure>
-<h3 id="json数据"><a href="#json数据" class="headerlink" title="json数据"></a>json数据</h3><p>获取方式:<br>     ajax 请求接口<br>     切换手机移动h5端<br>     app抓包获取<br>     等等<br>json模块：⽤于字符串和 python 数据类型间进⾏转换<br>js：JSON.stringify   JSON.parse</p>
+        <p> HTML 用于展示数据，而 XML 用于结构化、传输和存储数据 XML 文档必须有一个根元素；<br>     嵌套的 HTML 元素 结构化的一种文档结构 ——&gt; W3C 针对其指定了一个标准化的模型DOM </p><a id="more"></a>
+<h3 id="json数据"><a href="#json数据" class="headerlink" title="json数据"></a>json数据</h3><p>获取方式:<br>     ajax 请求接口<br>     切换手机移动h5端<br>     app抓包获取<br>     等等<br>json模块：⽤于字符串和 python 数据类型间进⾏转换<br>     js：JSON.stringify   JSON.parse</p>
 <h3 id="python封装http库：-请求的是源代码"><a href="#python封装http库：-请求的是源代码" class="headerlink" title="python封装http库：# 请求的是源代码"></a>python封装http库：# 请求的是源代码</h3><pre><code>标准urllib库
 第三方库request
 </code></pre><ol>
 <li>urllib库：<ol>
 <li>request模块：<br>  urlopen()函数<pre><code>data参数：请求方式变为post
 超时处理：设置timeout
-</code></pre>   read() 返回二进制代码<br>  Request类<br>  Handler类</li>
+</code></pre>   read() 返回二进制代码<br>  Request类<br>  Handler类<br>  请求+保存：urlretrieve(图片的源地址,保存文件的文件名)  —— 重新请求url响应 就实现了请求图片、新建文件、写入文件三个步骤的功能。</li>
 </ol>
 </li>
 </ol>
@@ -343,16 +336,18 @@
      解析urlparse() (根据url的6个部分解析)
      构造urlunparse() params接受长度为6的可迭代对象
          urlsplit()
-     合并urljoin()
+     合并urljoin()  # 按照完整url自动修正拼接
 
      url编码转换：
           1.字符串：urllib.parse.quote(str)  url编码
              unquote() url解码
           2.字典：  urllib.parse.urlencode(dict) 转化为url参数
 </code></pre><ol start="2">
-<li><p>requests库</p>
+<li><p>requests库 - 添加/修改请求头</p>
 <ul>
-<li><p>GET（url,params,headers）<br>params:dict ; query-data</p>
+<li><p>GET（url,params,headers[cookies=]）   使用 cookies 参数，首先需要将 Cookie 值处理为字典的形式：<br>params:dict ; query-data<br>headers = {</p>
+<pre><code>cookie,
+</code></pre><p>}</p>
 </li>
 <li><p>post(url,data{},headers)</p>
 <ol>
@@ -373,13 +368,13 @@ res.cookies.get_dict()
 <li>获取服务器的原始套接字响应:r.raw  请求：(,stream=True)<br>r.json() 获取json数据</li>
 </ul>
 <p>获取cookies字典：response.cookies.get_dict()</p>
-<p>response属性（6）:  r.request.headers</p>
+<p>response属性（6）响应头响应体相关:  r.request.headers</p>
 </li>
 <li><p>r.status_code</p>
-<p>   http请求的返回状态，200表示连接成功，404表示连接失败</p>
+<p>   http请求的返回状态，200表示连接成功，404表示连接失败没有对应资源<br>   301/302 永久/临时重定向<br>   403 没有权限访问 400：客户端请求语法错误 404：请求的资源没有找到<br>   500 服务器错误 503 服务器正在维护</p>
 </li>
 <li><p>r.text</p>
-<p>   http响应解码后的str形式，url对应的页面内容</p>
+<p>   http响应<strong>解码</strong>后的str形式，根据r.encoding</p>
 </li>
 <li><p>r.encoding  从HTTP header中猜测的响应内容编码方式</p>
 </li>
@@ -387,7 +382,7 @@ res.cookies.get_dict()
 <p>   从内容分析出的响应内容的编码方式（备选编码方式）</p>
 </li>
 <li><p>r.content .decode()</p>
-<p>   HTTP响应内容的二进制形式bytes类型</p>
+<p>   HTTP响应内容的编码二进制形式bytes类型</p>
 </li>
 <li><p>r.headers</p>
 <p>   http响应内容的头部内容</p>
@@ -399,14 +394,16 @@ res.cookies.get_dict()
 <p>利用 XPath css<br>选择器来提取定位某个节点，然后再调用相应方法获取它的正文内容或者属性</p>
 </blockquote>
 <p>3个解析库：bs，lxml，pyquery</p>
-<h3 id="bs4（网页解析库，支持多种解析器’html-parser’-‘lxml’）"><a href="#bs4（网页解析库，支持多种解析器’html-parser’-‘lxml’）" class="headerlink" title="bs4（网页解析库，支持多种解析器’html.parser’ ‘lxml’）"></a>bs4（网页解析库，支持多种解析器’html.parser’ ‘lxml’）</h3><pre><code> 先初始化一个bs对象，指定解析库
- bs自动将输入文档转 Unicode 编码，输出文档转换为 UTF-8 编码 你不需考虑编码方式（bs将HTML文档转为DOM树）
- soup = BeautifulSoup(open(&apos;index.html&apos;)) #打开本地 HTML ⽂件的⽅式来创建对象
+<h3 id="bs4（网页解析库，支持多种解析器’html-parser’-‘lxml’）"><a href="#bs4（网页解析库，支持多种解析器’html-parser’-‘lxml’）" class="headerlink" title="bs4（网页解析库，支持多种解析器’html.parser’ ‘lxml’）"></a>bs4（网页解析库，支持多种解析器’html.parser’ ‘lxml’）</h3><pre><code> 初始化一个bs对象，指定解析库
+ &gt; bs自动将输入文档转 Unicode 编码，输出文档转换为 UTF-8 编码 你不需考虑编码方式（bs将HTML文档转为DOM树）
+
+ soup = BeautifulSoup(open(&apos;index.html&apos;),解析库) #打开本地 HTML ⽂件的⽅式来创建对象
 
  - soup.p标签：默认只取第一个  soup.p.string取文本
  方法：
  1. find_all(tag, attributes, recursive, text, limit, keywords)  返回list类型匹配的源代码
-    get_text()获取文本   取属性：get（属性名）
+
+    在 BeautifulSoup 中每个元素都有一个get_text()获取文本   取属性：get（属性名）
     soup.attrs # dict形式返回标签属性  打印：soup.attrs[&apos;key&apos;]
     attributes字典封装多个属性值，通过标签的名称和属性来查找标签
     获取属性们：
@@ -416,7 +413,15 @@ res.cookies.get_dict()
       ···
  2. 
     soup.select(css选择器，limit=1)     # 返回list； css选择器更简洁
-      css选择器：标签名与类名、id 名进⾏组合
+
+      css选择器：标签名与类名、id 名组合   h1::text  ::attr(属性)获取标签属性 伪类选择器[xpath @属性：获取元素对应属性值]
+        li:nth-child(3)选取第三个li元素
+        li:nth-child(2n) 第偶数个
+        a[title]选取有title属性的a元素
+        .container.wrapper 表示同一标签class
+        ul p 选取所有子元素，包括嵌套不相关
+        ul + p 选取ul后面第一个p元素
+        div#container &gt; ul 第一个子元素
      bs默认取后代所有标签，
 * soup.prettify() 以标准缩进输出
 </code></pre><p>  *** lxml解析html代码和文件<br>        parse_text: etree.HTML(text)  #直接读取字符串<br>        parse_file：etree.parse()     #文件读取</p>
@@ -427,14 +432,16 @@ res.cookies.get_dict()
     先转换类型为DOM树实例化选择器：etree.HTML()，再xpath选取
     利⽤ etree.parse() ⽅法来读取⽂件。
 
+ 下一级xpath加  .//
  / 选中直接子节点  //开头遍历所有  //选中文档所有子孙标签  @属性：获取元素对应属性值
  tag（）获取标签名   text（）获取文本   下标a[1]  li[last()] 可以找到最后⼀个元素
- 模糊查询/[contains()]
+ 模糊查询/[contains()]   
+ a[text()=&apos;下一页&apos;] ：class名称相同时用
 
 四个基本方法：
  .extract（） 序列化该节点为 Unicode 字符串并返回 list
  .css(): 返回该表达式所对应的所有节点的 selector list，语法同 BeautifulSoup4
- .re(): 返回 Unicode 字符串 list
+ .re(): 返回 Unicode 字符串 list 正则只有\d才能提取数字
 </code></pre><h3 id="pyquery选择器-from-pyquery-import-PyQuery-as-pq"><a href="#pyquery选择器-from-pyquery-import-PyQuery-as-pq" class="headerlink" title="pyquery选择器  from pyquery import PyQuery as pq"></a>pyquery选择器  from pyquery import PyQuery as pq</h3><pre><code>方法：
 find()查找子孙节点  children（）查找所有子节点
 多个节点.items()方法 返回一个generator
@@ -446,22 +453,19 @@ text() 返回所有text 中间空格分开，str类型
 <p>协程的优势：</p>
 <p>最大的优势就是协程极高的执行效率。因为子程序切换不是线程切换，而是由程序自身控制，因此，没有线程切换的开销，和多线程比，线程数量越多，协程的性能优势就越明显。</p>
 <p>第二大优势就是不需要多线程的锁机制，因为只有一个线程，也不存在同时写变量冲突，在协程中控制共享资源不加锁，只需要判断状态就好了，所以执行效率比多线程高很多</p>
-<h3 id="实战经验："><a href="#实战经验：" class="headerlink" title="实战经验："></a>实战经验：</h3><pre><code>简单数据，直接用正则提取
-
-进入初始网页
-分析翻页url规则
-阅读分析源码，
-明确数据加载方式
-
+<h3 id="实战经验："><a href="#实战经验：" class="headerlink" title="实战经验："></a>实战经验：</h3><pre><code>简单数据，直接用正则提取   
 # def write_to_file(content) :
      with open (’result.txt ’,’a ’, encoding=’ utf-8&apos;) as f:   # 用中文编码
           f.write(json.dumps(content ，ensure_ascii=False) +’\n&apos;)   ## json.dumps() 序列化时默认使⽤的 ascii 编码
 
 # json.dump(item,open(&apos;sfda.json&apos;,&apos;w&apos;),ensure_ascii=False)  卸载返回json字符串
-</code></pre><p>模拟登录：<br>    登录刷新：post登录<br>    无刷新：Ajax方式</p>
-<pre><code> 1. 分析post请求data内容
- 2. 初始化get请求登录页，获取set-cookies（session自动处理） 源代码中搜索获取_token
+</code></pre><p>模拟登录：手动模拟设置 cookies token等</p>
+<pre><code>初次：登录刷新：post登录
+无刷新：Ajax方式
 
+ 1. 分析post请求data内容
+ 2. 初始化清空get请求登录页，获取set-cookies（session自动处理） 源代码中搜索获取_token
+      构造cookies ——&gt; 字典生成式
 - GitHub：先获取token
 
 - 微信登录：
@@ -598,7 +602,7 @@ text() 返回所有text 中间空格分开，str类型
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP-web协议：（规范浏览器-服务器req，res信息）"><span class="nav-number">1.</span> <span class="nav-text">HTTP web协议：（规范浏览器/服务器req，res信息）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#json数据"><span class="nav-number">2.</span> <span class="nav-text">json数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#python封装http库：-请求的是源代码"><span class="nav-number">3.</span> <span class="nav-text">python封装http库：# 请求的是源代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bs4（网页解析库，支持多种解析器’html-parser’-‘lxml’）"><span class="nav-number">4.</span> <span class="nav-text">bs4（网页解析库，支持多种解析器’html.parser’ ‘lxml’）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pyquery选择器-from-pyquery-import-PyQuery-as-pq"><span class="nav-number">5.</span> <span class="nav-text">pyquery选择器  from pyquery import PyQuery as pq</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#js动态渲染问题："><span class="nav-number"></span> <span class="nav-text">js动态渲染问题：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模拟Ajax异步数据爬取-（返回json类型）"><span class="nav-number">1.</span> <span class="nav-text">模拟Ajax异步数据爬取 （返回json类型）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实战经验："><span class="nav-number">2.</span> <span class="nav-text">实战经验：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#selemium-浏览器自动化"><span class="nav-number">3.</span> <span class="nav-text">selemium 浏览器自动化</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#json数据"><span class="nav-number">1.</span> <span class="nav-text">json数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#python封装http库：-请求的是源代码"><span class="nav-number">2.</span> <span class="nav-text">python封装http库：# 请求的是源代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bs4（网页解析库，支持多种解析器’html-parser’-‘lxml’）"><span class="nav-number">3.</span> <span class="nav-text">bs4（网页解析库，支持多种解析器’html.parser’ ‘lxml’）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pyquery选择器-from-pyquery-import-PyQuery-as-pq"><span class="nav-number">4.</span> <span class="nav-text">pyquery选择器  from pyquery import PyQuery as pq</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#js动态渲染问题："><span class="nav-number"></span> <span class="nav-text">js动态渲染问题：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模拟Ajax异步数据爬取-（返回json类型）"><span class="nav-number">1.</span> <span class="nav-text">模拟Ajax异步数据爬取 （返回json类型）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实战经验："><span class="nav-number">2.</span> <span class="nav-text">实战经验：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#selemium-浏览器自动化"><span class="nav-number">3.</span> <span class="nav-text">selemium 浏览器自动化</span></a></li></ol></div>
         
       </div>
       <!--/noindex-->
@@ -615,7 +619,7 @@ text() 返回所有text 中间空格分开，str类型
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -641,7 +645,7 @@ text() 返回所有text 中间空格分开，str类型
             <a href="/tags/">
           
         
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
