@@ -63,7 +63,7 @@
 <meta property="og:site_name" content="中·庸">
 <meta property="og:description" content="HTML 用于展示数据，而 XML 用于结构化、传输和存储数据 XML 文档必须有一个根元素；     嵌套的 HTML 元素 结构化的一种文档结构 ——&amp;gt; W3C 针对其指定了一个标准化的模型DOM">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-23T06:46:16.572Z">
+<meta property="og:updated_time" content="2019-10-26T13:00:49.085Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="spider">
 <meta name="twitter:description" content="HTML 用于展示数据，而 XML 用于结构化、传输和存储数据 XML 文档必须有一个根元素；     嵌套的 HTML 元素 结构化的一种文档结构 ——&amp;gt; W3C 针对其指定了一个标准化的模型DOM">
@@ -280,7 +280,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-10-23 14:46:16" itemprop="dateModified" datetime="2019-10-23T14:46:16+08:00">2019-10-23</time>
+                <time title="修改时间：2019-10-26 21:00:49" itemprop="dateModified" datetime="2019-10-26T21:00:49+08:00">2019-10-26</time>
               </span>
             
           
@@ -318,34 +318,33 @@
 <h3 id="python封装http库：-请求的是源代码"><a href="#python封装http库：-请求的是源代码" class="headerlink" title="python封装http库：# 请求的是源代码"></a>python封装http库：# 请求的是源代码</h3><pre><code>标准urllib库
 第三方库request
 </code></pre><ol>
-<li>urllib库：<ol>
-<li>request模块：<br>  urlopen()函数<pre><code>data参数：请求方式变为post
+<li><p>urllib库：</p>
+<ol>
+<li><p>request模块：<br>  urlopen()函数</p>
+<pre><code>urllib的params需urlencode转换类型
+data参数：请求方式变为post
 超时处理：设置timeout
-</code></pre>   read() 返回二进制代码<br>  Request类<br>  Handler类<br>  请求+保存：urlretrieve(图片的源地址,保存文件的文件名)  —— 重新请求url响应 就实现了请求图片、新建文件、写入文件三个步骤的功能。</li>
+</code></pre><p>   read() 返回二进制代码<br>  Request类<br>  Handler类<br>  请求+保存：urlretrieve(图片的源地址,保存文件的文件名)  —— 重新请求url响应 就实现了请求图片、新建文件、写入文件三个步骤的功能。</p>
+</li>
+<li><p>error模块：<br>  URLError类（作用于request模块的异常）<br>  HTTPError类(子类)</p>
+<pre><code>三个属性code reason headers
+
+解析异常：AttributeError：
+标签为None
+</code></pre></li>
+<li><p>parse模块：（处理url）<br>  解析urlparse() (根据url的6个部分解析)<br>  构造urlunparse() params接受长度为6的可迭代对象</p>
+<pre><code>urlsplit()
+</code></pre><p>  合并urljoin()  # 按照完整url自动修正拼接</p>
+<p>  url编码转换：</p>
+<pre><code>1.字符串：urllib.parse.quote(str)  url编码
+   unquote() url解码
+2.字典：  urllib.parse.urlencode(dict) 转化为url参数
+</code></pre></li>
 </ol>
 </li>
-</ol>
-<pre><code>2. error模块：
-     URLError类（作用于request模块的异常）
-     HTTPError类(子类)
-          三个属性code reason headers
-
-          解析异常：AttributeError：
-          标签为None
-3. parse模块：（处理url）
-     解析urlparse() (根据url的6个部分解析)
-     构造urlunparse() params接受长度为6的可迭代对象
-         urlsplit()
-     合并urljoin()  # 按照完整url自动修正拼接
-
-     url编码转换：
-          1.字符串：urllib.parse.quote(str)  url编码
-             unquote() url解码
-          2.字典：  urllib.parse.urlencode(dict) 转化为url参数
-</code></pre><ol start="2">
 <li><p>requests库 - 添加/修改请求头</p>
 <ul>
-<li><p>GET（url,params,headers[cookies=]）   使用 cookies 参数，首先需要将 Cookie 值处理为字典的形式：<br>params:dict ; query-data<br>headers = {</p>
+<li><p>GET（url,params,headers[cookies=],timeout）   使用 cookies 参数，首先需要将 Cookie 值处理为字典的形式：<br>params:dict ; query-data<br>headers = {</p>
 <pre><code>cookie,
 </code></pre><p>}</p>
 </li>
@@ -397,11 +396,12 @@ res.cookies.get_dict()
 <h3 id="bs4（网页解析库，支持多种解析器’html-parser’-‘lxml’）"><a href="#bs4（网页解析库，支持多种解析器’html-parser’-‘lxml’）" class="headerlink" title="bs4（网页解析库，支持多种解析器’html.parser’ ‘lxml’）"></a>bs4（网页解析库，支持多种解析器’html.parser’ ‘lxml’）</h3><pre><code> 初始化一个bs对象，指定解析库
  &gt; bs自动将输入文档转 Unicode 编码，输出文档转换为 UTF-8 编码 你不需考虑编码方式（bs将HTML文档转为DOM树）
 
- soup = BeautifulSoup(open(&apos;index.html&apos;),解析库) #打开本地 HTML ⽂件的⽅式来创建对象
+ soup = BeautifulSoup(open(&apos;index.html&apos;),&apos;html.parser&apos;) #打开本地 HTML ⽂件的⽅式来创建对象
 
  - soup.p标签：默认只取第一个  soup.p.string取文本
+
  方法：
- 1. find_all(tag, attributes, recursive, text, limit, keywords)  返回list类型匹配的源代码
+ 1. soup.find_all(tag, attributes, recursive, text, limit, keywords)  返回list类型匹配的源代码
 
     在 BeautifulSoup 中每个元素都有一个get_text()获取文本   取属性：get（属性名）
     soup.attrs # dict形式返回标签属性  打印：soup.attrs[&apos;key&apos;]
@@ -411,8 +411,8 @@ res.cookies.get_dict()
       nameList = bs.find_all(text=&apos;the prince&apos;)
       [&apos;the prince&apos;, &apos;the prince&apos;, &apos;the prince&apos;, &apos;the prince&apos;, &apos;the prince&apos;, &apos;the prince&apos;, &apos;the prince&apos;]
       ···
- 2. 
-    soup.select(css选择器，limit=1)     # 返回list； css选择器更简洁
+
+ 2. soup.select(css选择器，limit=1)     # 返回list； css选择器更简洁
 
       css选择器：标签名与类名、id 名组合   h1::text  ::attr(属性)获取标签属性 伪类选择器[xpath @属性：获取元素对应属性值]
         li:nth-child(3)选取第三个li元素
@@ -422,7 +422,7 @@ res.cookies.get_dict()
         ul p 选取所有子元素，包括嵌套不相关
         ul + p 选取ul后面第一个p元素
         div#container &gt; ul 第一个子元素
-     bs默认取后代所有标签，
+
 * soup.prettify() 以标准缩进输出
 </code></pre><p>  *** lxml解析html代码和文件<br>        parse_text: etree.HTML(text)  #直接读取字符串<br>        parse_file：etree.parse()     #文件读取</p>
 <pre><code>    # 按字符串序列化 HTML文档
@@ -432,7 +432,8 @@ res.cookies.get_dict()
     先转换类型为DOM树实例化选择器：etree.HTML()，再xpath选取
     利⽤ etree.parse() ⽅法来读取⽂件。
 
- 下一级xpath加  .//
+ 下一级xpath加  .//    
+ //*[@class=&apos;&apos;]
  / 选中直接子节点  //开头遍历所有  //选中文档所有子孙标签  @属性：获取元素对应属性值
  tag（）获取标签名   text（）获取文本   下标a[1]  li[last()] 可以找到最后⼀个元素
  模糊查询/[contains()]   
