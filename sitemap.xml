@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>yuwengeng.coding.me/hexo-blog/2018/11/26/Scrapy/</loc>
+    
+    <lastmod>2019-10-27T08:04:19.943Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>yuwengeng.coding.me/hexo-blog/2018/11/26/http-note/</loc>
+    
+    <lastmod>2019-10-27T08:03:10.401Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>yuwengeng.coding.me/hexo-blog/2018/11/26/redis_note/</loc>
+    
+    <lastmod>2019-10-27T08:01:55.978Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>yuwengeng.coding.me/hexo-blog/2018/11/26/%E4%BD%A0%E5%A5%BD-Hexo/</loc>
     
     <lastmod>2019-10-27T07:24:15.744Z</lastmod>
@@ -19,27 +40,6 @@
     <loc>yuwengeng.coding.me/hexo-blog/2018/11/26/spider/</loc>
     
     <lastmod>2019-10-26T13:00:49.085Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>yuwengeng.coding.me/hexo-blog/2019/10/23/redis_note/</loc>
-    
-    <lastmod>2019-10-26T09:56:14.553Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>yuwengeng.coding.me/hexo-blog/2019/05/30/Scrapy/</loc>
-    
-    <lastmod>2019-10-26T06:03:24.590Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>yuwengeng.coding.me/hexo-blog/2019/10/20/http-note/</loc>
-    
-    <lastmod>2019-10-20T13:10:32.967Z</lastmod>
     
   </url>
   

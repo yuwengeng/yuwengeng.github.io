@@ -55,19 +55,19 @@
   };
 </script>
 
-  <meta name="description" content="hexo version # 显示hexo版本hexo cleanhexo serverhexo d #将本地数据部署到远端服务器(如github) hexo generate -dhexo list  # 列出网站资料 更新hexonpm update hexo -g#升级 hexo更新主题：cd 到主题文件夹，执行命令：git pull更新插件：npm update  多行  嵌套引用">
-<meta name="keywords" content="hexo命令行">
+  <meta name="description" content="启动：（1）dos命令提示符，进入redis安装目录：开启服务redis-server –service-start Redis 是一个高性能的 key-value 数据库 数据类型：Redis 支持五种数据类型：string（字符串），hash（哈希），list（列表），set（集合）及 zset (sorted set：有序集合)">
+<meta name="keywords" content="数据库">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Markdown常用语法">
-<meta property="og:url" content="yuwengeng.coding.me/hexo-blog/2018/11/26/你好-Hexo/index.html">
+<meta property="og:title" content="Redis-note">
+<meta property="og:url" content="yuwengeng.coding.me/hexo-blog/2018/11/26/redis_note/index.html">
 <meta property="og:site_name" content="中·庸">
-<meta property="og:description" content="hexo version # 显示hexo版本hexo cleanhexo serverhexo d #将本地数据部署到远端服务器(如github) hexo generate -dhexo list  # 列出网站资料 更新hexonpm update hexo -g#升级 hexo更新主题：cd 到主题文件夹，执行命令：git pull更新插件：npm update  多行  嵌套引用">
+<meta property="og:description" content="启动：（1）dos命令提示符，进入redis安装目录：开启服务redis-server –service-start Redis 是一个高性能的 key-value 数据库 数据类型：Redis 支持五种数据类型：string（字符串），hash（哈希），list（列表），set（集合）及 zset (sorted set：有序集合)">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-27T07:24:15.744Z">
+<meta property="og:updated_time" content="2019-10-27T08:01:55.978Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Markdown常用语法">
-<meta name="twitter:description" content="hexo version # 显示hexo版本hexo cleanhexo serverhexo d #将本地数据部署到远端服务器(如github) hexo generate -dhexo list  # 列出网站资料 更新hexonpm update hexo -g#升级 hexo更新主题：cd 到主题文件夹，执行命令：git pull更新插件：npm update  多行  嵌套引用">
-  <link rel="canonical" href="yuwengeng.coding.me/hexo-blog/2018/11/26/你好-Hexo/">
+<meta name="twitter:title" content="Redis-note">
+<meta name="twitter:description" content="启动：（1）dos命令提示符，进入redis安装目录：开启服务redis-server –service-start Redis 是一个高性能的 key-value 数据库 数据类型：Redis 支持五种数据类型：string（字符串），hash（哈希），list（列表），set（集合）及 zset (sorted set：有序集合)">
+  <link rel="canonical" href="yuwengeng.coding.me/hexo-blog/2018/11/26/redis_note/">
 
 
 <script id="page-configurations">
@@ -81,7 +81,7 @@
   };
 </script>
 
-  <title>Markdown常用语法 | 中·庸</title>
+  <title>Redis-note | 中·庸</title>
   
 
 
@@ -240,7 +240,7 @@
   
   
   <article itemscope="" itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="yuwengeng.coding.me/hexo-blog/2018/11/26/你好-Hexo/">
+    <link itemprop="mainEntityOfPage" href="yuwengeng.coding.me/hexo-blog/2018/11/26/redis_note/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zhiheng">
@@ -254,7 +254,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            Markdown常用语法
+            Redis-note
             
 
           
@@ -282,7 +282,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-10-27 15:24:15" itemprop="dateModified" datetime="2019-10-27T15:24:15+08:00">2019-10-27</time>
+                <time title="修改时间：2019-10-27 16:01:55" itemprop="dateModified" datetime="2019-10-27T16:01:55+08:00">2019-10-27</time>
               </span>
             
           
@@ -293,8 +293,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
+                  <a href="/categories/数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
                   </a>
                 </span>
 
@@ -323,44 +323,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>hexo version # 显示hexo版本<br>hexo clean<br>hexo server<br>hexo d #将本地数据部署到远端服务器(如github)</p>
-<p>hexo generate -d<br>hexo list <type> # 列出网站资料</type></p>
-<h3 id="更新hexo"><a href="#更新hexo" class="headerlink" title="更新hexo"></a>更新hexo</h3><p>npm update hexo -g#升级</p>
-<h3 id="hexo更新主题："><a href="#hexo更新主题：" class="headerlink" title="hexo更新主题："></a>hexo更新主题：</h3><p>cd 到主题文件夹，执行命令：<br><code>git pull</code><br>更新插件：<br>npm update</p>
-<blockquote>
-<p>多行</p>
-<blockquote>
-<p>嵌套引用<br><a id="more"></a><br>自动截断</p>
-</blockquote>
-</blockquote>
-<p>// 隐藏   </p>
-<details><br>hhhh<br></details>
+        <p>启动：<br>（1）dos命令提示符，进入redis安装目录：<br>开启服务redis-server –service-start</p><blockquote>
+<p>Redis 是一个高性能的 key-value 数据库</p>
+</blockquote><h3 id="数据类型："><a href="#数据类型：" class="headerlink" title="数据类型："></a>数据类型：</h3><p>Redis 支持五种数据类型：string（字符串），hash（哈希），list（列表），set（集合）及 zset (sorted set：有序集合)</p><a id="more"></a>
 
-<h2 id="markdown"><a href="#markdown" class="headerlink" title="markdown"></a>markdown</h2><p>强制换行<br>在行末使用空格（两个以上） + 换行（Enter）</p>
-<p>&lt; src &gt;： 链接<br><a href=""></a> :文字链接</p>
-<ul>
-<li><ul>
-<li>：斜体<br><code></code> :单行代码<br>— ：分行<br>表格：<br>| | |<br>|-|-|</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>任务列表</p>
-<ul>
-<li style="list-style: none"><input type="checkbox"> 纯牛奶</li>
-<li style="list-style: none"><input type="checkbox" checked> 西瓜</li>
-<li style="list-style: none"><input type="checkbox"> 鸡蛋</li>
-<li style="list-style: none"><input type="checkbox" checked> 保鲜膜</li>
-<li style="list-style: none"><input type="checkbox"> 猪肉（暂时买不起）</li>
-</ul>
-</blockquote>
-<center>中间 </center>
 
-<hr>
-<p>分割线可以用三个以上的星号、减号或者底线来标识</p>
-<p>&lt;自动链接&gt;</p>
-<p>[TOC] 目录DD</p>
-<p>[TOC] ml</p>
+<p>Redis hash 是一个键值对集合，是一个 string 类型的 field 和 value 的映射表，适合用于存储对象。</p>
 
     </div>
 
@@ -376,7 +344,7 @@
           
           <div class="post-tags">
             
-              <a href="/tags/hexo命令行/" rel="tag"># hexo命令行</a>
+              <a href="/tags/数据库/" rel="tag"># 数据库</a>
             
           </div>
         
@@ -386,8 +354,8 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2018/11/26/js/" rel="next" title="javascript笔记">
-                  <i class="fa fa-chevron-left"></i> javascript笔记
+                <a href="/2018/11/26/Google搜索/" rel="next" title="Google搜索">
+                  <i class="fa fa-chevron-left"></i> Google搜索
                 </a>
               
             </div>
@@ -396,8 +364,8 @@
 
             <div class="post-nav-prev post-nav-item">
               
-                <a href="/2018/11/26/Google搜索/" rel="prev" title="Google搜索">
-                  Google搜索 <i class="fa fa-chevron-right"></i>
+                <a href="/2018/11/26/http-note/" rel="prev" title="HTTP协议">
+                  HTTP协议 <i class="fa fa-chevron-right"></i>
                 </a>
               
             </div>
@@ -447,7 +415,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#更新hexo"><span class="nav-number">1.</span> <span class="nav-text">更新hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo更新主题："><span class="nav-number">2.</span> <span class="nav-text">hexo更新主题：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#markdown"><span class="nav-number"></span> <span class="nav-text">markdown</span></a></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型："><span class="nav-number">1.</span> <span class="nav-text">数据类型：</span></a></li></ol></div>
         
       </div>
       <!--/noindex-->
@@ -728,7 +696,7 @@ window.addEventListener('pjax:success', () => {
       repo: 'yuwengeng.github.io',
       owner: 'yuwengeng',
       admin: ['yuwengeng'],
-      id: 'f1fc37c1251f2ae5c1bc79d225cead4d',
+      id: '52be1dc63a8a090c721f443c7968a9b4',
         language: 'zh-CN',
       
       distractionFreeMode: 'true'

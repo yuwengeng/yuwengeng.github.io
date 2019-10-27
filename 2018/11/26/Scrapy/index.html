@@ -55,19 +55,19 @@
   };
 </script>
 
-  <meta name="description" content="hexo version # 显示hexo版本hexo cleanhexo serverhexo d #将本地数据部署到远端服务器(如github) hexo generate -dhexo list  # 列出网站资料 更新hexonpm update hexo -g#升级 hexo更新主题：cd 到主题文件夹，执行命令：git pull更新插件：npm update  多行  嵌套引用">
-<meta name="keywords" content="hexo命令行">
+  <meta name="description" content="经典爬虫框架：1. url 管理器：Scheduler调度器     主要两个变量：已爬取url集合，未爬取集合；     去重：内存去重；           缓存数据库去重，布隆算法过滤  2. 下载器：">
+<meta name="keywords" content="爬虫">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Markdown常用语法">
-<meta property="og:url" content="yuwengeng.coding.me/hexo-blog/2018/11/26/你好-Hexo/index.html">
+<meta property="og:title" content="Scrapy框架">
+<meta property="og:url" content="yuwengeng.coding.me/hexo-blog/2018/11/26/Scrapy/index.html">
 <meta property="og:site_name" content="中·庸">
-<meta property="og:description" content="hexo version # 显示hexo版本hexo cleanhexo serverhexo d #将本地数据部署到远端服务器(如github) hexo generate -dhexo list  # 列出网站资料 更新hexonpm update hexo -g#升级 hexo更新主题：cd 到主题文件夹，执行命令：git pull更新插件：npm update  多行  嵌套引用">
+<meta property="og:description" content="经典爬虫框架：1. url 管理器：Scheduler调度器     主要两个变量：已爬取url集合，未爬取集合；     去重：内存去重；           缓存数据库去重，布隆算法过滤  2. 下载器：">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-27T07:24:15.744Z">
+<meta property="og:updated_time" content="2019-10-27T08:04:19.943Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Markdown常用语法">
-<meta name="twitter:description" content="hexo version # 显示hexo版本hexo cleanhexo serverhexo d #将本地数据部署到远端服务器(如github) hexo generate -dhexo list  # 列出网站资料 更新hexonpm update hexo -g#升级 hexo更新主题：cd 到主题文件夹，执行命令：git pull更新插件：npm update  多行  嵌套引用">
-  <link rel="canonical" href="yuwengeng.coding.me/hexo-blog/2018/11/26/你好-Hexo/">
+<meta name="twitter:title" content="Scrapy框架">
+<meta name="twitter:description" content="经典爬虫框架：1. url 管理器：Scheduler调度器     主要两个变量：已爬取url集合，未爬取集合；     去重：内存去重；           缓存数据库去重，布隆算法过滤  2. 下载器：">
+  <link rel="canonical" href="yuwengeng.coding.me/hexo-blog/2018/11/26/Scrapy/">
 
 
 <script id="page-configurations">
@@ -81,7 +81,7 @@
   };
 </script>
 
-  <title>Markdown常用语法 | 中·庸</title>
+  <title>Scrapy框架 | 中·庸</title>
   
 
 
@@ -240,7 +240,7 @@
   
   
   <article itemscope="" itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="yuwengeng.coding.me/hexo-blog/2018/11/26/你好-Hexo/">
+    <link itemprop="mainEntityOfPage" href="yuwengeng.coding.me/hexo-blog/2018/11/26/Scrapy/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zhiheng">
@@ -254,7 +254,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            Markdown常用语法
+            Scrapy框架
             
 
           
@@ -282,7 +282,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-10-27 15:24:15" itemprop="dateModified" datetime="2019-10-27T15:24:15+08:00">2019-10-27</time>
+                <time title="修改时间：2019-10-27 16:04:19" itemprop="dateModified" datetime="2019-10-27T16:04:19+08:00">2019-10-27</time>
               </span>
             
           
@@ -293,8 +293,19 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
+                  <a href="/categories/scrapy/" itemprop="url" rel="index">
+                    <span itemprop="name">scrapy</span>
+                  </a>
+                </span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/scrapy/爬虫/" itemprop="url" rel="index">
+                    <span itemprop="name">爬虫</span>
                   </a>
                 </span>
 
@@ -323,44 +334,91 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>hexo version # 显示hexo版本<br>hexo clean<br>hexo server<br>hexo d #将本地数据部署到远端服务器(如github)</p>
-<p>hexo generate -d<br>hexo list <type> # 列出网站资料</type></p>
-<h3 id="更新hexo"><a href="#更新hexo" class="headerlink" title="更新hexo"></a>更新hexo</h3><p>npm update hexo -g#升级</p>
-<h3 id="hexo更新主题："><a href="#hexo更新主题：" class="headerlink" title="hexo更新主题："></a>hexo更新主题：</h3><p>cd 到主题文件夹，执行命令：<br><code>git pull</code><br>更新插件：<br>npm update</p>
-<blockquote>
-<p>多行</p>
-<blockquote>
-<p>嵌套引用<br><a id="more"></a><br>自动截断</p>
-</blockquote>
-</blockquote>
-<p>// 隐藏   </p>
-<details><br>hhhh<br></details>
+        <h2 id="经典爬虫框架："><a href="#经典爬虫框架：" class="headerlink" title="经典爬虫框架："></a>经典爬虫框架：</h2><pre><code>1. url 管理器：Scheduler调度器
+    主要两个变量：已爬取url集合，未爬取集合；
+    去重：内存去重；
+          缓存数据库去重，布隆算法过滤
 
-<h2 id="markdown"><a href="#markdown" class="headerlink" title="markdown"></a>markdown</h2><p>强制换行<br>在行末使用空格（两个以上） + 换行（Enter）</p>
-<p>&lt; src &gt;： 链接<br><a href=""></a> :文字链接</p>
+2. 下载器：
+</code></pre><a id="more"></a><p>logging模块：保存持久化日志信息</p>
+<h2 id="scrapy框架-任务分离固定明确"><a href="#scrapy框架-任务分离固定明确" class="headerlink" title="scrapy框架: 任务分离固定明确"></a>scrapy框架: 任务分离固定明确</h2><blockquote>
+<p>框架中数据流：request，response，item<br>item会内部返回给pipline 在管道间传递 ,先在settings中开启pipline<br>    Spider opened 开启</p>
+</blockquote>
+<p>scrapy shell url 进行快速调试<br>    scrapy check 检查代码是否有错误<br>    scrapy list列出所有可用的爬虫<br>    scrapy fetch url 源代码下载下来并显示出来</p>
+<h3 id="spider主程序："><a href="#spider主程序：" class="headerlink" title="spider主程序："></a>spider主程序：</h3><ul>
+<li><p>被继承的基类scrapy.Spider中:<br> 属性：</p>
+<p> 方法：</p>
+<ol>
+<li>start_requests() 这个方法必须返回一个可迭代对象</li>
+<li><p>parse(response)  默认的回调函数<br>  从生成器取尽第一部分的 request，然后再获取第二部分的 item，取到 item 了，就会放<br>  到对应的 pipeline处理；<br>   取尽之后，parse()⼯作结束，引擎再根据队列和 pipelines 中的内容去执⾏相<br>   应的操作；</p>
+<ol start="8">
+<li>程序在取得各个⻚⾯的 items 前，会先处理完之前所有的 request 队列⾥的请求<br>，然后再提取 items。</li>
+<li>这⼀切的⼀切，Scrapy 引擎和调度器将负责到底。<br>yield 返回Request，dict None BaseItem</li>
+</ol>
 <ul>
-<li><ul>
-<li>：斜体<br><code></code> :单行代码<br>— ：分行<br>表格：<br>| | |<br>|-|-|</li>
+<li>CrawlSpider类: 自动二次请求Request解析匹配响应url，url自动修正[parse.urljoin()]；  定义rules匹配规则；  follow=True提取的链接响应中继续跟进匹配；<br>   Rule(LinkExtractor(allow=re,restrict_css(), ),)<br>scrapy genspider -t crawl<br>使用场景：<br>   url规律能被正则或xpath匹配<br>   实现自动翻页<h3 id="settings："><a href="#settings：" class="headerlink" title="settings："></a>settings：</h3>LOG_LEVEL = “WARNING”  debug info  #设置scrapy日志等级</li>
 </ul>
 </li>
+</ol>
+</li>
 </ul>
-<blockquote>
-<p>任务列表</p>
-<ul>
-<li style="list-style: none"><input type="checkbox"> 纯牛奶</li>
-<li style="list-style: none"><input type="checkbox" checked> 西瓜</li>
-<li style="list-style: none"><input type="checkbox"> 鸡蛋</li>
-<li style="list-style: none"><input type="checkbox" checked> 保鲜膜</li>
-<li style="list-style: none"><input type="checkbox"> 猪肉（暂时买不起）</li>
-</ul>
-</blockquote>
-<center>中间 </center>
+<h3 id="requests对象：scrapy-Request-类实例化"><a href="#requests对象：scrapy-Request-类实例化" class="headerlink" title="requests对象：scrapy.Request()类实例化"></a>requests对象：scrapy.Request()类实例化</h3><pre><code>- Request类常用参数：
+    callback，
+    dont_filter=True不过滤，默认对url去重
+    meta: item{}，在不同解析函数中传递item数据  注意item deepcopy()防止同一引用污染。
+    headers,
+    cookies={} # cookies只能单独设置，不在headers
 
-<hr>
-<p>分割线可以用三个以上的星号、减号或者底线来标识</p>
-<p>&lt;自动链接&gt;</p>
-<p>[TOC] 目录DD</p>
-<p>[TOC] ml</p>
+#### scrapy post请求模拟登录:
+- scrapy.FormRequest(url,formdata,callback) 
+
+        # 自动从响应中找到form表单字段进行登录
+        FormRequest.from_response(
+            response,
+            formdata,# 只需写user poassword 
+            formid=None,
+            formname=None,
+        )
+</code></pre><h3 id="response对象："><a href="#response对象：" class="headerlink" title="response对象："></a>response对象：</h3><pre><code>    shell: 【response.加tab】
+        res.body相当于res.content
+        res.url 发起请求的url
+        res.text
+        res.meta
+selector选中元素方法：xpath，css ，返回selector对象list
+提取数据对象data属性：
+extract()方法 序列化选中内容为Unicode 字符串 并返回字符串列表
+extract_first():直接返回字符串
+</code></pre><h3 id="item：初始化要爬取的item"><a href="#item：初始化要爬取的item" class="headerlink" title="item：初始化要爬取的item"></a>item：初始化要爬取的item</h3><h3 id="item-pipeline组件"><a href="#item-pipeline组件" class="headerlink" title="item pipeline组件:"></a>item pipeline组件:</h3><pre><code>必有process_item(self,item,spider)方法，必须返回item，以便继续处理
+
+初始化数据库连接:
+- open_spider(self,spider) # 相当于爬之前先开盖
+- close_spider(self,spider)
+
+- scrapy 保存信息的最简单的⽅法主要有四种，-o 输出指定格式的⽂件 【json csv xml jsonl】
+</code></pre><h3 id="中间件"><a href="#中间件" class="headerlink" title="中间件"></a>中间件</h3><ol>
+<li><p>Downloader middleware： 用于修改request和response （ 代理池，UA库，）<br> process_request(request,spider)被调用<br> 拦截：<br> process_response(request, response, spider)</p>
+<h2 id="process-exception-request-exception-spider"><a href="#process-exception-request-exception-spider" class="headerlink" title=" process_exception(request, exception, spider)"></a> process_exception(request, exception, spider)</h2><ul>
+<li><p>重写RandomUserAgentMiddlware：<br>from fake_useragent import UserAgent </p>
+<h1 id="引入开源库"><a href="#引入开源库" class="headerlink" title="引入开源库"></a>引入开源库</h1><p>class RandomUserAgentMiddlware(object):</p>
+<p>   def <strong>init</strong>(self, crawler):</p>
+<pre><code>super(RandomUserAgentMiddlware, self).__init__()
+self.ua = UserAgent()
+#可读取在settings文件中的配置，来决定开源库ua执行的方法，默认是random，也可是ie、Firefox等等
+self.ua_type = crawler.settings.get(&quot;RANDOM_UA_TYPE&quot;, &quot;random&quot;)
+</code></pre><p>   @classmethod<br>   def from_crawler(cls, crawler):</p>
+<pre><code>return cls(crawler)
+</code></pre><p>   #更换用户代理逻辑在此方法中<br>   def process_request(self, request, spider):</p>
+<pre><code>def get_ua():
+    return getattr(self.ua, self.ua_type)
+
+&lt;!-- print  get_ua()2 --&gt;
+request.headers.setdefault(&apos;User-Agent&apos;, get_ua())
+</code></pre><p>添加代理：request.meta[‘proxy’] = </p>
+</li>
+</ul>
+</li>
+<li>Spider Middleware</li>
+</ol>
 
     </div>
 
@@ -376,7 +434,7 @@
           
           <div class="post-tags">
             
-              <a href="/tags/hexo命令行/" rel="tag"># hexo命令行</a>
+              <a href="/tags/爬虫/" rel="tag"># 爬虫</a>
             
           </div>
         
@@ -386,8 +444,8 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2018/11/26/js/" rel="next" title="javascript笔记">
-                  <i class="fa fa-chevron-left"></i> javascript笔记
+                <a href="/2018/11/26/http-note/" rel="next" title="HTTP协议">
+                  <i class="fa fa-chevron-left"></i> HTTP协议
                 </a>
               
             </div>
@@ -396,8 +454,8 @@
 
             <div class="post-nav-prev post-nav-item">
               
-                <a href="/2018/11/26/Google搜索/" rel="prev" title="Google搜索">
-                  Google搜索 <i class="fa fa-chevron-right"></i>
+                <a href="/2018/11/26/es-note/" rel="prev" title="python操作es">
+                  python操作es <i class="fa fa-chevron-right"></i>
                 </a>
               
             </div>
@@ -447,7 +505,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#更新hexo"><span class="nav-number">1.</span> <span class="nav-text">更新hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo更新主题："><span class="nav-number">2.</span> <span class="nav-text">hexo更新主题：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#markdown"><span class="nav-number"></span> <span class="nav-text">markdown</span></a></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#经典爬虫框架："><span class="nav-number">1.</span> <span class="nav-text">经典爬虫框架：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#scrapy框架-任务分离固定明确"><span class="nav-number">2.</span> <span class="nav-text">scrapy框架: 任务分离固定明确</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#spider主程序："><span class="nav-number">2.1.</span> <span class="nav-text">spider主程序：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#settings："><span class="nav-number">2.2.</span> <span class="nav-text">settings：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#requests对象：scrapy-Request-类实例化"><span class="nav-number">2.3.</span> <span class="nav-text">requests对象：scrapy.Request()类实例化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#response对象："><span class="nav-number">2.4.</span> <span class="nav-text">response对象：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#item：初始化要爬取的item"><span class="nav-number">2.5.</span> <span class="nav-text">item：初始化要爬取的item</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#item-pipeline组件"><span class="nav-number">2.6.</span> <span class="nav-text">item pipeline组件:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#中间件"><span class="nav-number">2.7.</span> <span class="nav-text">中间件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#process-exception-request-exception-spider"><span class="nav-number">3.</span> <span class="nav-text"> process_exception(request, exception, spider)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#引入开源库"><span class="nav-number"></span> <span class="nav-text">引入开源库</span></a></div>
         
       </div>
       <!--/noindex-->
@@ -728,7 +786,7 @@ window.addEventListener('pjax:success', () => {
       repo: 'yuwengeng.github.io',
       owner: 'yuwengeng',
       admin: ['yuwengeng'],
-      id: 'f1fc37c1251f2ae5c1bc79d225cead4d',
+      id: '26c56a0c64994f936af37dd2579b54b5',
         language: 'zh-CN',
       
       distractionFreeMode: 'true'

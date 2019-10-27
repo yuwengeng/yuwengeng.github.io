@@ -55,19 +55,19 @@
   };
 </script>
 
-  <meta name="description" content="经典爬虫框架：1. url 管理器：Scheduler调度器     主要两个变量：已爬取url集合，未爬取集合；     去重：内存去重；           缓存数据库去重，布隆算法过滤  2. 下载器：">
-<meta name="keywords" content="python 前端">
+  <meta name="description" content="HTTP web协议：（规范浏览器/服务器req，res信息）- 特点  1. 无连接  2. 无关媒体类型  3. 无状态 - 内容：  - 起始行:由请求方法、请求的 URL 以及使用的 HTTP 协议版本三部分组成  - 请求头: 以行为单位   用来说明服务器要使用的附加信息，比较重要的信息有 Cookie Referer User-Agent等  - 消息体：">
+<meta name="keywords" content="网络">
 <meta property="og:type" content="article">
-<meta property="og:title" content="中·庸">
-<meta property="og:url" content="yuwengeng.coding.me/hexo-blog/2019/05/30/Scrapy/index.html">
+<meta property="og:title" content="HTTP协议">
+<meta property="og:url" content="yuwengeng.coding.me/hexo-blog/2018/11/26/http-note/index.html">
 <meta property="og:site_name" content="中·庸">
-<meta property="og:description" content="经典爬虫框架：1. url 管理器：Scheduler调度器     主要两个变量：已爬取url集合，未爬取集合；     去重：内存去重；           缓存数据库去重，布隆算法过滤  2. 下载器：">
+<meta property="og:description" content="HTTP web协议：（规范浏览器/服务器req，res信息）- 特点  1. 无连接  2. 无关媒体类型  3. 无状态 - 内容：  - 起始行:由请求方法、请求的 URL 以及使用的 HTTP 协议版本三部分组成  - 请求头: 以行为单位   用来说明服务器要使用的附加信息，比较重要的信息有 Cookie Referer User-Agent等  - 消息体：">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-26T06:03:24.590Z">
+<meta property="og:updated_time" content="2019-10-27T08:03:10.401Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="中·庸">
-<meta name="twitter:description" content="经典爬虫框架：1. url 管理器：Scheduler调度器     主要两个变量：已爬取url集合，未爬取集合；     去重：内存去重；           缓存数据库去重，布隆算法过滤  2. 下载器：">
-  <link rel="canonical" href="yuwengeng.coding.me/hexo-blog/2019/05/30/Scrapy/">
+<meta name="twitter:title" content="HTTP协议">
+<meta name="twitter:description" content="HTTP web协议：（规范浏览器/服务器req，res信息）- 特点  1. 无连接  2. 无关媒体类型  3. 无状态 - 内容：  - 起始行:由请求方法、请求的 URL 以及使用的 HTTP 协议版本三部分组成  - 请求头: 以行为单位   用来说明服务器要使用的附加信息，比较重要的信息有 Cookie Referer User-Agent等  - 消息体：">
+  <link rel="canonical" href="yuwengeng.coding.me/hexo-blog/2018/11/26/http-note/">
 
 
 <script id="page-configurations">
@@ -81,7 +81,7 @@
   };
 </script>
 
-  <title> | 中·庸</title>
+  <title>HTTP协议 | 中·庸</title>
   
 
 
@@ -240,7 +240,7 @@
   
   
   <article itemscope="" itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="yuwengeng.coding.me/hexo-blog/2019/05/30/Scrapy/">
+    <link itemprop="mainEntityOfPage" href="yuwengeng.coding.me/hexo-blog/2018/11/26/http-note/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zhiheng">
@@ -254,7 +254,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            
+            HTTP协议
             
 
           
@@ -271,7 +271,7 @@
                 
               
 
-              <time title="创建时间：2019-05-30 20:17:19" itemprop="dateCreated datePublished" datetime="2019-05-30T20:17:19+08:00">2019-05-30</time>
+              <time title="创建时间：2018-11-26 17:08:58" itemprop="dateCreated datePublished" datetime="2018-11-26T17:08:58+08:00">2018-11-26</time>
             </span>
           
             
@@ -282,9 +282,48 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-10-26 14:03:24" itemprop="dateModified" datetime="2019-10-26T14:03:24+08:00">2019-10-26</time>
+                <time title="修改时间：2019-10-27 16:03:10" itemprop="dateModified" datetime="2019-10-27T16:03:10+08:00">2019-10-27</time>
               </span>
             
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/网络/" itemprop="url" rel="index">
+                    <span itemprop="name">网络</span>
+                  </a>
+                </span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/网络/web/" itemprop="url" rel="index">
+                    <span itemprop="name">web</span>
+                  </a>
+                </span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/网络/web/爬虫/" itemprop="url" rel="index">
+                    <span itemprop="name">爬虫</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -306,91 +345,17 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="经典爬虫框架："><a href="#经典爬虫框架：" class="headerlink" title="经典爬虫框架："></a>经典爬虫框架：</h2><pre><code>1. url 管理器：Scheduler调度器
-    主要两个变量：已爬取url集合，未爬取集合；
-    去重：内存去重；
-          缓存数据库去重，布隆算法过滤
-
-2. 下载器：
-</code></pre><a id="more"></a><p>logging模块：保存持久化日志信息</p>
-<h2 id="scrapy框架-任务分离固定明确"><a href="#scrapy框架-任务分离固定明确" class="headerlink" title="scrapy框架: 任务分离固定明确"></a>scrapy框架: 任务分离固定明确</h2><blockquote>
-<p>框架中数据流：request，response，item<br>item会内部返回给pipline 在管道间传递 ,先在settings中开启pipline<br>    Spider opened 开启</p>
-</blockquote>
-<p>scrapy shell url 进行快速调试<br>    scrapy check 检查代码是否有错误<br>    scrapy list列出所有可用的爬虫<br>    scrapy fetch url 源代码下载下来并显示出来</p>
-<h3 id="spider主程序："><a href="#spider主程序：" class="headerlink" title="spider主程序："></a>spider主程序：</h3><ul>
-<li><p>被继承的基类scrapy.Spider中:<br> 属性：</p>
-<p> 方法：</p>
-<ol>
-<li>start_requests() 这个方法必须返回一个可迭代对象</li>
-<li><p>parse(response)  默认的回调函数<br>  从生成器取尽第一部分的 request，然后再获取第二部分的 item，取到 item 了，就会放<br>  到对应的 pipeline处理；<br>   取尽之后，parse()⼯作结束，引擎再根据队列和 pipelines 中的内容去执⾏相<br>   应的操作；</p>
-<ol start="8">
-<li>程序在取得各个⻚⾯的 items 前，会先处理完之前所有的 request 队列⾥的请求<br>，然后再提取 items。</li>
-<li>这⼀切的⼀切，Scrapy 引擎和调度器将负责到底。<br>yield 返回Request，dict None BaseItem</li>
-</ol>
-<ul>
-<li>CrawlSpider类: 自动二次请求Request解析匹配响应url，url自动修正[parse.urljoin()]；  定义rules匹配规则；  follow=True提取的链接响应中继续跟进匹配；<br>   Rule(LinkExtractor(allow=re,restrict_css(), ),)<br>scrapy genspider -t crawl<br>使用场景：<br>   url规律能被正则或xpath匹配<br>   实现自动翻页<h3 id="settings："><a href="#settings：" class="headerlink" title="settings："></a>settings：</h3>LOG_LEVEL = “WARNING”  debug info  #设置scrapy日志等级</li>
-</ul>
-</li>
-</ol>
-</li>
-</ul>
-<h3 id="requests对象：scrapy-Request-类实例化"><a href="#requests对象：scrapy-Request-类实例化" class="headerlink" title="requests对象：scrapy.Request()类实例化"></a>requests对象：scrapy.Request()类实例化</h3><pre><code>- Request类常用参数：
-    callback，
-    dont_filter=True不过滤，默认对url去重
-    meta: item{}，在不同解析函数中传递item数据  注意item deepcopy()防止同一引用污染。
-    headers,
-    cookies={} # cookies只能单独设置，不在headers
-
-#### scrapy post请求模拟登录:
-- scrapy.FormRequest(url,formdata,callback) 
-
-        # 自动从响应中找到form表单字段进行登录
-        FormRequest.from_response(
-            response,
-            formdata,# 只需写user poassword 
-            formid=None,
-            formname=None,
-        )
-</code></pre><h3 id="response对象："><a href="#response对象：" class="headerlink" title="response对象："></a>response对象：</h3><pre><code>    shell: 【response.加tab】
-        res.body相当于res.content
-        res.url 发起请求的url
-        res.text
-        res.meta
-selector选中元素方法：xpath，css ，返回selector对象list
-提取数据对象data属性：
-extract()方法 序列化选中内容为Unicode 字符串 并返回字符串列表
-extract_first():直接返回字符串
-</code></pre><h3 id="item：初始化要爬取的item"><a href="#item：初始化要爬取的item" class="headerlink" title="item：初始化要爬取的item"></a>item：初始化要爬取的item</h3><h3 id="item-pipeline组件"><a href="#item-pipeline组件" class="headerlink" title="item pipeline组件:"></a>item pipeline组件:</h3><pre><code>必有process_item(self,item,spider)方法，必须返回item，以便继续处理
-
-初始化数据库连接:
-- open_spider(self,spider) # 相当于爬之前先开盖
-- close_spider(self,spider)
-
-- scrapy 保存信息的最简单的⽅法主要有四种，-o 输出指定格式的⽂件 【json csv xml jsonl】
-</code></pre><h3 id="中间件"><a href="#中间件" class="headerlink" title="中间件"></a>中间件</h3><ol>
-<li><p>Downloader middleware： 用于修改request和response （ 代理池，UA库，）<br> process_request(request,spider)被调用<br> 拦截：<br> process_response(request, response, spider)</p>
-<h2 id="process-exception-request-exception-spider"><a href="#process-exception-request-exception-spider" class="headerlink" title=" process_exception(request, exception, spider)"></a> process_exception(request, exception, spider)</h2><ul>
-<li><p>重写RandomUserAgentMiddlware：<br>from fake_useragent import UserAgent </p>
-<h1 id="引入开源库"><a href="#引入开源库" class="headerlink" title="引入开源库"></a>引入开源库</h1><p>class RandomUserAgentMiddlware(object):</p>
-<p>   def <strong>init</strong>(self, crawler):</p>
-<pre><code>super(RandomUserAgentMiddlware, self).__init__()
-self.ua = UserAgent()
-#可读取在settings文件中的配置，来决定开源库ua执行的方法，默认是random，也可是ie、Firefox等等
-self.ua_type = crawler.settings.get(&quot;RANDOM_UA_TYPE&quot;, &quot;random&quot;)
-</code></pre><p>   @classmethod<br>   def from_crawler(cls, crawler):</p>
-<pre><code>return cls(crawler)
-</code></pre><p>   #更换用户代理逻辑在此方法中<br>   def process_request(self, request, spider):</p>
-<pre><code>def get_ua():
-    return getattr(self.ua, self.ua_type)
-
-&lt;!-- print  get_ua()2 --&gt;
-request.headers.setdefault(&apos;User-Agent&apos;, get_ua())
-</code></pre><p>添加代理：request.meta[‘proxy’] = </p>
-</li>
-</ul>
-</li>
-<li>Spider Middleware</li>
-</ol>
+        <h3 id="HTTP-web协议：（规范浏览器-服务器req，res信息）"><a href="#HTTP-web协议：（规范浏览器-服务器req，res信息）" class="headerlink" title="HTTP web协议：（规范浏览器/服务器req，res信息）"></a>HTTP web协议：（规范浏览器/服务器req，res信息）</h3><pre><code>- 特点
+ 1. 无连接
+ 2. 无关媒体类型
+ 3. 无状态
+- 内容：
+ - 起始行:由请求方法、请求的 URL 以及使用的 HTTP 协议版本三部分组成
+ - 请求头: 以行为单位
+  用来说明服务器要使用的附加信息，比较重要的信息有 Cookie Referer User-Agent等
+ - 消息体：
+</code></pre><a id="more"></a><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">Response Headers 一般包含以下部分 ( 响应 ( 服务端 -&gt; 客户端 [response]))：</span><br><span class="line"></span><br><span class="line">HTTP/1.1 为响应采用的协议和版本号 200（状态码）OK（描述信息）</span><br><span class="line">Location 为服务端需要客户端访问的页面路径</span><br><span class="line">Server 为服务端的 Web 服务端名</span><br><span class="line">Content-Encoding 为服务端能够发送压缩编码类型</span><br><span class="line">Content-Length 为服务端发送的压缩数据的长度</span><br><span class="line">Content-Language 为服务端发送的语言类型</span><br><span class="line">Content-Type 为服务端发送的类型及采用的编码方式</span><br><span class="line">Last-Modified 为服务端对该资源最后修改的时间</span><br><span class="line">Refresh 为服务端要求客户端 1 秒钟后，刷新，然后访问指定的页面路径</span><br><span class="line">Content-Disposition 为服务端要求客户端以下载文件的方式打开该文件</span><br><span class="line">Transfer-Encoding 为分块传递数据到客户端</span><br><span class="line">Set-Cookie 为服务端发送到客户端的暂存数据</span><br><span class="line">Connection 为维护客户端和服务端的连接关系</span><br><span class="line"></span><br><span class="line">Request Headers 一般包含以下部分 ( 请求 ( 客户端 -&gt; 服务端[request]))：</span><br><span class="line"></span><br><span class="line">GET（请求的方式）/newcoder/hello.html（请求的目标资源）HTTP/1.1（请求采用的协议和版本号）</span><br><span class="line">Accept 为客户端能接收的资源类型</span><br><span class="line">Accept-Language 为客户端接收的语言类型</span><br><span class="line">Connection 为维护客户端和服务端的连接关系</span><br><span class="line">Host 为连接的目标主机</span><br><span class="line">Referer 告诉服务器我来自于哪里</span><br><span class="line">User-Agent 为客户端操作系统版本号等信息</span><br><span class="line">Accept-Encoding 为客户端能接收的压缩数据的类型</span><br><span class="line">If-Modified-Since 为缓存时间</span><br><span class="line">Cookie 为客户端暂存服务端的信息</span><br><span class="line">Date 为客户端请求服务端的时间</span><br></pre></td></tr></table></figure>
+<p>304：重定向。<br> 400：客户端请求语法错误。<br> 403：客户端请求被拒绝，可能是权限问题。<br> 404：请求的资源没有找到。<br> 500：服务器内部错误。<br> 502：网关或代理服务器错误。<br> 504：网关超时，服务器没有及时从上游服务器接获取到请求。</p>
 
     </div>
 
@@ -401,14 +366,23 @@ request.headers.setdefault(&apos;User-Agent&apos;, get_ua())
       
 
       <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/网络/" rel="tag"># 网络</a>
+            
+          </div>
+        
 
         
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2018/11/26/es-note/" rel="next" title="python操作es">
-                  <i class="fa fa-chevron-left"></i> python操作es
+                <a href="/2018/11/26/redis_note/" rel="next" title="Redis-note">
+                  <i class="fa fa-chevron-left"></i> Redis-note
                 </a>
               
             </div>
@@ -417,8 +391,8 @@ request.headers.setdefault(&apos;User-Agent&apos;, get_ua())
 
             <div class="post-nav-prev post-nav-item">
               
-                <a href="/2019/10/11/随笔/" rel="prev" title="随笔">
-                  随笔 <i class="fa fa-chevron-right"></i>
+                <a href="/2018/11/26/Scrapy/" rel="prev" title="Scrapy框架">
+                  Scrapy框架 <i class="fa fa-chevron-right"></i>
                 </a>
               
             </div>
@@ -468,7 +442,7 @@ request.headers.setdefault(&apos;User-Agent&apos;, get_ua())
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#经典爬虫框架："><span class="nav-number">1.</span> <span class="nav-text">经典爬虫框架：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#scrapy框架-任务分离固定明确"><span class="nav-number">2.</span> <span class="nav-text">scrapy框架: 任务分离固定明确</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#spider主程序："><span class="nav-number">2.1.</span> <span class="nav-text">spider主程序：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#settings："><span class="nav-number">2.2.</span> <span class="nav-text">settings：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#requests对象：scrapy-Request-类实例化"><span class="nav-number">2.3.</span> <span class="nav-text">requests对象：scrapy.Request()类实例化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#response对象："><span class="nav-number">2.4.</span> <span class="nav-text">response对象：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#item：初始化要爬取的item"><span class="nav-number">2.5.</span> <span class="nav-text">item：初始化要爬取的item</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#item-pipeline组件"><span class="nav-number">2.6.</span> <span class="nav-text">item pipeline组件:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#中间件"><span class="nav-number">2.7.</span> <span class="nav-text">中间件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#process-exception-request-exception-spider"><span class="nav-number">3.</span> <span class="nav-text"> process_exception(request, exception, spider)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#引入开源库"><span class="nav-number"></span> <span class="nav-text">引入开源库</span></a></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP-web协议：（规范浏览器-服务器req，res信息）"><span class="nav-number">1.</span> <span class="nav-text">HTTP web协议：（规范浏览器/服务器req，res信息）</span></a></li></ol></div>
         
       </div>
       <!--/noindex-->
@@ -498,7 +472,7 @@ request.headers.setdefault(&apos;User-Agent&apos;, get_ua())
             <a href="/categories/">
           
         
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">分类</span>
         </a>
       </div>
@@ -511,7 +485,7 @@ request.headers.setdefault(&apos;User-Agent&apos;, get_ua())
             <a href="/tags/">
           
         
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
@@ -749,7 +723,7 @@ window.addEventListener('pjax:success', () => {
       repo: 'yuwengeng.github.io',
       owner: 'yuwengeng',
       admin: ['yuwengeng'],
-      id: '3e42e33619de01cc5852d89aeca6a45e',
+      id: '261f743b8d759930b5d7b7d8951a771c',
         language: 'zh-CN',
       
       distractionFreeMode: 'true'
