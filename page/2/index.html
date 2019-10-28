@@ -239,12 +239,12 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="yuwengeng.coding.me/hexo-blog/2018/11/26/es-note/">
+    <link itemprop="mainEntityOfPage" href="yuwengeng.coding.me/hexo-blog/2018/11/26/Scrapy/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zhiheng">
       <meta itemprop="description" content="programming and life">
-      <meta itemprop="image" content="/images/icon.jpg">
+      <meta itemprop="image" content="http://q030yb439.bkt.clouddn.com/icon.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -254,7 +254,7 @@
         <h1 class="post-title" itemprop="name headline">
           
             
-            <a href="/2018/11/26/es-note/" class="post-title-link" itemprop="url">python操作es</a>
+            <a href="/2018/11/26/Scrapy/" class="post-title-link" itemprop="url">Scrapy框架</a>
           
         </h1>
 
@@ -280,7 +280,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-10-14 20:37:10" itemprop="dateModified" datetime="2019-10-14T20:37:10+08:00">2019-10-14</time>
+                <time title="修改时间：2019-10-27 16:04:19" itemprop="dateModified" datetime="2019-10-27T16:04:19+08:00">2019-10-27</time>
               </span>
             
           
@@ -291,8 +291,19 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/搜索/" itemprop="url" rel="index">
-                    <span itemprop="name">搜索</span>
+                  <a href="/categories/scrapy/" itemprop="url" rel="index">
+                    <span itemprop="name">scrapy</span>
+                  </a>
+                </span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/scrapy/爬虫/" itemprop="url" rel="index">
+                    <span itemprop="name">爬虫</span>
                   </a>
                 </span>
 
@@ -313,24 +324,17 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="es"><a href="#es" class="headerlink" title="es:"></a>es:</h2><ul>
-<li><p>集群(Cluster)：集群是一个或多个节点（服务器）的集合，它们共同保存您的整个数据，并提供跨所有节点的联合索引和搜索功能。本质上是一个分布式数据库，允许多台服务器协同工作，每台服务器可以运行多个 Elastic 实例。单个 Elastic 实例称为一个节点（node）。一组节点构成一个集群（cluster）。</p>
-</li>
-<li><p>节点（Node）：节点是作为集群一部分的单个服务器，存储数据并参与群集的索引和搜索功能。</p>
-</li>
-<li><p>索引（Index）：索引是具有某些类似特征的文档集合。索引由名称标识（必须全部小写），此名称用于在对其中的文档执行索引，搜索，更新和删除操作时引用索引。 数据管理的顶层单位就叫做 Index（索引）。它是单个数据库的同义词。每个 Index （即数据库）的名字必须是小写。</p>
-</li>
-<li><p>文档（Document）：文档是可以编制索引的基本信息单元。Index 里面单条的记录称为 Document（文档）。许多条 Document 构成了一个 Index。Document 使用 JSON 格式表示，同一个 Index 里面的 Document，不要求有相同的结构（scheme），但是最好保持相同，这样有利于提高搜索效率。</p>
-</li>
-<li><p>分片和副本（Shards &amp; Replicas）：索引可能存储大量可能超过单个节点的硬件限制的数据。为了解决这个问题，Elasticsearch提供了将索引细分为多个称为分片的功能。创建索引时，只需定义所需的分片数即可。每个分片本身都是一个功能齐全且独立的“索引”，可以托管在集群中的任何节点上。</p>
-</li>
-<li><p>副本集很重要：它在分片/节点发生故障时提供高可用性。它允许您扩展搜索量/吞吐量，因为可以在所有副本上并行执行搜索。默认情况下，Elasticsearch中的每个索引都分配了5个主分片和1个副本，这意味着如果群集中至少有两个节点，则索引将包含5个主分片和另外5个副本分片（1个完整副本），总计为每个索引10个分片。</p>
-</li>
-</ul>
+          <h2 id="经典爬虫框架："><a href="#经典爬虫框架：" class="headerlink" title="经典爬虫框架："></a>经典爬虫框架：</h2><pre><code>1. url 管理器：Scheduler调度器
+    主要两个变量：已爬取url集合，未爬取集合；
+    去重：内存去重；
+          缓存数据库去重，布隆算法过滤
+
+2. 下载器：
+</code></pre>
           <!--noindex-->
           
             <div class="post-button">
-              <a class="btn" href="/2018/11/26/es-note/#more" rel="contents">
+              <a class="btn" href="/2018/11/26/Scrapy/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -362,7 +366,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zhiheng">
       <meta itemprop="description" content="programming and life">
-      <meta itemprop="image" content="/images/icon.jpg">
+      <meta itemprop="image" content="http://q030yb439.bkt.clouddn.com/icon.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -498,7 +502,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zhiheng">
       <meta itemprop="description" content="programming and life">
-      <meta itemprop="image" content="/images/icon.jpg">
+      <meta itemprop="image" content="http://q030yb439.bkt.clouddn.com/icon.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -605,7 +609,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zhiheng">
       <meta itemprop="description" content="programming and life">
-      <meta itemprop="image" content="/images/icon.jpg">
+      <meta itemprop="image" content="http://q030yb439.bkt.clouddn.com/icon.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -750,7 +754,7 @@
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image"
-      src="/images/icon.jpg"
+      src="http://q030yb439.bkt.clouddn.com/icon.jpg"
       alt="zhiheng">
   <p class="site-author-name" itemprop="name">zhiheng</p>
   <div class="site-description" itemprop="description">programming and life</div>
