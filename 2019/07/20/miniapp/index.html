@@ -1,0 +1,119 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2"><meta name="theme-color" content="#222"><meta name="generator" content="Hexo 3.9.0"><link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png"><link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png"><link rel="mask-icon" href="/images/logo.svg" color="#222"><link rel="alternate" href="/atom.xml" title="中·庸" type="application/atom+xml"><link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="themes\hexo-theme-next\source\lib\font-awesome\css\font-awesome.min.css"><script id="hexo-configurations">var NexT=window.NexT||{},CONFIG={hostname:new URL("yuwengeng.coding.me/hexo-blog").hostname,root:"/",scheme:"Pisces",version:"7.5.0",exturl:!1,sidebar:{position:"right",display:"post",offset:12,onmobile:!0},copycode:{enable:!0,show_result:!0,style:null},back2top:{enable:!0,sidebar:!1,scrollpercent:!1},bookmark:{enable:!1,color:"#222",save:"auto"},fancybox:!1,mediumzoom:!0,lazyload:!1,pangu:!1,algolia:{appID:"",apiKey:"",indexName:"",hits:{per_page:10},labels:{input_placeholder:"Search for Posts",hits_empty:"We didn't find any results for the search: ${query}",hits_stats:"${hits} results found in ${time} ms"}},localsearch:{enable:!1,trigger:"auto",top_n_per_article:1,unescape:!1,preload:!1},path:"",motion:{enable:!0,async:!1,transition:{post_block:"fadeIn",post_header:"slideDownIn",post_body:"slideDownIn",coll_header:"slideLeftIn",sidebar:"slideUpIn"}},sidebarPadding:40}</script><meta name="description" content="小程序使用场景：1. 同App进行互补，提供同app类似的功能，比app操作更加简洁的轻应用 2. 用户使用频率不高，但又不得不用的功能软件. 只要在脚本注册过事件的回调函数，事件发生时就会进入”任务队列”，等待主线程读取。结构：入口文件——&amp;gt;一级页面——&amp;gt;二级页面。。。。启动过程：　　项目的启动文件app.jsonLaunch()只加载一次,有三大功能: 浏览器缓存进行存取数据；用登"><meta name="keywords" content="python 前端"><meta property="og:type" content="article"><meta property="og:title" content="中·庸"><meta property="og:url" content="yuwengeng.coding.me/hexo-blog/2019/07/20/miniapp/index.html"><meta property="og:site_name" content="中·庸"><meta property="og:description" content="小程序使用场景：1. 同App进行互补，提供同app类似的功能，比app操作更加简洁的轻应用 2. 用户使用频率不高，但又不得不用的功能软件. 只要在脚本注册过事件的回调函数，事件发生时就会进入”任务队列”，等待主线程读取。结构：入口文件——&amp;gt;一级页面——&amp;gt;二级页面。。。。启动过程：　　项目的启动文件app.jsonLaunch()只加载一次,有三大功能: 浏览器缓存进行存取数据；用登"><meta property="og:locale" content="zh-CN"><meta property="og:updated_time" content="2019-11-17T07:50:43.163Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="中·庸"><meta name="twitter:description" content="小程序使用场景：1. 同App进行互补，提供同app类似的功能，比app操作更加简洁的轻应用 2. 用户使用频率不高，但又不得不用的功能软件. 只要在脚本注册过事件的回调函数，事件发生时就会进入”任务队列”，等待主线程读取。结构：入口文件——&amp;gt;一级页面——&amp;gt;二级页面。。。。启动过程：　　项目的启动文件app.jsonLaunch()只加载一次,有三大功能: 浏览器缓存进行存取数据；用登"><link rel="canonical" href="yuwengeng.coding.me/hexo-blog/2019/07/20/miniapp/"><script id="page-configurations">CONFIG.page={sidebar:"",isHome:!1,isPost:!0,isPage:!1,isArchive:!1}</script><title>| 中·庸</title><noscript><style>.sidebar-inner,.use-motion .brand,.use-motion .collection-header,.use-motion .comments,.use-motion .menu-item,.use-motion .pagination,.use-motion .post-block,.use-motion .post-body,.use-motion .post-header{opacity:initial}.use-motion .site-subtitle,.use-motion .site-title{opacity:initial;top:initial}.use-motion .logo-line-before i{left:initial}.use-motion .logo-line-after i{right:initial}</style></noscript></head><body itemscope itemtype="http://schema.org/WebPage"><div class="container use-motion"><div class="headband"></div><header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="header-inner"><div class="site-brand-container"><div class="site-meta"><div><a href="/" class="brand" rel="start"><span class="logo-line-before"><i></i></span> <span class="site-title">中·庸</span> <span class="logo-line-after"><i></i></span></a></div><p class="site-subtitle">斯人若彩虹，遇上方知有</p></div><div class="site-nav-toggle"><div class="toggle" aria-label="切换导航栏"><span class="toggle-line toggle-line-first"></span> <span class="toggle-line toggle-line-middle"></span> <span class="toggle-line toggle-line-last"></span></div></div></div><nav class="site-nav"><ul id="menu" class="menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a></li></ul></nav></div></header><div class="back-to-top"><i class="fa fa-arrow-up"></i> <span>0%</span></div><main class="main"><div class="main-inner"><div class="content-wrap"><div class="content"><div class="posts-expand"><article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN"><link itemprop="mainEntityOfPage" href="yuwengeng.coding.me/hexo-blog/2019/07/20/miniapp/"><span hidden itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="image" content="/images/avatar.gif"><meta itemprop="name" content="zhiheng"><meta itemprop="description" content="programming and life"></span><span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="中·庸"></span><header class="post-header"><h1 class="post-title" itemprop="name headline"></h1><div class="post-meta"><span class="post-meta-item"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i> </span><span class="post-meta-item-text">发表于</span> <time title="创建时间：2019-07-20 13:19:18" itemprop="dateCreated datePublished" datetime="2019-07-20T13:19:18+08:00">2019-07-20</time> </span><span class="post-meta-item"><span class="post-meta-item-icon"><i class="fa fa-calendar-check-o"></i> </span><span class="post-meta-item-text">更新于</span> <time title="修改时间：2019-11-17 15:50:43" itemprop="dateModified" datetime="2019-11-17T15:50:43+08:00">2019-11-17</time> </span><span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display:none"><span class="post-meta-item-icon"><i class="fa fa-eye"></i> </span><span class="post-meta-item-text">阅读次数：</span> <span id="busuanzi_value_page_pv"></span></span></div></header><div class="post-body" itemprop="articleBody"><h2 id="小程序使用场景："><a href="#小程序使用场景：" class="headerlink" title="小程序使用场景："></a>小程序使用场景：</h2><pre><code>1. 同App进行互补，提供同app类似的功能，比app操作更加简洁的轻应用
+2. 用户使用频率不高，但又不得不用的功能软件.
+</code></pre><hr><p>只要在脚本注册过事件的回调函数，事件发生时就会进入”任务队列”，等待主线程读取。<br>结构：入口文件——&gt;一级页面——&gt;二级页面。。。。</p><p><strong>启动过程：</strong><br>　　项目的启动文件app.js<br>onLaunch()只加载一次,有三大功能: 浏览器缓存进行存取数据；用登陆成功的回调；获取用户信息<br>　　当 app.js 执行结束后，小程序会按照开发者在 app.json 中定义的 pages 的顺序，逐一执行</p><a id="more"></a><p>js：import ‘相对路径’<br>App()函数不能注册多个 App的生命周期是由微信客户端根据用户操作主动触发的 通过getApp()获取<br>　　Page（）页面构造器，逻辑层通过 Page 实例（this）的 setData方法传递数据到渲染层setData（）传递数据实际是一个异步的过程，两个线程传输</p><pre><code>作用域：获取 global 变量：var app = getApp()
+</code></pre><ul><li><code>.json</code> 后缀的 JSON 配置文件</li><li><code>.wxml</code> 后缀的 WXML 模板文件</li><li><code>.wxss</code> 后缀的 WXSS 样式文件</li><li><code>.js</code> 后缀的 JS 脚本逻辑文件</li></ul><p>wxml：<br><import src>// template引入，不能多层传递导入，include可以</import></p><p>　　- include 可以将目标文件中除了<template><wxs>外的整个代码引入 相当于是拷贝到 include 位置 公共组件抽象到独立文件<br><include src="header.wxml"></include></wxs></template></p><pre><code>- template
+    定义:&lt;template name=&quot;&quot;&gt;
+    使用:&lt;template is=&quot;&quot; data=&quot;{{}}&quot;/&gt;  // 可以灵活传参
+- 自定义组件 （命名:小写字母 - _）
+    结构类似一个页面，使用component要在配置文件说明
+    - component样式不影响page样式 class样式默认隔离；component不允许使用id 标签 属性选择器
+    - data：{}
+    - page与component通信:
+        properties:{} // 给组件传递数据，从page到组件
+        externalClasses:[] //style 定义组件额外class；或者用？：切换style
+        methods：{
+            this.triggerEvent(&apos;发送给page事件的名称&apos;,{event.detail},{})
+        } // 组件的事件传递给page 
+
+整个wxml页面，最底层的标签是&lt;page&gt;&lt;/page&gt; 小程序组件继承全局的部分样式font，color ，pages可以继承所有全局的 // pc为&lt;html&gt;&lt;/html&gt;
+</code></pre><p><block wx:for>循环代码块，block标签用来包裹循环多个语句，只接受控制属性；比view组件好<br>wx:for-item=’’ 一般在多层嵌套中用来更改item，index变量名称<br>wx:key=”唯一值属性/<em>this” // </em>this代表item本身<br>保留当前的状态;<br>提高性能 setData()后不渲染,根据key直接排序</block></p><pre><code>VueJS中使用v-if控制元素是否渲染，使用v-show控制元素是否显示。微信小程序使用wx:if控制元素是否渲染，使用属性hidden控制元素显示
+</code></pre><p>wxss：<br>导入外联样式: @import “common.wxss”;<br>内联样式 框架组件上支持使用 style、class 属性来控制组件的样式：静态的样式统一写到 class 中。style文件接收动态的样式，在运行时会进行解析，请尽量避免将静态的样式写进 style 中，以免影响渲染速度。<br>cursor:pointer 点击高亮</p><p>viewport(可视区域大小)移动设备上的viewport就是设备的屏幕上能用来显示网页的那一块区域,就是浏览器显示网页的那部分区域<br>小程序尺寸单位：只有iphone6上:1px = 1rpx 2个物理像素（rpx） = 1px<br>一般水平方向rpx，垂直方向px ，混合使用：rpx自适应，px不变<br>字体大小用px</p><p>margin：相对子元素，padding：父元素<br>line-height = font-size 消除文字上下空白</p><p>wxs：<br>在wxml中不能直接调用page/component中定义的函数<br>导入：<wxs src="必须相对路径" module></wxs></p><h2 id="两大核心-事件回调和数据驱动-setData-bind-’event’"><a href="#两大核心-事件回调和数据驱动-setData-bind-’event’" class="headerlink" title="两大核心:事件回调和数据驱动[setData() bind=’event’]"></a>两大核心:事件回调和数据驱动[setData() bind=’event’]</h2><pre><code>- 小程序内，事件的绑定是通过在 WXML 标签增加 `bind*` 属性来实现(catch抓住 会阻止事件继续冒泡) 当事件触发时，处理函数会响应，传入 event 对象，通过 event 对象可以获取事件触发时候的一些信息，包括时间戳、detail 等。
+事件data传递: 因为小程序内的事件绑定都是在 WXML 中实现的，所以传递参数只能通过 WXML 上面的属性值来传递,传递到event对象里
+</code></pre><blockquote><p>事件捕获capture-bind、capture-catch，后者将中断事件流捕获阶段和取消冒泡阶段</p></blockquote><h2 id="wxml-html属性拓展【属性：值为data-函数】-公用属性：hidden，-data-自定义属性-传数据-，"><a href="#wxml-html属性拓展【属性：值为data-函数】-公用属性：hidden，-data-自定义属性-传数据-，" class="headerlink" title="wxml: html属性拓展【属性：值为data/函数】  公用属性：hidden， data-* 自定义属性(传数据)，"></a>wxml: html属性拓展【属性：值为data/函数】 公用属性：hidden， data-* 自定义属性(传数据)，</h2><pre><code>  bind/catch事件=&apos;事件处理函数（event）&apos;；
+event对象：{
+    type:
+    target: 触发事件的源组件
+    currentTarget: **有事件绑定**的当前组件  
+        data-index属性用法： event.currentTarget.dataset.index //用事件返回
+    &lt;!-- 正确获取 dataset 的姿势是使用 currentTarget 的 --&gt;
+}
+
+text行内元素
+    - selectable=&apos;{{true}}&apos; 
+    - &lt;text decode=&quot;{{true}}&quot;&gt; &lt;text&gt; // 解码，开启识别转义字符
+button默认为block元素：
+    - size=&quot;mini&quot;
+    - type=&quot;primary/default/warn&quot;
+    - plain 镂空
+    - hover-class=&quot;&quot; 点击样式变化
+view 块级容器
+    - hover-stop-propagation=&quot;&quot; 是否阻止父标签点击态变化
+image inline-block元素  默认大小320x240px
+    - bindload=&quot;&quot; 监听图片加载完成
+    - lazy-load 
+    - wx.chooseImage({}) 调用相册
+scroll-view
+    - scroll-x
+    - bindscroll
+swiper:轮播容器； swiper-item:轮播项目
+
+picker——选择器 --&gt;
+</code></pre><p>wxss:</p><ul><li>设置全局字体样式app.wxss：<br>text{<br>font-family:MicroSoft yahei;<br>}</li><li>设置页面全屏样式及背景色：</li></ul><p>page{<br>height:100%;<br>background:#b3d4db;<br>}</p><ul><li>图片居中覆盖:<br>.audio{<br>width:102rpx;<br>height:110rpx;<br>position: absolute;<br>left: 50%;<br>margin-left: -51rpx;//经典水平居中方式<br>top:180rpx;<br>margin-top: 20rpx;<br>opacity:0.6;//透明度</li></ul><h3 id="自定义组件"><a href="#自定义组件" class="headerlink" title="自定义组件"></a>自定义组件</h3><p>云开发调用:<br><code>`</code><br>wx.cloud.init({<br>env: ‘tianqi-xxx’ # 初始化时，需要传入 env 参数<br>})</p><p>增删改查:</p><ul><li><p>获取数据</p><ol><li><p>db.collection(“”).get().then(res =&gt; {</p><p>})</p></li><li>.doc(“id”).get().then()</li><li>.where({}).get().then()</li></ol></li><li><p>删除多条数据:<br>只能在服务端,云函数</p></li></ul><p>-更新数据:</p><pre><code>1. 局部更新 update()
+2. 整体更新 set()
+</code></pre><p>commend指令:<br>_ = db.commend; 指令操作句柄<br>state:_.eq({</p><pre><code>})
+</code></pre></div><footer class="post-footer"><div class="post-nav"><div class="post-nav-item"><a href="/2018/11/26/Google搜索/" rel="prev" title="Google搜索"><i class="fa fa-chevron-left"></i> Google搜索</a></div><div class="post-nav-item"><a href="/2019/10/11/随笔/" rel="next" title="随笔">随笔 <i class="fa fa-chevron-right"></i></a></div></div></footer></article></div></div><div class="comments" id="gitalk-container"></div></div><div class="toggle sidebar-toggle"><span class="toggle-line toggle-line-first"></span> <span class="toggle-line toggle-line-middle"></span> <span class="toggle-line toggle-line-last"></span></div><aside class="sidebar"><div class="sidebar-inner"><ul class="sidebar-nav motion-element"><li class="sidebar-nav-toc">文章目录</li><li class="sidebar-nav-overview">站点概览</li></ul><div class="post-toc-wrap sidebar-panel"><div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#小程序使用场景："><span class="nav-number">1.</span> <span class="nav-text">小程序使用场景：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#两大核心-事件回调和数据驱动-setData-bind-’event’"><span class="nav-number">2.</span> <span class="nav-text">两大核心:事件回调和数据驱动[setData() bind=’event’]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#wxml-html属性拓展【属性：值为data-函数】-公用属性：hidden，-data-自定义属性-传数据-，"><span class="nav-number">3.</span> <span class="nav-text">wxml: html属性拓展【属性：值为data/函数】 公用属性：hidden， data-* 自定义属性(传数据)，</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义组件"><span class="nav-number">3.1.</span> <span class="nav-text">自定义组件</span></a></li></ol></li></ol></div></div><div class="site-overview-wrap sidebar-panel"><div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person"><p class="site-author-name" itemprop="name">zhiheng</p><div class="site-description" itemprop="description">programming and life</div></div><div class="site-state-wrap motion-element"><nav class="site-state"><div class="site-state-item site-state-posts"><a href="/archives/"><span class="site-state-item-count">11</span> <span class="site-state-item-name">日志</span></a></div><div class="site-state-item site-state-categories"><a href="/categories/"><span class="site-state-item-count">10</span> <span class="site-state-item-name">分类</span></a></div><div class="site-state-item site-state-tags"><a href="/tags/"><span class="site-state-item-count">10</span> <span class="site-state-item-name">标签</span></a></div></nav></div><div class="feed-link motion-element"><a href="/atom.xml" rel="alternate"><i class="fa fa-rss"></i>RSS</a></div><div class="links-of-author motion-element"><span class="links-of-author-item"><a href="https://github.com/yuwengeng" title="GitHub → https://github.com/yuwengeng" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a> </span><span class="links-of-author-item"><a href="https://www.cnblogs.com/yuwengeng/" title="博客园 → https://www.cnblogs.com/yuwengeng/" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>博客园</a> </span><span class="links-of-author-item"><a href="mailto:yuwenzhiheng95@gmail.com" title="E-Mail → mailto:yuwenzhiheng95@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a> </span><span class="links-of-author-item"><a href="https://weibo.com/yourname" title="Weibo → https://weibo.com/yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a> </span><span class="links-of-author-item"><a href="https://twitter.com/yourname" title="Twitter → https://twitter.com/yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a> </span><span class="links-of-author-item"><a href="https://instagram.com/yourname" title="Instagram → https://instagram.com/yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a></span></div></div></div></aside><div id="sidebar-dimmer"></div></div></main><footer class="footer"><div class="footer-inner"><div class="copyright">&copy; <span itemprop="copyrightYear">2019</span> <span class="with-love"><i class="fa fa-heart"></i> </span><span class="author" itemprop="copyrightHolder">zhiheng</span></div><div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div><span class="post-meta-divider">|</span><div class="theme-info">主题 – <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.5.0</div><div class="busuanzi-count"><script pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span class="post-meta-item" id="busuanzi_container_site_uv" style="display:none"><span class="post-meta-item-icon"><i class="fa fa-user"></i> </span><span class="site-uv" title="总访客量"><span id="busuanzi_value_site_uv"></span> </span></span><span class="post-meta-divider">|</span> <span class="post-meta-item" id="busuanzi_container_site_pv" style="display:none"><span class="post-meta-item-icon"><i class="fa fa-eye"></i> </span><span class="site-pv" title="总访问量"><span id="busuanzi_value_site_pv"></span></span></span></div></div></footer></div><script src="themes\hexo-theme-next\source\lib\anime.min.js"></script><script src="themes\hexo-theme-next\source\lib\pjax\pjax.min.js"></script><script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script><script src="themes\hexo-theme-next\source\lib\velocity\velocity.min.js"></script><script src="themes\hexo-theme-next\source\lib\velocity\velocity.ui.min.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/pisces.js"></script><script src="/js/next-boot.js"></script><script>var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.getAttribute('pjax') !== null) {
+      element.setAttribute('pjax', '');
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});</script><div id="pjax"><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css"><script>NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID: '24ef63b5f7c6e9d3a198# GitHub Application Client ID',
+      clientSecret: '5cceec5609a0910c5f361eaaefdbe57ae7c5d359# GitHub Application Client Secret',
+      repo: 'yuwengeng.github.io# Repository name to store issues',
+      owner: 'yuwengeng',
+      admin: ['yuwengeng# GitHub repo owner and collaborators, only these guys can initialize gitHub issues'],
+      id: '094a1e847a4de7433e3a4f0d5e5ba0fa',
+        language: 'zh-CN',
+      distractionFreeMode: 'true'
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);</script></div></body></html>
