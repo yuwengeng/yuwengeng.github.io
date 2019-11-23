@@ -22,15 +22,15 @@
   var CONFIG = {
     hostname: new URL('yuwengeng.coding.me/hexo-blog').hostname,
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Muse',
     version: '7.5.0',
     exturl: false,
-    sidebar: {"position":"right","display":"post","offset":12,"onmobile":true},
+    sidebar: {"position":"right","display":"post","offset":12,"onmobile":false},
     copycode: {"enable":true,"show_result":true,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: false,
-    mediumzoom: true,
+    mediumzoom: false,
     lazyload: false,
     pangu: false,
     algolia: {
@@ -47,18 +47,18 @@
   };
 </script>
 
-  <meta name="description" content="前端素养浏览器渲染原理- html 为什么操作 DOM 慢1. 两个线程通信损耗 2. 重绘回流；  经典面试题：插入几万个 DOM，如何实现页面不卡顿？ 虚拟滚动（virtualized scroller）。 这种技术的原理就是只渲染可视区域内的内容，非可见区域的那就完全不渲染了，当用户在滚动的时候就实时去替换渲染的内容。">
+  <meta name="description" content="前端素养 浏览器渲染原理- html为什么操作 DOM 慢1. 两个线程通信损耗 2. 重绘回流； 经典面试题：插入几万个 DOM，如何实现页面不卡顿？  虚拟滚动（virtualized scroller）。 这种技术的原理就是只渲染可视区域内的内容，非可见区域的那就完全不渲染了，当用户在滚动的时候就实时去替换渲染的内容。清浮动? clearoverflow:hidden;溢出属性清除浮动带来的">
 <meta name="keywords" content="python 前端">
 <meta property="og:type" content="article">
 <meta property="og:title" content="&#39;web-api&#39;">
 <meta property="og:url" content="yuwengeng.coding.me/hexo-blog/2019/10/12/My-web-interview/index.html">
 <meta property="og:site_name" content="中·庸">
-<meta property="og:description" content="前端素养浏览器渲染原理- html 为什么操作 DOM 慢1. 两个线程通信损耗 2. 重绘回流；  经典面试题：插入几万个 DOM，如何实现页面不卡顿？ 虚拟滚动（virtualized scroller）。 这种技术的原理就是只渲染可视区域内的内容，非可见区域的那就完全不渲染了，当用户在滚动的时候就实时去替换渲染的内容。">
+<meta property="og:description" content="前端素养 浏览器渲染原理- html为什么操作 DOM 慢1. 两个线程通信损耗 2. 重绘回流； 经典面试题：插入几万个 DOM，如何实现页面不卡顿？  虚拟滚动（virtualized scroller）。 这种技术的原理就是只渲染可视区域内的内容，非可见区域的那就完全不渲染了，当用户在滚动的时候就实时去替换渲染的内容。清浮动? clearoverflow:hidden;溢出属性清除浮动带来的">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-11-06T13:17:40.599Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="&#39;web-api&#39;">
-<meta name="twitter:description" content="前端素养浏览器渲染原理- html 为什么操作 DOM 慢1. 两个线程通信损耗 2. 重绘回流；  经典面试题：插入几万个 DOM，如何实现页面不卡顿？ 虚拟滚动（virtualized scroller）。 这种技术的原理就是只渲染可视区域内的内容，非可见区域的那就完全不渲染了，当用户在滚动的时候就实时去替换渲染的内容。">
+<meta name="twitter:description" content="前端素养 浏览器渲染原理- html为什么操作 DOM 慢1. 两个线程通信损耗 2. 重绘回流； 经典面试题：插入几万个 DOM，如何实现页面不卡顿？  虚拟滚动（virtualized scroller）。 这种技术的原理就是只渲染可视区域内的内容，非可见区域的那就完全不渲染了，当用户在滚动的时候就实时去替换渲染的内容。清浮动? clearoverflow:hidden;溢出属性清除浮动带来的">
 
 <link rel="canonical" href="yuwengeng.coding.me/hexo-blog/2019/10/12/My-web-interview/">
 
@@ -143,24 +143,24 @@
     <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
   </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">10</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">10</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
-
-  </li>
-        <li class="menu-item menu-item-about">
-
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">11</span></a>
 
   </li>
   </ul>
@@ -240,16 +240,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="前端素养"><a href="#前端素养" class="headerlink" title="前端素养"></a>前端素养</h1><hr><h2 id="浏览器渲染原理"><a href="#浏览器渲染原理" class="headerlink" title="浏览器渲染原理"></a>浏览器渲染原理</h2><pre><code>- html
-</code></pre><h3 id="为什么操作-DOM-慢"><a href="#为什么操作-DOM-慢" class="headerlink" title="为什么操作 DOM 慢"></a>为什么操作 DOM 慢</h3><pre><code>1. 两个线程通信损耗
-2. 重绘回流；
-</code></pre><blockquote>
+        <h1 id="前端素养"><a href="#前端素养" class="headerlink" title="前端素养"></a>前端素养</h1><hr>
+<h2 id="浏览器渲染原理"><a href="#浏览器渲染原理" class="headerlink" title="浏览器渲染原理"></a>浏览器渲染原理</h2><pre><code>- html</code></pre><h3 id="为什么操作-DOM-慢"><a href="#为什么操作-DOM-慢" class="headerlink" title="为什么操作 DOM 慢"></a>为什么操作 DOM 慢</h3><pre><code>1. 两个线程通信损耗
+2. 重绘回流；</code></pre><blockquote>
 <p>经典面试题：插入几万个 DOM，如何实现页面不卡顿？</p>
-</blockquote><pre><code>虚拟滚动（virtualized scroller）。
-这种技术的原理就是只渲染可视区域内的内容，非可见区域的那就完全不渲染了，当用户在滚动的时候就实时去替换渲染的内容。
-</code></pre><a id="more"></a>
-
-<h3 id="清浮动"><a href="#清浮动" class="headerlink" title="清浮动?"></a>清浮动?</h3><blockquote>
+</blockquote>
+<pre><code>虚拟滚动（virtualized scroller）。
+这种技术的原理就是只渲染可视区域内的内容，非可见区域的那就完全不渲染了，当用户在滚动的时候就实时去替换渲染的内容。</code></pre><h3 id="清浮动"><a href="#清浮动" class="headerlink" title="清浮动?"></a>清浮动?</h3><blockquote>
 <p>clear<br>overflow:hidden;溢出属性清除浮动带来的影响</p>
 </blockquote>
 <h3 id="过渡与动画区别？"><a href="#过渡与动画区别？" class="headerlink" title="过渡与动画区别？"></a>过渡与动画区别？</h3><blockquote>
@@ -261,8 +258,7 @@
 <li>多张合并成一张减少图片字节；减少命名困扰；方便修改<br>缺点：</li>
 <li>图片合成比较麻烦；</li>
 </ul>
-<h3 id="css中content属性作用："><a href="#css中content属性作用：" class="headerlink" title="css中content属性作用："></a>css中content属性作用：</h3><pre><code>content与:before伪元素配合使用，为元素插入生成内容
-</code></pre><h3 id="为什么设置background-image的同时还设置background-color？"><a href="#为什么设置background-image的同时还设置background-color？" class="headerlink" title="为什么设置background-image的同时还设置background-color？"></a>为什么设置background-image的同时还设置background-color？</h3><blockquote>
+<h3 id="css中content属性作用："><a href="#css中content属性作用：" class="headerlink" title="css中content属性作用："></a>css中content属性作用：</h3><pre><code>content与:before伪元素配合使用，为元素插入生成内容</code></pre><h3 id="为什么设置background-image的同时还设置background-color？"><a href="#为什么设置background-image的同时还设置background-color？" class="headerlink" title="为什么设置background-image的同时还设置background-color？"></a>为什么设置background-image的同时还设置background-color？</h3><blockquote>
 <p>防止无法显示背景图片时，页面可以使用这种颜色作为背景色</p>
 </blockquote>
 <blockquote>
@@ -291,8 +287,6 @@
     
     
     
-      
-
 
       <footer class="post-footer">
 
@@ -427,11 +421,6 @@
   </span>
   <span class="author" itemprop="copyrightHolder">zhiheng</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0
-  </div>
-  <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.5.0
-  </div>
 
         
 <div class="busuanzi-count">
@@ -470,9 +459,8 @@
   
   <script src="//cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
   <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
 <script src="/js/utils.js"></script>
-<script src="/js/schemes/pisces.js"></script>
+<script src="/js/schemes/muse.js"></script>
 <script src="/js/next-boot.js"></script>
   <script>
 var pjax = new Pjax({

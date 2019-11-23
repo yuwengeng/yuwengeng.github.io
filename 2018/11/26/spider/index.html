@@ -22,15 +22,15 @@
   var CONFIG = {
     hostname: new URL('yuwengeng.coding.me/hexo-blog').hostname,
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Muse',
     version: '7.5.0',
     exturl: false,
-    sidebar: {"position":"right","display":"post","offset":12,"onmobile":true},
+    sidebar: {"position":"right","display":"post","offset":12,"onmobile":false},
     copycode: {"enable":true,"show_result":true,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: false,
-    mediumzoom: true,
+    mediumzoom: false,
     lazyload: false,
     pangu: false,
     algolia: {
@@ -47,18 +47,18 @@
   };
 </script>
 
-  <meta name="description" content="HTML 用于展示数据，而 XML 用于结构化、传输和存储数据 XML 文档必须有一个根元素；     嵌套的 HTML 元素 结构化的一种文档结构 ——&amp;gt; W3C 针对其指定了一个标准化的模型DOM json数据获取方式:     ajax 请求接口     切换手机移动h5端     app抓包获取     等等json模块：⽤于字符串和 python 数据类型间进⾏转换     js">
+  <meta name="description" content="HTML 用于展示数据，而 XML 用于结构化、传输和存储数据 XML 文档必须有一个根元素；     嵌套的 HTML 元素 结构化的一种文档结构 ——&amp;gt; W3C 针对其指定了一个标准化的模型DOM  json数据获取方式:     ajax 请求接口     切换手机移动h5端     app抓包获取     等等json模块：⽤于字符串和 python 数据类型间进⾏转换     j">
 <meta name="keywords" content="爬虫,python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="spider">
 <meta property="og:url" content="yuwengeng.coding.me/hexo-blog/2018/11/26/spider/index.html">
 <meta property="og:site_name" content="中·庸">
-<meta property="og:description" content="HTML 用于展示数据，而 XML 用于结构化、传输和存储数据 XML 文档必须有一个根元素；     嵌套的 HTML 元素 结构化的一种文档结构 ——&amp;gt; W3C 针对其指定了一个标准化的模型DOM json数据获取方式:     ajax 请求接口     切换手机移动h5端     app抓包获取     等等json模块：⽤于字符串和 python 数据类型间进⾏转换     js">
+<meta property="og:description" content="HTML 用于展示数据，而 XML 用于结构化、传输和存储数据 XML 文档必须有一个根元素；     嵌套的 HTML 元素 结构化的一种文档结构 ——&amp;gt; W3C 针对其指定了一个标准化的模型DOM  json数据获取方式:     ajax 请求接口     切换手机移动h5端     app抓包获取     等等json模块：⽤于字符串和 python 数据类型间进⾏转换     j">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-11-11T06:05:59.868Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="spider">
-<meta name="twitter:description" content="HTML 用于展示数据，而 XML 用于结构化、传输和存储数据 XML 文档必须有一个根元素；     嵌套的 HTML 元素 结构化的一种文档结构 ——&amp;gt; W3C 针对其指定了一个标准化的模型DOM json数据获取方式:     ajax 请求接口     切换手机移动h5端     app抓包获取     等等json模块：⽤于字符串和 python 数据类型间进⾏转换     js">
+<meta name="twitter:description" content="HTML 用于展示数据，而 XML 用于结构化、传输和存储数据 XML 文档必须有一个根元素；     嵌套的 HTML 元素 结构化的一种文档结构 ——&amp;gt; W3C 针对其指定了一个标准化的模型DOM  json数据获取方式:     ajax 请求接口     切换手机移动h5端     app抓包获取     等等json模块：⽤于字符串和 python 数据类型间进⾏转换     j">
 
 <link rel="canonical" href="yuwengeng.coding.me/hexo-blog/2018/11/26/spider/">
 
@@ -143,24 +143,24 @@
     <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
   </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">10</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">10</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
-
-  </li>
-        <li class="menu-item menu-item-about">
-
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">11</span></a>
 
   </li>
   </ul>
@@ -251,57 +251,51 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p> HTML 用于展示数据，而 XML 用于结构化、传输和存储数据 XML 文档必须有一个根元素；<br>     嵌套的 HTML 元素 结构化的一种文档结构 ——&gt; W3C 针对其指定了一个标准化的模型DOM </p><h3 id="json数据"><a href="#json数据" class="headerlink" title="json数据"></a>json数据</h3><p>获取方式:<br>     ajax 请求接口<br>     切换手机移动h5端<br>     app抓包获取<br>     等等<br>json模块：⽤于字符串和 python 数据类型间进⾏转换<br>     js：JSON.stringify   JSON.parse</p><a id="more"></a>
-
+        <p> HTML 用于展示数据，而 XML 用于结构化、传输和存储数据 XML 文档必须有一个根元素；<br>     嵌套的 HTML 元素 结构化的一种文档结构 ——&gt; W3C 针对其指定了一个标准化的模型DOM </p>
+<h3 id="json数据"><a href="#json数据" class="headerlink" title="json数据"></a>json数据</h3><p>获取方式:<br>     ajax 请求接口<br>     切换手机移动h5端<br>     app抓包获取<br>     等等<br>json模块：⽤于字符串和 python 数据类型间进⾏转换<br>     js：JSON.stringify   JSON.parse</p>
 <blockquote>
 <p>只有基本数据类型才能转换成JSON格式字符串</p>
 </blockquote>
 <h3 id="python封装http库：-请求的是源代码"><a href="#python封装http库：-请求的是源代码" class="headerlink" title="python封装http库：# 请求的是源代码"></a>python封装http库：# 请求的是源代码</h3><pre><code>标准urllib库
-第三方库request
-</code></pre><ol>
+第三方库request</code></pre><ol>
 <li><p>urllib库：</p>
 <ol>
 <li><p>request模块：<br>  urlopen()函数</p>
 <pre><code>urllib的params需urlencode转换类型
 data参数：请求方式变为post
-超时处理：设置timeout
-</code></pre><p>   read() 返回二进制代码<br>  Request类<br>  Handler类<br>  请求+保存：urlretrieve(图片的源地址,保存文件的文件名)  —— 重新请求url响应 就实现了请求图片、新建文件、写入文件三个步骤的功能。</p>
+超时处理：设置timeout</code></pre><p>   read() 返回二进制代码<br>  Request类<br>  Handler类<br>  请求+保存：urlretrieve(图片的源地址,保存文件的文件名)  —— 重新请求url响应 就实现了请求图片、新建文件、写入文件三个步骤的功能。</p>
 </li>
 <li><p>error模块：<br>  URLError类（作用于request模块的异常）<br>  HTTPError类(子类)</p>
 <pre><code>三个属性code reason headers
 
 解析异常：AttributeError：
-标签为None
-</code></pre></li>
+标签为None</code></pre></li>
 <li><p>parse模块：（处理url）<br>  解析urlparse() (根据url的6个部分解析)<br>  构造urlunparse() params接受长度为6的可迭代对象</p>
-<pre><code>urlsplit()
-</code></pre><p>  合并urljoin()  # url自动修正拼接完整</p>
+<pre><code>urlsplit()</code></pre><p>  合并urljoin()  # url自动修正拼接完整</p>
 <p>  url编码转换：</p>
 <pre><code>1.字符串：urllib.parse.quote(str)  url编码
    unquote() url解码  # requests.utils.unquote(str,encoding=&apos;utf-8&apos;, errors=&apos;replace&apos;)
-2.字典：  urllib.parse.urlencode(dict) 转化为url参数
-</code></pre></li>
+2.字典：  urllib.parse.urlencode(dict) 转化为url参数</code></pre></li>
 </ol>
 </li>
 <li><p>requests库 - 添加/修改请求头</p>
 <ul>
 <li><p>GET（url,params,headers[cookies=],timeout）   使用 cookies 参数，首先需要将 Cookie 值处理为字典的形式：<br>params:dict ; query-data<br>headers = {</p>
-<pre><code>cookie,
-</code></pre><p>}</p>
+<pre><code>cookie,</code></pre><p>}</p>
 </li>
 <li><p>post(url,data{},headers)</p>
 <ol>
 <li><p>处理登录：声明一个session会话，自动处理cookies</p>
 <pre><code>操作session获取数据： session.cookies.save()
-res.cookies.get_dict()
-</code></pre></li>
+res.cookies.get_dict()</code></pre></li>
 <li><p>证书验证（https协议）<br>  设置认证verify=false<br>  指定cert=（path）</p>
 </li>
 <li><p>代理设置<br>  (proxies=..)</p>
 </li>
 <li><p>requests异常处理：<br>  from requests.exceptions import RequestException</p>
 </li>
-<li>auth 内网认证<br>  auth = (‘user’,’pass’)</li>
+<li><p>auth 内网认证<br>  auth = (‘user’,’pass’)</p>
+</li>
 </ol>
 <p>res方法：</p>
 <ul>
@@ -368,12 +362,8 @@ res.cookies.get_dict()
         ul + p 选取ul后面第一个p元素
         div#container &gt; ul 第一个子元素
 
-* soup.prettify() 以标准缩进输出
-</code></pre><p>  *** lxml解析html代码和文件<br>        parse_text: etree.HTML(text)  #直接读取字符串<br>        parse_file：etree.parse()     #文件读取</p>
-<pre><code>    # 按字符串序列化 HTML文档
-    result = etree.tostring(html)
-
- - Xpath：在xml文档中选取元素属性的路径表达式
+* soup.prettify() 以标准缩进输出</code></pre><p>  *** lxml解析html代码和文件<br>        parse_text: etree.HTML(text)  #直接读取字符串<br>        parse_file：etree.parse()     #文件读取<br>        # 按字符串序列化 HTML文档<br>        result = etree.tostring(html)</p>
+<pre><code> - Xpath：在xml文档中选取元素属性的路径表达式
     网络数据：先转换类型为etree对象，etree.HTML()，再xpath选取
     本地文件： etree.parse(文件名) ⽅法来读取⽂件。
 
@@ -390,15 +380,12 @@ res.cookies.get_dict()
 四个基本方法：
  .extract（） 序列化该节点为 Unicode 字符串并返回 list
  .css(): 返回该表达式所对应的所有节点的 selector list，语法同 BeautifulSoup4
- .re(): 返回 Unicode 字符串 list 正则只有\d才能提取数字
-</code></pre><h3 id="pyquery选择器-from-pyquery-import-PyQuery-as-pq"><a href="#pyquery选择器-from-pyquery-import-PyQuery-as-pq" class="headerlink" title="pyquery选择器  from pyquery import PyQuery as pq"></a>pyquery选择器  from pyquery import PyQuery as pq</h3><pre><code>方法：
+ .re(): 返回 Unicode 字符串 list 正则只有\d才能提取数字</code></pre><h3 id="pyquery选择器-from-pyquery-import-PyQuery-as-pq"><a href="#pyquery选择器-from-pyquery-import-PyQuery-as-pq" class="headerlink" title="pyquery选择器  from pyquery import PyQuery as pq"></a>pyquery选择器  from pyquery import PyQuery as pq</h3><pre><code>方法：
 find()查找子孙节点  children（）查找所有子节点
 多个节点.items()方法 返回一个generator
 
 html() attr() 返回第一个节点
-text() 返回所有text 中间空格分开，str类型
-</code></pre><h2 id="js动态渲染问题："><a href="#js动态渲染问题：" class="headerlink" title="js动态渲染问题："></a>js动态渲染问题：</h2><h3 id="模拟Ajax异步数据爬取-（返回json类型）"><a href="#模拟Ajax异步数据爬取-（返回json类型）" class="headerlink" title="模拟Ajax异步数据爬取 （返回json类型）"></a>模拟Ajax异步数据爬取 （返回json类型）</h3><pre><code>Type：xhr
-</code></pre><p>cookies池，代理池，UA（from fake_useragent import UserAgent）</p>
+text() 返回所有text 中间空格分开，str类型</code></pre><h2 id="js动态渲染问题："><a href="#js动态渲染问题：" class="headerlink" title="js动态渲染问题："></a>js动态渲染问题：</h2><h3 id="模拟Ajax异步数据爬取-（返回json类型）"><a href="#模拟Ajax异步数据爬取-（返回json类型）" class="headerlink" title="模拟Ajax异步数据爬取 （返回json类型）"></a>模拟Ajax异步数据爬取 （返回json类型）</h3><pre><code>Type：xhr</code></pre><p>cookies池，代理池，UA（from fake_useragent import UserAgent）</p>
 <p>协程的优势：</p>
 <p>最大的优势就是协程极高的执行效率。因为子程序切换不是线程切换，而是由程序自身控制，因此，没有线程切换的开销，和多线程比，线程数量越多，协程的性能优势就越明显。</p>
 <p>第二大优势就是不需要多线程的锁机制，因为只有一个线程，也不存在同时写变量冲突，在协程中控制共享资源不加锁，只需要判断状态就好了，所以执行效率比多线程高很多</p>
@@ -407,12 +394,12 @@ text() 返回所有text 中间空格分开，str类型
      with open (’result.txt ’,’a ’, encoding=’ utf-8&apos;) as f:   # 写入文件有中文，指定编码格式
           f.write(json.dumps(content ，ensure_ascii=False) +’\n&apos;)   ## json.dumps() 序列化时默认使⽤的 ascii 编码
 
-# json.dump(item,open(&apos;sfda.json&apos;,&apos;w&apos;),ensure_ascii=False)  卸载返回json字符串
-</code></pre><ul>
+# json.dump(item,open(&apos;sfda.json&apos;,&apos;w&apos;),ensure_ascii=False)  卸载返回json字符串</code></pre><ul>
 <li><p>模拟登录：手动模拟设置 cookies token等</p>
 <p>  初次：登录刷新：post登录<br>  无刷新：Ajax方式</p>
 <ol>
-<li>分析post请求data内容</li>
+<li><p>分析post请求data内容</p>
+</li>
 <li><p>初始化清空get请求登录页，获取set-cookies（session自动处理） 源代码中搜索获取_token<br>  构造cookies ——&gt; 字典生成式</p>
 <ul>
 <li><p>GitHub：先获取token</p>
@@ -426,16 +413,14 @@ text() 返回所有text 中间空格分开，str类型
 </ol>
 </li>
 <li><p>拼接完整url<br>if item[‘href’] is not None:</p>
-<pre><code>item[&apos;href&apos;] = urllib.parse.urljoin(response.url, item[&apos;href&apos;])
-</code></pre></li>
+<pre><code>item[&apos;href&apos;] = urllib.parse.urljoin(response.url, item[&apos;href&apos;])</code></pre></li>
 <li><p>处理src:<br>item[‘img_list’] = [requests.utils.unquote(i).split(‘src=’)[-1] for i in item[‘img_list’]]</p>
 </li>
 <li><h1 id="去掉列表中的空字符串和字符串的空白"><a href="#去掉列表中的空字符串和字符串的空白" class="headerlink" title="去掉列表中的空字符串和字符串的空白"></a>去掉列表中的空字符串和字符串的空白</h1><p>content = [i.strip() for i in content if len(i.strip())&gt;0] </p>
 </li>
 <li><p>scrapy带cookies请求,转换cookies为dict<br>def start_requests(self):</p>
 <pre><code>cookies = &quot;anonymid=jqpacc0i4eh2re; depovince=ZGQT; _r01_=1; JSESSIONID=abcM4DE98_8lS_2hu7hLw;&quot;
-cookies = {i.split(&apos;=&apos;)[0]:i.split(&apos;=&apos;)[1] for i in cookies.split(&apos;; &apos;)}
-</code></pre></li>
+cookies = {i.split(&apos;=&apos;)[0]:i.split(&apos;=&apos;)[1] for i in cookies.split(&apos;; &apos;)}</code></pre></li>
 </ul>
 <h3 id="selemium-浏览器自动化"><a href="#selemium-浏览器自动化" class="headerlink" title="selemium 浏览器自动化"></a>selemium 浏览器自动化</h3><pre><code>   from selenium import webdriver
    driver = webdriver.Chrome()
@@ -466,21 +451,12 @@ cookies = {i.split(&apos;=&apos;)[0]:i.split(&apos;=&apos;)[1] for i in cookies.
 
 加载等待：
      隐式等待browser.implicitly_ wait(10)
-显式等待：
-</code></pre>
+显式等待：</code></pre>
     </div>
 
     
     
     
-      
-  <div class="popular-posts-header">相关文章推荐# Custom header, leave empty to use the default one</div>
-  <ul class="popular-posts">
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2018\11\26\Scrapy\" rel="bookmark">Scrapy框架</a></div>
-    </li>
-  </ul>
-
 
       <footer class="post-footer">
           <div class="post-tags">
@@ -622,11 +598,6 @@ cookies = {i.split(&apos;=&apos;)[0]:i.split(&apos;=&apos;)[1] for i in cookies.
   </span>
   <span class="author" itemprop="copyrightHolder">zhiheng</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0
-  </div>
-  <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.5.0
-  </div>
 
         
 <div class="busuanzi-count">
@@ -665,9 +636,8 @@ cookies = {i.split(&apos;=&apos;)[0]:i.split(&apos;=&apos;)[1] for i in cookies.
   
   <script src="//cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
   <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
 <script src="/js/utils.js"></script>
-<script src="/js/schemes/pisces.js"></script>
+<script src="/js/schemes/muse.js"></script>
 <script src="/js/next-boot.js"></script>
   <script>
 var pjax = new Pjax({

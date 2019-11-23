@@ -22,15 +22,15 @@
   var CONFIG = {
     hostname: new URL('yuwengeng.coding.me/hexo-blog').hostname,
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Muse',
     version: '7.5.0',
     exturl: false,
-    sidebar: {"position":"right","display":"post","offset":12,"onmobile":true},
+    sidebar: {"position":"right","display":"post","offset":12,"onmobile":false},
     copycode: {"enable":true,"show_result":true,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: false,
-    mediumzoom: true,
+    mediumzoom: false,
     lazyload: false,
     pangu: false,
     algolia: {
@@ -47,18 +47,18 @@
   };
 </script>
 
-  <meta name="description" content="mongo在bin目录下进入命令行启动：mongod --dbpath &amp;quot;D:\dev\database\Mongodb\Server\4.0\data\db”管理员命令行: net start mongodb安装:设置数据库文件存放位置: data的目录下，创建一个db文件 G:\mongodb\data\db">
+  <meta name="description" content="mongo在bin目录下进入命令行启动：mongod --dbpath &amp;quot;D:\dev\database\Mongodb\Server\4.0\data\db”管理员命令行: net start mongodb 安装:设置数据库文件存放位置: data的目录下，创建一个db文件 G:\mongodb\data\db   启动：（1）dos命令提示符，进入redis安装目录：开启服务red">
 <meta name="keywords" content="数据库">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Redis-note">
 <meta property="og:url" content="yuwengeng.coding.me/hexo-blog/2018/11/26/redis_note/index.html">
 <meta property="og:site_name" content="中·庸">
-<meta property="og:description" content="mongo在bin目录下进入命令行启动：mongod --dbpath &amp;quot;D:\dev\database\Mongodb\Server\4.0\data\db”管理员命令行: net start mongodb安装:设置数据库文件存放位置: data的目录下，创建一个db文件 G:\mongodb\data\db">
+<meta property="og:description" content="mongo在bin目录下进入命令行启动：mongod --dbpath &amp;quot;D:\dev\database\Mongodb\Server\4.0\data\db”管理员命令行: net start mongodb 安装:设置数据库文件存放位置: data的目录下，创建一个db文件 G:\mongodb\data\db   启动：（1）dos命令提示符，进入redis安装目录：开启服务red">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-11-10T15:22:22.063Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Redis-note">
-<meta name="twitter:description" content="mongo在bin目录下进入命令行启动：mongod --dbpath &amp;quot;D:\dev\database\Mongodb\Server\4.0\data\db”管理员命令行: net start mongodb安装:设置数据库文件存放位置: data的目录下，创建一个db文件 G:\mongodb\data\db">
+<meta name="twitter:description" content="mongo在bin目录下进入命令行启动：mongod --dbpath &amp;quot;D:\dev\database\Mongodb\Server\4.0\data\db”管理员命令行: net start mongodb 安装:设置数据库文件存放位置: data的目录下，创建一个db文件 G:\mongodb\data\db   启动：（1）dos命令提示符，进入redis安装目录：开启服务red">
 
 <link rel="canonical" href="yuwengeng.coding.me/hexo-blog/2018/11/26/redis_note/">
 
@@ -143,24 +143,24 @@
     <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
   </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">10</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">10</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
-
-  </li>
-        <li class="menu-item menu-item-about">
-
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">11</span></a>
 
   </li>
   </ul>
@@ -251,9 +251,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>mongo<br>在bin目录下进入命令行<br>启动：<code>mongod --dbpath &quot;D:\dev\database\Mongodb\Server\4.0\data\db”</code><br>管理员命令行: net start mongodb</p><p>安装:<br>设置数据库文件存放位置: data的目录下，创建一个db文件 G:\mongodb\data\db</p><a id="more"></a>
-
+        <p>mongo<br>在bin目录下进入命令行<br>启动：<code>mongod --dbpath &quot;D:\dev\database\Mongodb\Server\4.0\data\db”</code><br>管理员命令行: net start mongodb</p>
+<p>安装:<br>设置数据库文件存放位置: data的目录下，创建一个db文件 G:\mongodb\data\db</p>
 <!-- mongod -dbpath "D:\dev\database\Mongodb\Server\4.0\data" -logpath "D:\dev\database\Mongodb\Server\4.0\log\mongod.log" -install -serviceName "mongodb" -->
+
 <p>启动：<br>（1）dos命令提示符，进入redis安装目录：<br>开启服务redis-server –service-start/stop</p>
 <p>安装redis-py模块： pip install redis</p>
 <blockquote>
@@ -268,8 +269,6 @@
     
     
     
-      
-
 
       <footer class="post-footer">
           <div class="post-tags">
@@ -410,11 +409,6 @@
   </span>
   <span class="author" itemprop="copyrightHolder">zhiheng</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0
-  </div>
-  <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.5.0
-  </div>
 
         
 <div class="busuanzi-count">
@@ -453,9 +447,8 @@
   
   <script src="//cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
   <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
 <script src="/js/utils.js"></script>
-<script src="/js/schemes/pisces.js"></script>
+<script src="/js/schemes/muse.js"></script>
 <script src="/js/next-boot.js"></script>
   <script>
 var pjax = new Pjax({

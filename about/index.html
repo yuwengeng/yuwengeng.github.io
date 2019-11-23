@@ -22,15 +22,15 @@
   var CONFIG = {
     hostname: new URL('yuwengeng.coding.me/hexo-blog').hostname,
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Muse',
     version: '7.5.0',
     exturl: false,
-    sidebar: {"position":"right","display":"post","offset":12,"onmobile":true},
+    sidebar: {"position":"right","display":"post","offset":12,"onmobile":false},
     copycode: {"enable":true,"show_result":true,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: false,
-    mediumzoom: true,
+    mediumzoom: false,
     lazyload: false,
     pangu: false,
     algolia: {
@@ -47,18 +47,18 @@
   };
 </script>
 
-  <meta name="description" content="基本信息 姓名： 宇文庚 性别： 男 籍贯： 河北省石家庄市 联系方式    电话： 19912023107 邮箱： yuwenzhiheng95@gmail.com 教育经历 邢台学院电子信息科学与技术（2016~至今）  证书 计算机二级python 普通话二级 英语四级 技能 了解前端html，css，JavaScript语言 熟悉python编程 了解硬件VHDL语言，单片机开发流程 了解">
+  <meta name="description" content="基本信息 姓名： 宇文庚 性别： 男 籍贯： 河北省石家庄市  联系方式     *电话： 19912023107*  * 邮箱： yuwenzhiheng95@gmail.com  教育经历 邢台学院电子信息科学与技术（2016~至今）   证书 计算机二级python 普通话二级 英语四级  技能 了解前端html，css，JavaScript语言 熟悉python编程 了解硬件VHDL语言">
 <meta name="keywords" content="简历">
 <meta property="og:type" content="website">
 <meta property="og:title" content="关于我">
 <meta property="og:url" content="yuwengeng.coding.me/hexo-blog/about/index.html">
 <meta property="og:site_name" content="中·庸">
-<meta property="og:description" content="基本信息 姓名： 宇文庚 性别： 男 籍贯： 河北省石家庄市 联系方式    电话： 19912023107 邮箱： yuwenzhiheng95@gmail.com 教育经历 邢台学院电子信息科学与技术（2016~至今）  证书 计算机二级python 普通话二级 英语四级 技能 了解前端html，css，JavaScript语言 熟悉python编程 了解硬件VHDL语言，单片机开发流程 了解">
+<meta property="og:description" content="基本信息 姓名： 宇文庚 性别： 男 籍贯： 河北省石家庄市  联系方式     *电话： 19912023107*  * 邮箱： yuwenzhiheng95@gmail.com  教育经历 邢台学院电子信息科学与技术（2016~至今）   证书 计算机二级python 普通话二级 英语四级  技能 了解前端html，css，JavaScript语言 熟悉python编程 了解硬件VHDL语言">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-10-11T14:24:11.619Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于我">
-<meta name="twitter:description" content="基本信息 姓名： 宇文庚 性别： 男 籍贯： 河北省石家庄市 联系方式    电话： 19912023107 邮箱： yuwenzhiheng95@gmail.com 教育经历 邢台学院电子信息科学与技术（2016~至今）  证书 计算机二级python 普通话二级 英语四级 技能 了解前端html，css，JavaScript语言 熟悉python编程 了解硬件VHDL语言，单片机开发流程 了解">
+<meta name="twitter:description" content="基本信息 姓名： 宇文庚 性别： 男 籍贯： 河北省石家庄市  联系方式     *电话： 19912023107*  * 邮箱： yuwenzhiheng95@gmail.com  教育经历 邢台学院电子信息科学与技术（2016~至今）   证书 计算机二级python 普通话二级 英语四级  技能 了解前端html，css，JavaScript语言 熟悉python编程 了解硬件VHDL语言">
 
 <link rel="canonical" href="yuwengeng.coding.me/hexo-blog/about/">
 
@@ -144,24 +144,24 @@
     <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
   </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">10</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">10</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
-
-  </li>
-        <li class="menu-item menu-item-about">
-
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">11</span></a>
 
   </li>
   </ul>
@@ -208,30 +208,31 @@
       
       
       <div class="post-body">
-          <hr><h2 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h2><ul>
+          <hr>
+<h2 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h2><ul>
 <li>姓名： 宇文庚</li>
 <li>性别： 男</li>
 <li>籍贯： 河北省石家庄市</li>
-</ul><h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><p><details><br>    <em>电话： 19912023107</em><br></details></p><ul>
-<li>邮箱： <a href="mailto:yuwenzhiheng95@gmail.com" target="_blank" rel="noopener">yuwenzhiheng95@gmail.com</a></li>
-</ul><h2 id="教育经历"><a href="#教育经历" class="headerlink" title="教育经历"></a>教育经历</h2><ul>
+</ul>
+<h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><details>
+    *电话： 19912023107*
+</details>
+* 邮箱： yuwenzhiheng95@gmail.com
+
+<h2 id="教育经历"><a href="#教育经历" class="headerlink" title="教育经历"></a>教育经历</h2><ul>
 <li>邢台学院<br>电子信息科学与技术（2016~至今） </li>
-</ul><h2 id="证书"><a href="#证书" class="headerlink" title="证书"></a>证书</h2><ul>
+</ul>
+<h2 id="证书"><a href="#证书" class="headerlink" title="证书"></a>证书</h2><ul>
 <li>计算机二级python</li>
 <li>普通话二级</li>
 <li>英语四级</li>
-</ul><h2 id="技能"><a href="#技能" class="headerlink" title="技能"></a>技能</h2><ul>
+</ul>
+<h2 id="技能"><a href="#技能" class="headerlink" title="技能"></a>技能</h2><ul>
 <li>了解前端html，css，JavaScript语言</li>
 <li>熟悉python编程</li>
 <li>了解硬件VHDL语言，单片机开发流程</li>
 <li>了解基本网络通信</li>
-</ul><a id="more"></a>
-
-
-
-
-
-
+</ul>
 <h2 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h2>
       </div>
       
@@ -356,11 +357,6 @@
   </span>
   <span class="author" itemprop="copyrightHolder">zhiheng</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0
-  </div>
-  <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.5.0
-  </div>
 
         
 <div class="busuanzi-count">
@@ -399,9 +395,8 @@
   
   <script src="//cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
   <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
 <script src="/js/utils.js"></script>
-<script src="/js/schemes/pisces.js"></script>
+<script src="/js/schemes/muse.js"></script>
 <script src="/js/next-boot.js"></script>
   <script>
 var pjax = new Pjax({

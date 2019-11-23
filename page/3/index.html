@@ -22,15 +22,15 @@
   var CONFIG = {
     hostname: new URL('yuwengeng.coding.me/hexo-blog').hostname,
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Muse',
     version: '7.5.0',
     exturl: false,
-    sidebar: {"position":"right","display":"post","offset":12,"onmobile":true},
+    sidebar: {"position":"right","display":"post","offset":12,"onmobile":false},
     copycode: {"enable":true,"show_result":true,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: false,
-    mediumzoom: true,
+    mediumzoom: false,
     lazyload: false,
     pangu: false,
     algolia: {
@@ -142,24 +142,24 @@
     <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
   </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">10</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">10</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
-
-  </li>
-        <li class="menu-item menu-item-about">
-
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">11</span></a>
 
   </li>
   </ul>
@@ -244,15 +244,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>mongo<br>在bin目录下进入命令行<br>启动：<code>mongod --dbpath &quot;D:\dev\database\Mongodb\Server\4.0\data\db”</code><br>管理员命令行: net start mongodb</p><p>安装:<br>设置数据库文件存放位置: data的目录下，创建一个db文件 G:\mongodb\data\db</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/11/26/redis_note/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+          <p>mongo<br>在bin目录下进入命令行<br>启动：<code>mongod --dbpath &quot;D:\dev\database\Mongodb\Server\4.0\data\db”</code><br>管理员命令行: net start mongodb</p>
+<p>安装:<br>设置数据库文件存放位置: data的目录下，创建一个db文件 G:\mongodb\data\db</p>
+<!-- mongod -dbpath "D:\dev\database\Mongodb\Server\4.0\data" -logpath "D:\dev\database\Mongodb\Server\4.0\log\mongod.log" -install -serviceName "mongodb" -->
+
+<p>启动：<br>（1）dos命令提示符，进入redis安装目录：<br>开启服务redis-server –service-start/stop</p>
+<p>安装redis-py模块： pip install redis</p>
+<blockquote>
+<p>Redis 是一个高性能的 key-value 数据库</p>
+</blockquote>
+<h3 id="数据类型："><a href="#数据类型：" class="headerlink" title="数据类型："></a>数据类型：</h3><p>Redis 支持五种数据类型：string（字符串），hash（哈希），list（列表），set（集合）及 zset (sorted set：有序集合)</p>
+<p>Redis hash 是一个键值对集合，是一个 string 类型的 field 和 value 的映射表，适合用于存储对象。</p>
+<p>python操作Redis：<br><a href="https://www.cnblogs.com/zmc940317/p/10121443.html" target="_blank" rel="noopener">https://www.cnblogs.com/zmc940317/p/10121443.html</a></p>
+
       
     </div>
 
@@ -327,15 +331,207 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p> HTML 用于展示数据，而 XML 用于结构化、传输和存储数据 XML 文档必须有一个根元素；<br>     嵌套的 HTML 元素 结构化的一种文档结构 ——&gt; W3C 针对其指定了一个标准化的模型DOM </p><h3 id="json数据"><a href="#json数据" class="headerlink" title="json数据"></a>json数据</h3><p>获取方式:<br>     ajax 请求接口<br>     切换手机移动h5端<br>     app抓包获取<br>     等等<br>json模块：⽤于字符串和 python 数据类型间进⾏转换<br>     js：JSON.stringify   JSON.parse</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/11/26/spider/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+          <p> HTML 用于展示数据，而 XML 用于结构化、传输和存储数据 XML 文档必须有一个根元素；<br>     嵌套的 HTML 元素 结构化的一种文档结构 ——&gt; W3C 针对其指定了一个标准化的模型DOM </p>
+<h3 id="json数据"><a href="#json数据" class="headerlink" title="json数据"></a>json数据</h3><p>获取方式:<br>     ajax 请求接口<br>     切换手机移动h5端<br>     app抓包获取<br>     等等<br>json模块：⽤于字符串和 python 数据类型间进⾏转换<br>     js：JSON.stringify   JSON.parse</p>
+<blockquote>
+<p>只有基本数据类型才能转换成JSON格式字符串</p>
+</blockquote>
+<h3 id="python封装http库：-请求的是源代码"><a href="#python封装http库：-请求的是源代码" class="headerlink" title="python封装http库：# 请求的是源代码"></a>python封装http库：# 请求的是源代码</h3><pre><code>标准urllib库
+第三方库request</code></pre><ol>
+<li><p>urllib库：</p>
+<ol>
+<li><p>request模块：<br>  urlopen()函数</p>
+<pre><code>urllib的params需urlencode转换类型
+data参数：请求方式变为post
+超时处理：设置timeout</code></pre><p>   read() 返回二进制代码<br>  Request类<br>  Handler类<br>  请求+保存：urlretrieve(图片的源地址,保存文件的文件名)  —— 重新请求url响应 就实现了请求图片、新建文件、写入文件三个步骤的功能。</p>
+</li>
+<li><p>error模块：<br>  URLError类（作用于request模块的异常）<br>  HTTPError类(子类)</p>
+<pre><code>三个属性code reason headers
+
+解析异常：AttributeError：
+标签为None</code></pre></li>
+<li><p>parse模块：（处理url）<br>  解析urlparse() (根据url的6个部分解析)<br>  构造urlunparse() params接受长度为6的可迭代对象</p>
+<pre><code>urlsplit()</code></pre><p>  合并urljoin()  # url自动修正拼接完整</p>
+<p>  url编码转换：</p>
+<pre><code>1.字符串：urllib.parse.quote(str)  url编码
+   unquote() url解码  # requests.utils.unquote(str,encoding=&apos;utf-8&apos;, errors=&apos;replace&apos;)
+2.字典：  urllib.parse.urlencode(dict) 转化为url参数</code></pre></li>
+</ol>
+</li>
+<li><p>requests库 - 添加/修改请求头</p>
+<ul>
+<li><p>GET（url,params,headers[cookies=],timeout）   使用 cookies 参数，首先需要将 Cookie 值处理为字典的形式：<br>params:dict ; query-data<br>headers = {</p>
+<pre><code>cookie,</code></pre><p>}</p>
+</li>
+<li><p>post(url,data{},headers)</p>
+<ol>
+<li><p>处理登录：声明一个session会话，自动处理cookies</p>
+<pre><code>操作session获取数据： session.cookies.save()
+res.cookies.get_dict()</code></pre></li>
+<li><p>证书验证（https协议）<br>  设置认证verify=false<br>  指定cert=（path）</p>
+</li>
+<li><p>代理设置<br>  (proxies=..)</p>
+</li>
+<li><p>requests异常处理：<br>  from requests.exceptions import RequestException</p>
+</li>
+<li><p>auth 内网认证<br>  auth = (‘user’,’pass’)</p>
+</li>
+</ol>
+<p>res方法：</p>
+<ul>
+<li>获取服务器的原始套接字响应:r.raw  请求：(,stream=True)<br>   边下载边存硬盘:for chunk in r.iter_content(chunk_size=1024):<br>r.json() 获取json数据</li>
+</ul>
+<p>获取cookies字典：response.cookies.get_dict()</p>
+<p>response属性（6）响应头响应体相关:  r.request.headers</p>
+</li>
+<li><p>r.status_code</p>
+<p>   http请求的返回状态，200表示连接成功，404表示连接失败没有对应资源<br>   301/302 永久/临时重定向<br>   403 没有权限访问 400：客户端请求语法错误 404：请求的资源没有找到<br>   500 服务器错误 503 服务器正在维护</p>
+</li>
+<li><p>r.text</p>
+<p>   http响应<strong>解码</strong>后的str形式，根据r.encoding</p>
+</li>
+<li><p>r.encoding  从HTTP header中猜测的响应内容编码方式</p>
+</li>
+<li><p>r.apparent_encoding</p>
+<p>   从内容分析出的响应内容的编码方式（备选编码方式）</p>
+</li>
+<li><p>r.content .decode()</p>
+<p>   HTTP响应内容的编码二进制形式bytes类型</p>
+</li>
+<li><p>r.headers</p>
+<p>   http响应内容的头部内容</p>
+</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>利用 XPath css<br>选择器来提取定位某个节点，然后再调用相应方法获取它的正文内容或者属性</p>
+</blockquote>
+<p>3个解析库：bs，lxml，pyquery</p>
+<h3 id="bs4（网页解析库，支持多种解析器’html-parser’-‘lxml’）"><a href="#bs4（网页解析库，支持多种解析器’html-parser’-‘lxml’）" class="headerlink" title="bs4（网页解析库，支持多种解析器’html.parser’ ‘lxml’）"></a>bs4（网页解析库，支持多种解析器’html.parser’ ‘lxml’）</h3><pre><code> 初始化一个bs对象，指定解析库
+ &gt; bs自动将输入文档转 Unicode 编码，输出文档转换为 UTF-8 编码 你不需考虑编码方式（bs将HTML文档转为DOM树）
+
+ soup = BeautifulSoup(open(&apos;index.html&apos;),&apos;html.parser&apos;) #打开本地 HTML ⽂件的⽅式来创建对象
+
+ - soup.p标签：默认只取第一个  soup.p.string取文本
+
+ 方法：
+ 1. soup.find_all(tag, attributes, recursive, text, limit, keywords)  返回list类型匹配的源代码
+
+    在 BeautifulSoup 中每个元素都有一个get_text()获取文本   取属性：get（属性名）
+    - 获取属性：
+    soup.attrs # dict形式返回标签属性  
+    打印：soup.attrs[&apos;key&apos;]
+    soup.a[&apos;href&apos;]   也可简写为这种形式
+
+    attributes字典封装多个属性值，通过标签的名称和属性来查找标签
+    获取属性们：
+      ···
+      nameList = bs.find_all(text=&apos;the prince&apos;)
+      [&apos;the prince&apos;, &apos;the prince&apos;, &apos;the prince&apos;, &apos;the prince&apos;, &apos;the prince&apos;, &apos;the prince&apos;, &apos;the prince&apos;]
+      ···
+
+ 2. soup.select(css选择器，limit=1)     # select选择器返回list； css选择器更简洁
+
+      - css选择器：标签名与类名、id 名组合   h1::text  ::attr(属性)获取标签属性 伪类选择器  [xpath @属性]
+        li:nth-child(3)选取第三个li元素
+        li:nth-child(2n) 第偶数个
+        a[title]选取有title属性的a元素
+        .container.wrapper 表示同一标签class
+        ul p 选取所有子元素，包括嵌套不相关
+        ul + p 选取ul后面第一个p元素
+        div#container &gt; ul 第一个子元素
+
+* soup.prettify() 以标准缩进输出</code></pre><p>  *** lxml解析html代码和文件<br>        parse_text: etree.HTML(text)  #直接读取字符串<br>        parse_file：etree.parse()     #文件读取<br>        # 按字符串序列化 HTML文档<br>        result = etree.tostring(html)</p>
+<pre><code> - Xpath：在xml文档中选取元素属性的路径表达式
+    网络数据：先转换类型为etree对象，etree.HTML()，再xpath选取
+    本地文件： etree.parse(文件名) ⽅法来读取⽂件。
+
+      下一级xpath加  .//选中文档所有子孙标签  ./    
+      //*[@class=&apos;&apos;]    
+      / 选中直接子节点  //开头遍历所有  //选中文档所有子孙标签  @属性：获取元素对应属性值
+      tag（）获取标签名   text（）获取文本   
+
+      下标a[1]  li[last()] 可以找到最后⼀个元素  /a/..定位父节点
+
+      模糊查询/[contains()]   
+      a[text()=&apos;下一页&apos;] ：class名称相同时用
+
+四个基本方法：
+ .extract（） 序列化该节点为 Unicode 字符串并返回 list
+ .css(): 返回该表达式所对应的所有节点的 selector list，语法同 BeautifulSoup4
+ .re(): 返回 Unicode 字符串 list 正则只有\d才能提取数字</code></pre><h3 id="pyquery选择器-from-pyquery-import-PyQuery-as-pq"><a href="#pyquery选择器-from-pyquery-import-PyQuery-as-pq" class="headerlink" title="pyquery选择器  from pyquery import PyQuery as pq"></a>pyquery选择器  from pyquery import PyQuery as pq</h3><pre><code>方法：
+find()查找子孙节点  children（）查找所有子节点
+多个节点.items()方法 返回一个generator
+
+html() attr() 返回第一个节点
+text() 返回所有text 中间空格分开，str类型</code></pre><h2 id="js动态渲染问题："><a href="#js动态渲染问题：" class="headerlink" title="js动态渲染问题："></a>js动态渲染问题：</h2><h3 id="模拟Ajax异步数据爬取-（返回json类型）"><a href="#模拟Ajax异步数据爬取-（返回json类型）" class="headerlink" title="模拟Ajax异步数据爬取 （返回json类型）"></a>模拟Ajax异步数据爬取 （返回json类型）</h3><pre><code>Type：xhr</code></pre><p>cookies池，代理池，UA（from fake_useragent import UserAgent）</p>
+<p>协程的优势：</p>
+<p>最大的优势就是协程极高的执行效率。因为子程序切换不是线程切换，而是由程序自身控制，因此，没有线程切换的开销，和多线程比，线程数量越多，协程的性能优势就越明显。</p>
+<p>第二大优势就是不需要多线程的锁机制，因为只有一个线程，也不存在同时写变量冲突，在协程中控制共享资源不加锁，只需要判断状态就好了，所以执行效率比多线程高很多</p>
+<h3 id="实战经验："><a href="#实战经验：" class="headerlink" title="实战经验："></a>实战经验：</h3><pre><code>简单数据，直接用正则提取   
+# def write_to_file(content) :
+     with open (’result.txt ’,’a ’, encoding=’ utf-8&apos;) as f:   # 写入文件有中文，指定编码格式
+          f.write(json.dumps(content ，ensure_ascii=False) +’\n&apos;)   ## json.dumps() 序列化时默认使⽤的 ascii 编码
+
+# json.dump(item,open(&apos;sfda.json&apos;,&apos;w&apos;),ensure_ascii=False)  卸载返回json字符串</code></pre><ul>
+<li><p>模拟登录：手动模拟设置 cookies token等</p>
+<p>  初次：登录刷新：post登录<br>  无刷新：Ajax方式</p>
+<ol>
+<li><p>分析post请求data内容</p>
+</li>
+<li><p>初始化清空get请求登录页，获取set-cookies（session自动处理） 源代码中搜索获取_token<br>  构造cookies ——&gt; 字典生成式</p>
+<ul>
+<li><p>GitHub：先获取token</p>
+</li>
+<li><p>微信登录：<br>长轮询</p>
+</li>
+<li><p>验证码识别：</p>
+<h1 id="代码片段"><a href="#代码片段" class="headerlink" title="代码片段"></a>代码片段</h1></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>拼接完整url<br>if item[‘href’] is not None:</p>
+<pre><code>item[&apos;href&apos;] = urllib.parse.urljoin(response.url, item[&apos;href&apos;])</code></pre></li>
+<li><p>处理src:<br>item[‘img_list’] = [requests.utils.unquote(i).split(‘src=’)[-1] for i in item[‘img_list’]]</p>
+</li>
+<li><h1 id="去掉列表中的空字符串和字符串的空白"><a href="#去掉列表中的空字符串和字符串的空白" class="headerlink" title="去掉列表中的空字符串和字符串的空白"></a>去掉列表中的空字符串和字符串的空白</h1><p>content = [i.strip() for i in content if len(i.strip())&gt;0] </p>
+</li>
+<li><p>scrapy带cookies请求,转换cookies为dict<br>def start_requests(self):</p>
+<pre><code>cookies = &quot;anonymid=jqpacc0i4eh2re; depovince=ZGQT; _r01_=1; JSESSIONID=abcM4DE98_8lS_2hu7hLw;&quot;
+cookies = {i.split(&apos;=&apos;)[0]:i.split(&apos;=&apos;)[1] for i in cookies.split(&apos;; &apos;)}</code></pre></li>
+</ul>
+<h3 id="selemium-浏览器自动化"><a href="#selemium-浏览器自动化" class="headerlink" title="selemium 浏览器自动化"></a>selemium 浏览器自动化</h3><pre><code>   from selenium import webdriver
+   driver = webdriver.Chrome()
+   drive.get(&apos;&apos;)   //打开特定网页
+   drive.page_source  //打开网页源码
+获取源代码page_source
+     获取节点属性等信息
+查找节点：（通过XPath/CSS选择器）
+     单个节点/多个节点find_element() 返回的是WebElement类型
+      * 查找单个节点
+          <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line">browser = webdriver.Chrome()</span><br><span class="line">browser.get(<span class="string">'https://www.taobao.com'</span>)</span><br><span class="line">input_ first = browser.find_element_by_id(<span class="string">'q'</span>)</span><br><span class="line">input_second = browser.find_element_by css_selector   (<span class="string">'#q’)</span></span><br><span class="line"><span class="string">input_third = browser_find_element_by_xpath('</span>//*[@id ＝ 飞”］’）</span><br><span class="line">print(input_first, iput_second, input_third)</span><br><span class="line">browser.close()</span><br></pre></td></tr></table></figure>
+
+          另一种参数的灵活方式：
+          `find_element(By.ID, id ）`
+
+          * 多个节点
+          `find_elements(By.CSS_SELECTOR,&apos;.service-bd li&apos;) `
+
+节点交互：
+     动作链ActionChains
+
+     输入文字时用 `send_keys()`方法，清空文字时用` clear()`方法，点击按钮时用 `click()`方法
+
+
+(万能方法)模拟运行js：execute_script ()
+
+切换框架：switch_to.frame()
+
+加载等待：
+     隐式等待browser.implicitly_ wait(10)
+显式等待：</code></pre>
       
     </div>
 
@@ -424,7 +620,9 @@
 <blockquote>
 <p>多行</p>
 <blockquote>
-<p>嵌套引用<br>
+<p>嵌套引用</p>
+</blockquote>
+</blockquote>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2018/11/26/你好-Hexo/#more" rel="contents">
@@ -564,11 +762,6 @@
   </span>
   <span class="author" itemprop="copyrightHolder">zhiheng</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0
-  </div>
-  <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.5.0
-  </div>
 
         
 <div class="busuanzi-count">
@@ -607,9 +800,8 @@
   
   <script src="//cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
   <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
 <script src="/js/utils.js"></script>
-<script src="/js/schemes/pisces.js"></script>
+<script src="/js/schemes/muse.js"></script>
 <script src="/js/next-boot.js"></script>
   <script>
 var pjax = new Pjax({

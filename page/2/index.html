@@ -22,15 +22,15 @@
   var CONFIG = {
     hostname: new URL('yuwengeng.coding.me/hexo-blog').hostname,
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Muse',
     version: '7.5.0',
     exturl: false,
-    sidebar: {"position":"right","display":"post","offset":12,"onmobile":true},
+    sidebar: {"position":"right","display":"post","offset":12,"onmobile":false},
     copycode: {"enable":true,"show_result":true,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: false,
-    mediumzoom: true,
+    mediumzoom: false,
     lazyload: false,
     pangu: false,
     algolia: {
@@ -142,24 +142,24 @@
     <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
   </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">10</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">10</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
-
-  </li>
-        <li class="menu-item menu-item-about">
-
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">11</span></a>
 
   </li>
   </ul>
@@ -255,18 +255,116 @@
     去重：内存去重；
           缓存数据库去重，布隆算法过滤
 
-2. 下载器：
-</code></pre><p>logging模块：保存持久化日志信息</p><h2 id="scrapy框架-任务分离固定明确"><a href="#scrapy框架-任务分离固定明确" class="headerlink" title="scrapy框架: 任务分离固定明确"></a>scrapy框架: 任务分离固定明确</h2><blockquote>
+2. 下载器：</code></pre><p>logging模块：保存持久化日志信息</p>
+<h2 id="scrapy框架-任务分离固定明确"><a href="#scrapy框架-任务分离固定明确" class="headerlink" title="scrapy框架: 任务分离固定明确"></a>scrapy框架: 任务分离固定明确</h2><blockquote>
 <p>框架中数据流：request，response，item<br>item会内部返回给pipline 在管道间传递 ,先在settings中开启pipline<br>    Spider opened 开启</p>
 </blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/11/26/Scrapy/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+<p>scrapy shell url 进行快速调试<br>    scrapy check 检查代码是否有错误<br>    scrapy list列出所有可用的爬虫<br>    scrapy fetch url 源代码下载下来并显示出来</p>
+<h3 id="spider主程序："><a href="#spider主程序：" class="headerlink" title="spider主程序："></a>spider主程序：</h3><ul>
+<li><p>被继承的基类scrapy.Spider中:<br> 属性：</p>
+<p> 方法：</p>
+<ol>
+<li><p>start_requests() 这个方法必须返回一个可迭代对象</p>
+</li>
+<li><p>parse(response)  默认的回调函数<br>  从生成器取尽第一部分的 request，然后再获取第二部分的 item，取到 item 了，就会放<br>  到对应的 pipeline处理；<br>   取尽之后，parse()⼯作结束，引擎再根据队列和 pipelines 中的内容去执⾏相<br>   应的操作；</p>
+<ol start="8">
+<li>程序在取得各个⻚⾯的 items 前，会先处理完之前所有的 request 队列⾥的请求<br>，然后再提取 items。</li>
+<li>这⼀切的⼀切，Scrapy 引擎和调度器将负责到底。<br>yield 返回Request，dict None BaseItem </li>
+</ol>
+<ul>
+<li>CrawlSpider类: 自动匹配响应的规律url，构造二次Request ，url自动修正[parse.urljoin()]；  定义rules匹配规则；  follow=True提取的url响应中继续跟进匹配；<br>   Rule(LinkExtractor(allow=re,restrict_css(),restrict_path()),callback=’parse’)<br>scrapy genspider -t crawl<br>使用场景：<br>   url规律能被正则或xpath匹配<br>   实现自动翻页<h3 id="settings："><a href="#settings：" class="headerlink" title="settings："></a>settings：</h3>LOG_LEVEL = “WARNING”  debug info  #设置scrapy日志等级<br>数据库初始化:<br>REDIS_URL = “redis://127.0.0.1:6379”</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="requests对象：scrapy-Request-类实例化"><a href="#requests对象：scrapy-Request-类实例化" class="headerlink" title="requests对象：scrapy.Request()类实例化"></a>requests对象：scrapy.Request()类实例化</h3><pre><code>- Request类常用参数：
+    callback，
+    dont_filter=True不过滤，默认对url去重
+    meta:元数据字典 item{}，在不同解析函数中传递item数据  注意item层级多时 用deepcopy()防止同一引用污染。
+    headers,
+    cookies={} # cookies只能单独设置，不在headers
+
+    priority=0，请求优先级
+
+- scrapy post请求模拟登录:
+    scrapy.FormRequest(url,formdata,callback) 
+
+        # 自动从响应中找到form表单字段进行登录
+        FormRequest.from_response(
+            response,
+            formdata,# 只需写user poassword 
+            formid=None,
+            formname=None,
+        )</code></pre><h3 id="response对象："><a href="#response对象：" class="headerlink" title="response对象："></a>response对象：</h3><pre><code>    shell: 【response.加tab】
+        res.body相当于res.content
+        res.url 发起请求的url
+        res.text
+        res.meta{}
+selector选中元素方法：xpath，css ，返回selector对象list
+
+提取数据对象data属性：
+extract()方法 序列化选中内容为Unicode 字符串 并返回字符串列表
+extract_first():直接返回字符串</code></pre><h3 id="Item："><a href="#Item：" class="headerlink" title="Item："></a>Item：</h3><pre><code>初始化要爬取的Item类 实例化后为dict类型，以便为字段赋值</code></pre><h3 id="item-pipeline管道处理组件"><a href="#item-pipeline管道处理组件" class="headerlink" title="item pipeline管道处理组件:"></a>item pipeline管道处理组件:</h3><pre><code>必有process_item(self,item,spider)方法，必须返回item，以便继续处理
+
+初始化数据库连接:
+- open_spider(self,spider) # 相当于爬之前先开盖
+- close_spider(self,spider)
+
+- scrapy 保存信息的最简单的⽅法主要有四种，-o 输出指定格式的⽂件 【json csv xml jsonl】</code></pre><h3 id="中间件"><a href="#中间件" class="headerlink" title="中间件"></a>中间件</h3><ol>
+<li><p>Downloader middleware： 用于修改request和response （ 代理池，UA库，）<br> process_request(request,spider)被调用</p>
+<p> process_response(request, response, spider)</p>
+<h2 id="process-exception-request-exception-spider"><a href="#process-exception-request-exception-spider" class="headerlink" title=" process_exception(request, exception, spider)"></a> process_exception(request, exception, spider)</h2> <!-- class RandomUserAgentMiddleware:
+ def process_request(self, request, spider):
+     ua = random.choice(spider.settings.get("USER_AGENT_LIST"))
+     request.headers["User-Agent"] = ua
+
+ class CheckUserAgent: # 检查ua
+     def process_response(self, request, response, spider):
+         # print(dir(response.request))
+         print(request.headers["User-Agent"])
+         return response -->
+<ul>
+<li><p>重写RandomUserAgentMiddlware：<br>from fake_useragent import UserAgent </p>
+<h1 id="引入开源库"><a href="#引入开源库" class="headerlink" title="引入开源库"></a>引入开源库</h1><p>class RandomUserAgentMiddlware(object):</p>
+<p>   def <strong>init</strong>(self, crawler):</p>
+<pre><code>super(RandomUserAgentMiddlware, self).__init__()
+self.ua = UserAgent()
+#可读取在settings文件中的配置，来决定开源库ua执行的方法，默认是random，也可是ie、Firefox等等
+self.ua_type = crawler.settings.get(&quot;RANDOM_UA_TYPE&quot;, &quot;random&quot;)</code></pre><p>   @classmethod<br>   def from_crawler(cls, crawler):</p>
+<pre><code>return cls(crawler)</code></pre><p>   #更换用户代理逻辑在此方法中<br>   def process_request(self, request, spider):</p>
+<pre><code>def get_ua():
+    return getattr(self.ua, self.ua_type)
+
+&lt;!-- print  get_ua()2 --&gt;
+request.headers.setdefault(&apos;User-Agent&apos;, get_ua())</code></pre><p>添加代理：request.meta[‘proxy’] = </p>
+</li>
+</ul>
+</li>
+<li><p>Spider Middleware</p>
+</li>
+</ol>
+<h3 id="异步加多线程"><a href="#异步加多线程" class="headerlink" title="异步加多线程"></a>异步加多线程</h3><h3 id="分布式爬虫-多台主机协同爬取"><a href="#分布式爬虫-多台主机协同爬取" class="headerlink" title="分布式爬虫-多台主机协同爬取"></a>分布式爬虫-多台主机协同爬取</h3><blockquote>
+<p>爬取队列 Queue必须始终为一个，也就是共享爬取队列 ；这样才能保证 Scheduer 从队列里调度某个 Request 之后，其他Scheduler 不会重复调度此 Request ，就可以做到多个 Schduler 同步爬取 这就是分布式爬虫的基本雏形<br><strong>分布式架构</strong></p>
+</blockquote>
+<ol>
+<li><p>维护爬取队列</p>
+<p> Redis 支持的这几种数据结构存储各有优点：<br>列表有 lpush （） lpop （） rpush （） rpop （）方法，我们可以用它来实现先进先出式爬取队列，也可以实现先进后出栈式爬取队列<br>集合的元素是无序的且不重复的，这样我们可以非常方便地实现随机排序且不重复的爬取队列<br>有序集合带有分数表示，而 Scrapy的Request 也有优先级的控制，我们可以用它来实现带优先级调度的队列</p>
+<p>我们需要根据具体爬虫的需求来灵活选择不同的队列</p>
+</li>
+<li><p>如何去重</p>
+<blockquote>
+<p>Scrapy 有自动去重，它的去重使用了 Python 中的集合，生成哈希指纹（忽略request headers）<br>scrapy单个Request队列放在内存中<br>分布式去重则把各个主机的request都存在一个redis数据库集合中，由此判断去重</p>
+</blockquote>
+</li>
+<li><p>防止中断，断点续爬</p>
+<p>保存队列在本地<br>scrapy crawl spider -s JOB_DIR=crawls/spider</p>
+</li>
+</ol>
+<h3 id="RedisSpider"><a href="#RedisSpider" class="headerlink" title="RedisSpider()"></a>RedisSpider()</h3><p>部分修改<br>from scrapy_redis.spiders import RedisSpider<br>redis_key=”” #带爬取队列,从中读取start_url</p>
+<p>自定义request:<br>    def make_request_from_data(self, data): # RedisSpider内置方法,data来自redis<br>    def start_requests(self):</p>
+<h1 id="redis-cli"><a href="#redis-cli" class="headerlink" title="redis-cli:"></a>redis-cli:</h1><p>keys *<br>lpush key_name url</p>
+
       
     </div>
 
@@ -355,14 +453,21 @@
 <li><p>副本集很重要：它在分片/节点发生故障时提供高可用性。它允许您扩展搜索量/吞吐量，因为可以在所有副本上并行执行搜索。默认情况下，Elasticsearch中的每个索引都分配了5个主分片和1个副本，这意味着如果群集中至少有两个节点，则索引将包含5个主分片和另外5个副本分片（1个完整副本），总计为每个索引10个分片。</p>
 </li>
 </ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/11/26/es-note/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+<p><img src="https://github.com/bainingchao/imgurl/blob/master/2%20ES/2.png?raw=true" alt="es 与 关系型数据库"></p>
+<h3 id="核心模块"><a href="#核心模块" class="headerlink" title="核心模块"></a>核心模块</h3><ul>
+<li>analysis：主要负责词法分析及语言处理，也就是我们常说的分词，通过该模块可最终形成存储或者搜索的最小单元 Term。</li>
+<li>index 模块：主要负责索引的创建工作。</li>
+<li>store 模块：主要负责索引的读写，主要是对文件的一些操作，其主要目的是抽象出和平台文件系统无关的存储。</li>
+<li>queryParser 模块：主要负责语法分析，把我们的查询语句生成 Lucene 底层可以识别的条件。</li>
+<li>search 模块：主要负责对索引的搜索工作。</li>
+<li>similarity 模块：主要负责相关性打分和排序的实现。<h3 id="检索方式"><a href="#检索方式" class="headerlink" title="检索方式"></a>检索方式</h3></li>
+</ul>
+<p>（1）单个词查询：指对一个 Term 进行查询。比如，若要查找包含字符串“Lucene”的文档，则只需在词典中找到 Term“Lucene”，再获得在倒排表中对应的文档链表即可。</p>
+<p>（2）AND：指对多个集合求交集。比如，若要查找既包含字符串“Lucene”又包含字符串“Solr”的文档，则查找步骤如下：在词典中找到 Term “Lucene”，得到“Lucene”对应的文档链表。在词典中找到 Term “Solr”，得到“Solr”对应的文档链表。合并链表，对两个文档链表做交集运算，合并后的结果既包含“Lucene”也包含“Solr”。</p>
+<p>（3） OR：指多个集合求并集。比如，若要查找包含字符串“Luence”或者包含字符串“Solr”的文档，则查找步骤如下：在词典中找到 Term “Lucene”，得到“Lucene”对应的文档链表。在词典中找到 Term “Solr”，得到“Solr”对应的文档链表。合并链表，对两个文档链表做并集运算，合并后的结果包含“Lucene”或者包含“Solr”。</p>
+<p>（4）NOT：指对多个集合求差集。比如，若要查找包含字符串“Solr”但不包含字符串“Lucene”的文档，则查找步骤如下：在词典中找到 Term “Lucene”，得到“Lucene”对应的文档链表。在词典中找到 Term “Solr”，得到“Solr”对应的文档链表。合并链表，对两个文档链表做差集运算，用包含“Solr”的文档集减去包含“Lucene”的文档集，运算后的结果就是包含“Solr”但不包含“Lucene”。</p>
+<p>通过上述四种查询方式，我们不难发现，由于 Lucene 是以倒排表的形式存储的。所以在 Lucene 的查找过程中只需在词典中找到这些 Term，根据 Term 获得文档链表，然后根据具体的查询条件对链表进行交、并、差等操作，就可以准确地查到我们想要的结果。相对于在关系型数据库中的“Like”查找要做全表扫描来说，这种思路是非常高效的。虽然在索引创建时要做很多工作，但这种一次生成、多次使用的思路也是很高明的。</p>
+
       
     </div>
 
@@ -457,16 +562,10 @@
  - 起始行:由请求方法、请求的 URL 以及使用的 HTTP 协议版本三部分组成
  - 请求头: 以行为单位
   用来说明服务器要使用的附加信息，比较重要的信息有 Cookie Referer User-Agent等
- - 消息体：
-</code></pre>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/11/26/http-note/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+ - 消息体：</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">Response Headers 一般包含以下部分 ( 响应 ( 服务端 -&gt; 客户端 [response]))：</span><br><span class="line"></span><br><span class="line">HTTP/1.1 为响应采用的协议和版本号 200（状态码）OK（描述信息）</span><br><span class="line">Location 为服务端需要客户端访问的页面路径</span><br><span class="line">Server 为服务端的 Web 服务端名</span><br><span class="line">Content-Encoding 为服务端能够发送压缩编码类型</span><br><span class="line">Content-Length 为服务端发送的压缩数据的长度</span><br><span class="line">Content-Language 为服务端发送的语言类型</span><br><span class="line">Content-Type 为服务端发送的类型及采用的编码方式</span><br><span class="line">Last-Modified 为服务端对该资源最后修改的时间</span><br><span class="line">Refresh 为服务端要求客户端 1 秒钟后，刷新，然后访问指定的页面路径</span><br><span class="line">Content-Disposition 为服务端要求客户端以下载文件的方式打开该文件</span><br><span class="line">Transfer-Encoding 为分块传递数据到客户端</span><br><span class="line">Set-Cookie 为服务端发送到客户端的暂存数据</span><br><span class="line">Connection 为维护客户端和服务端的连接关系</span><br><span class="line"></span><br><span class="line">Request Headers 一般包含以下部分 ( 请求 ( 客户端 -&gt; 服务端[request]))：</span><br><span class="line"></span><br><span class="line">GET（请求的方式）/newcoder/hello.html（请求的目标资源）HTTP/1.1（请求采用的协议和版本号）</span><br><span class="line">Accept 为客户端能接收的资源类型</span><br><span class="line">Accept-Language 为客户端接收的语言类型</span><br><span class="line">Connection 为维护客户端和服务端的连接关系</span><br><span class="line">Host 为连接的目标主机</span><br><span class="line">Referer 告诉服务器我来自于哪里</span><br><span class="line">User-Agent 为客户端操作系统版本号等信息</span><br><span class="line">Accept-Encoding 为客户端能接收的压缩数据的类型</span><br><span class="line">If-Modified-Since 为缓存时间</span><br><span class="line">Cookie 为客户端暂存服务端的信息</span><br><span class="line">Date 为客户端请求服务端的时间</span><br></pre></td></tr></table></figure>
+
+<p>304：重定向。<br> 400：客户端请求语法错误。<br> 403：客户端请求被拒绝，可能是权限问题。<br> 404：请求的资源没有找到。<br> 500：服务器内部错误。<br> 502：网关或代理服务器错误。<br> 504：网关超时，服务器没有及时从上游服务器接获取到请求。</p>
+
       
     </div>
 
@@ -688,11 +787,6 @@
   </span>
   <span class="author" itemprop="copyrightHolder">zhiheng</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0
-  </div>
-  <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.5.0
-  </div>
 
         
 <div class="busuanzi-count">
@@ -731,9 +825,8 @@
   
   <script src="//cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
   <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
 <script src="/js/utils.js"></script>
-<script src="/js/schemes/pisces.js"></script>
+<script src="/js/schemes/muse.js"></script>
 <script src="/js/next-boot.js"></script>
   <script>
 var pjax = new Pjax({

@@ -22,15 +22,15 @@
   var CONFIG = {
     hostname: new URL('yuwengeng.coding.me/hexo-blog').hostname,
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Muse',
     version: '7.5.0',
     exturl: false,
-    sidebar: {"position":"right","display":"post","offset":12,"onmobile":true},
+    sidebar: {"position":"right","display":"post","offset":12,"onmobile":false},
     copycode: {"enable":true,"show_result":true,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: false,
-    mediumzoom: true,
+    mediumzoom: false,
     lazyload: false,
     pangu: false,
     algolia: {
@@ -143,24 +143,24 @@
     <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
   </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">10</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">10</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
-
-  </li>
-        <li class="menu-item menu-item-about">
-
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">11</span></a>
 
   </li>
   </ul>
@@ -265,30 +265,35 @@
 <blockquote>
 <p>多行</p>
 <blockquote>
-<p>嵌套引用<br><a id="more"></a><br>自动截断</p>
+<p>嵌套引用</p>
 </blockquote>
 </blockquote>
+<a id="more"></a> 
+<p>自动截断</p>
 <p>// 隐藏   </p>
-<details><br>hhhh<br></details>
+<details>
+hhhh
+</details>
 
 <h2 id="markdown"><a href="#markdown" class="headerlink" title="markdown"></a>markdown</h2><p>强制换行<br>在行末使用空格（两个以上） + 换行（Enter）</p>
 <p>&lt; src &gt;： 链接<br><a href></a> :文字链接</p>
 <ul>
 <li><ul>
-<li>：斜体<br><code></code> :单行代码<br>— ：分行<br>表格：<br>| | |<br>|-|-|</li>
+<li>：斜体<br><code></code> :单行代码</li>
 </ul>
 </li>
 </ul>
+<p>— ：分行<br>表格：<br>| | |<br>|-|-|</p>
 <blockquote>
 <p>任务列表</p>
-<ul>
-<li style="list-style: none"><input type="checkbox"> 纯牛奶</li>
-<li style="list-style: none"><input type="checkbox" checked> 西瓜</li>
-<li style="list-style: none"><input type="checkbox"> 鸡蛋</li>
-<li style="list-style: none"><input type="checkbox" checked> 保鲜膜</li>
-<li style="list-style: none"><input type="checkbox"> 猪肉（暂时买不起）</li>
-</ul>
 </blockquote>
+<ul>
+<li><input disabled type="checkbox"> 纯牛奶</li>
+<li><input checked disabled type="checkbox"> 西瓜</li>
+<li><input disabled type="checkbox"> 鸡蛋</li>
+<li><input checked disabled type="checkbox"> 保鲜膜</li>
+<li><input disabled type="checkbox"> 猪肉（暂时买不起）</li>
+</ul>
 <center>中间 </center>
 
 <hr>
@@ -302,8 +307,6 @@
     
     
     
-      
-
 
       <footer class="post-footer">
           <div class="post-tags">
@@ -441,11 +444,6 @@
   </span>
   <span class="author" itemprop="copyrightHolder">zhiheng</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0
-  </div>
-  <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.5.0
-  </div>
 
         
 <div class="busuanzi-count">
@@ -484,9 +482,8 @@
   
   <script src="//cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
   <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
 <script src="/js/utils.js"></script>
-<script src="/js/schemes/pisces.js"></script>
+<script src="/js/schemes/muse.js"></script>
 <script src="/js/next-boot.js"></script>
   <script>
 var pjax = new Pjax({
