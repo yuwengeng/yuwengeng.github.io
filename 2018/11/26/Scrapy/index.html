@@ -47,18 +47,18 @@
   };
 </script>
 
-  <meta name="description" content="经典爬虫框架：1. url 管理器：Scheduler调度器     主要两个变量：已爬取url集合，未爬取集合；     去重：内存去重；           缓存数据库去重，布隆算法过滤  2. 下载器：logging模块：保存持久化日志信息 scrapy框架: 任务分离固定明确 框架中数据流：request，response，itemitem会内部返回给pipline 在管道间传递 ,先在s">
+  <meta name="description" content="经典爬虫框架：1. url 管理器：Scheduler调度器     主要两个变量：已爬取url集合，未爬取集合；     去重：内存去重；           缓存数据库去重，布隆算法过滤  2. 下载器：logging模块：保存持久化日志信息scrapy框架: 任务分离固定明确 框架中数据流：request，response，itemitem会内部返回给pipline 在管道间传递 ,先在se">
 <meta name="keywords" content="爬虫">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Scrapy框架">
 <meta property="og:url" content="yuwengeng.coding.me/hexo-blog/2018/11/26/Scrapy/index.html">
 <meta property="og:site_name" content="中·庸">
-<meta property="og:description" content="经典爬虫框架：1. url 管理器：Scheduler调度器     主要两个变量：已爬取url集合，未爬取集合；     去重：内存去重；           缓存数据库去重，布隆算法过滤  2. 下载器：logging模块：保存持久化日志信息 scrapy框架: 任务分离固定明确 框架中数据流：request，response，itemitem会内部返回给pipline 在管道间传递 ,先在s">
+<meta property="og:description" content="经典爬虫框架：1. url 管理器：Scheduler调度器     主要两个变量：已爬取url集合，未爬取集合；     去重：内存去重；           缓存数据库去重，布隆算法过滤  2. 下载器：logging模块：保存持久化日志信息scrapy框架: 任务分离固定明确 框架中数据流：request，response，itemitem会内部返回给pipline 在管道间传递 ,先在se">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-11-09T15:05:13.807Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Scrapy框架">
-<meta name="twitter:description" content="经典爬虫框架：1. url 管理器：Scheduler调度器     主要两个变量：已爬取url集合，未爬取集合；     去重：内存去重；           缓存数据库去重，布隆算法过滤  2. 下载器：logging模块：保存持久化日志信息 scrapy框架: 任务分离固定明确 框架中数据流：request，response，itemitem会内部返回给pipline 在管道间传递 ,先在s">
+<meta name="twitter:description" content="经典爬虫框架：1. url 管理器：Scheduler调度器     主要两个变量：已爬取url集合，未爬取集合；     去重：内存去重；           缓存数据库去重，布隆算法过滤  2. 下载器：logging模块：保存持久化日志信息scrapy框架: 任务分离固定明确 框架中数据流：request，response，itemitem会内部返回给pipline 在管道间传递 ,先在se">
 
 <link rel="canonical" href="yuwengeng.coding.me/hexo-blog/2018/11/26/Scrapy/">
 
@@ -262,10 +262,10 @@
     去重：内存去重；
           缓存数据库去重，布隆算法过滤
 
-2. 下载器：</code></pre><p>logging模块：保存持久化日志信息</p>
-<h2 id="scrapy框架-任务分离固定明确"><a href="#scrapy框架-任务分离固定明确" class="headerlink" title="scrapy框架: 任务分离固定明确"></a>scrapy框架: 任务分离固定明确</h2><blockquote>
+2. 下载器：</code></pre><p>logging模块：保存持久化日志信息</p><h2 id="scrapy框架-任务分离固定明确"><a href="#scrapy框架-任务分离固定明确" class="headerlink" title="scrapy框架: 任务分离固定明确"></a>scrapy框架: 任务分离固定明确</h2><blockquote>
 <p>框架中数据流：request，response，item<br>item会内部返回给pipline 在管道间传递 ,先在settings中开启pipline<br>    Spider opened 开启</p>
-</blockquote>
+</blockquote><a id="more"></a>
+
 <p>scrapy shell url 进行快速调试<br>    scrapy check 检查代码是否有错误<br>    scrapy list列出所有可用的爬虫<br>    scrapy fetch url 源代码下载下来并显示出来</p>
 <h3 id="spider主程序："><a href="#spider主程序：" class="headerlink" title="spider主程序："></a>spider主程序：</h3><ul>
 <li><p>被继承的基类scrapy.Spider中:<br> 属性：</p>

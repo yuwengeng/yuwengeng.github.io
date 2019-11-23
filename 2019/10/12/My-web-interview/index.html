@@ -47,18 +47,18 @@
   };
 </script>
 
-  <meta name="description" content="前端素养 浏览器渲染原理- html为什么操作 DOM 慢1. 两个线程通信损耗 2. 重绘回流； 经典面试题：插入几万个 DOM，如何实现页面不卡顿？  虚拟滚动（virtualized scroller）。 这种技术的原理就是只渲染可视区域内的内容，非可见区域的那就完全不渲染了，当用户在滚动的时候就实时去替换渲染的内容。清浮动? clearoverflow:hidden;溢出属性清除浮动带来的">
+  <meta name="description" content="前端素养浏览器渲染原理- html为什么操作 DOM 慢1. 两个线程通信损耗 2. 重绘回流； 经典面试题：插入几万个 DOM，如何实现页面不卡顿？ 虚拟滚动（virtualized scroller）。 这种技术的原理就是只渲染可视区域内的内容，非可见区域的那就完全不渲染了，当用户在滚动的时候就实时去替换渲染的内容。">
 <meta name="keywords" content="python 前端">
 <meta property="og:type" content="article">
 <meta property="og:title" content="&#39;web-api&#39;">
 <meta property="og:url" content="yuwengeng.coding.me/hexo-blog/2019/10/12/My-web-interview/index.html">
 <meta property="og:site_name" content="中·庸">
-<meta property="og:description" content="前端素养 浏览器渲染原理- html为什么操作 DOM 慢1. 两个线程通信损耗 2. 重绘回流； 经典面试题：插入几万个 DOM，如何实现页面不卡顿？  虚拟滚动（virtualized scroller）。 这种技术的原理就是只渲染可视区域内的内容，非可见区域的那就完全不渲染了，当用户在滚动的时候就实时去替换渲染的内容。清浮动? clearoverflow:hidden;溢出属性清除浮动带来的">
+<meta property="og:description" content="前端素养浏览器渲染原理- html为什么操作 DOM 慢1. 两个线程通信损耗 2. 重绘回流； 经典面试题：插入几万个 DOM，如何实现页面不卡顿？ 虚拟滚动（virtualized scroller）。 这种技术的原理就是只渲染可视区域内的内容，非可见区域的那就完全不渲染了，当用户在滚动的时候就实时去替换渲染的内容。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-11-06T13:17:40.599Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="&#39;web-api&#39;">
-<meta name="twitter:description" content="前端素养 浏览器渲染原理- html为什么操作 DOM 慢1. 两个线程通信损耗 2. 重绘回流； 经典面试题：插入几万个 DOM，如何实现页面不卡顿？  虚拟滚动（virtualized scroller）。 这种技术的原理就是只渲染可视区域内的内容，非可见区域的那就完全不渲染了，当用户在滚动的时候就实时去替换渲染的内容。清浮动? clearoverflow:hidden;溢出属性清除浮动带来的">
+<meta name="twitter:description" content="前端素养浏览器渲染原理- html为什么操作 DOM 慢1. 两个线程通信损耗 2. 重绘回流； 经典面试题：插入几万个 DOM，如何实现页面不卡顿？ 虚拟滚动（virtualized scroller）。 这种技术的原理就是只渲染可视区域内的内容，非可见区域的那就完全不渲染了，当用户在滚动的时候就实时去替换渲染的内容。">
 
 <link rel="canonical" href="yuwengeng.coding.me/hexo-blog/2019/10/12/My-web-interview/">
 
@@ -240,13 +240,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="前端素养"><a href="#前端素养" class="headerlink" title="前端素养"></a>前端素养</h1><hr>
-<h2 id="浏览器渲染原理"><a href="#浏览器渲染原理" class="headerlink" title="浏览器渲染原理"></a>浏览器渲染原理</h2><pre><code>- html</code></pre><h3 id="为什么操作-DOM-慢"><a href="#为什么操作-DOM-慢" class="headerlink" title="为什么操作 DOM 慢"></a>为什么操作 DOM 慢</h3><pre><code>1. 两个线程通信损耗
+        <h1 id="前端素养"><a href="#前端素养" class="headerlink" title="前端素养"></a>前端素养</h1><hr><h2 id="浏览器渲染原理"><a href="#浏览器渲染原理" class="headerlink" title="浏览器渲染原理"></a>浏览器渲染原理</h2><pre><code>- html</code></pre><h3 id="为什么操作-DOM-慢"><a href="#为什么操作-DOM-慢" class="headerlink" title="为什么操作 DOM 慢"></a>为什么操作 DOM 慢</h3><pre><code>1. 两个线程通信损耗
 2. 重绘回流；</code></pre><blockquote>
 <p>经典面试题：插入几万个 DOM，如何实现页面不卡顿？</p>
-</blockquote>
-<pre><code>虚拟滚动（virtualized scroller）。
-这种技术的原理就是只渲染可视区域内的内容，非可见区域的那就完全不渲染了，当用户在滚动的时候就实时去替换渲染的内容。</code></pre><h3 id="清浮动"><a href="#清浮动" class="headerlink" title="清浮动?"></a>清浮动?</h3><blockquote>
+</blockquote><pre><code>虚拟滚动（virtualized scroller）。
+这种技术的原理就是只渲染可视区域内的内容，非可见区域的那就完全不渲染了，当用户在滚动的时候就实时去替换渲染的内容。</code></pre><a id="more"></a>
+
+<h3 id="清浮动"><a href="#清浮动" class="headerlink" title="清浮动?"></a>清浮动?</h3><blockquote>
 <p>clear<br>overflow:hidden;溢出属性清除浮动带来的影响</p>
 </blockquote>
 <h3 id="过渡与动画区别？"><a href="#过渡与动画区别？" class="headerlink" title="过渡与动画区别？"></a>过渡与动画区别？</h3><blockquote>

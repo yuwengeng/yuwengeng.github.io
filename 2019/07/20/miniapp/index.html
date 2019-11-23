@@ -47,18 +47,18 @@
   };
 </script>
 
-  <meta name="description" content="小程序使用场景：1. 同App进行互补，提供同app类似的功能，比app操作更加简洁的轻应用 2. 用户使用频率不高，但又不得不用的功能软件. 只要在脚本注册过事件的回调函数，事件发生时就会进入”任务队列”，等待主线程读取。结构：入口文件——&amp;gt;一级页面——&amp;gt;二级页面。。。。 启动过程：　　项目的启动文件app.js        onLaunch()只加载一次,有三大功能: 浏览器缓存">
+  <meta name="description" content="小程序使用场景：1. 同App进行互补，提供同app类似的功能，比app操作更加简洁的轻应用 2. 用户使用频率不高，但又不得不用的功能软件.只要在脚本注册过事件的回调函数，事件发生时就会进入”任务队列”，等待主线程读取。结构：入口文件——&amp;gt;一级页面——&amp;gt;二级页面。。。。启动过程：　　项目的启动文件app.js        onLaunch()只加载一次,有三大功能: 浏览器缓存进行">
 <meta name="keywords" content="python 前端">
 <meta property="og:type" content="article">
 <meta property="og:title" content="中·庸">
 <meta property="og:url" content="yuwengeng.coding.me/hexo-blog/2019/07/20/miniapp/index.html">
 <meta property="og:site_name" content="中·庸">
-<meta property="og:description" content="小程序使用场景：1. 同App进行互补，提供同app类似的功能，比app操作更加简洁的轻应用 2. 用户使用频率不高，但又不得不用的功能软件. 只要在脚本注册过事件的回调函数，事件发生时就会进入”任务队列”，等待主线程读取。结构：入口文件——&amp;gt;一级页面——&amp;gt;二级页面。。。。 启动过程：　　项目的启动文件app.js        onLaunch()只加载一次,有三大功能: 浏览器缓存">
+<meta property="og:description" content="小程序使用场景：1. 同App进行互补，提供同app类似的功能，比app操作更加简洁的轻应用 2. 用户使用频率不高，但又不得不用的功能软件.只要在脚本注册过事件的回调函数，事件发生时就会进入”任务队列”，等待主线程读取。结构：入口文件——&amp;gt;一级页面——&amp;gt;二级页面。。。。启动过程：　　项目的启动文件app.js        onLaunch()只加载一次,有三大功能: 浏览器缓存进行">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-11-17T07:50:43.163Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="中·庸">
-<meta name="twitter:description" content="小程序使用场景：1. 同App进行互补，提供同app类似的功能，比app操作更加简洁的轻应用 2. 用户使用频率不高，但又不得不用的功能软件. 只要在脚本注册过事件的回调函数，事件发生时就会进入”任务队列”，等待主线程读取。结构：入口文件——&amp;gt;一级页面——&amp;gt;二级页面。。。。 启动过程：　　项目的启动文件app.js        onLaunch()只加载一次,有三大功能: 浏览器缓存">
+<meta name="twitter:description" content="小程序使用场景：1. 同App进行互补，提供同app类似的功能，比app操作更加简洁的轻应用 2. 用户使用频率不高，但又不得不用的功能软件.只要在脚本注册过事件的回调函数，事件发生时就会进入”任务队列”，等待主线程读取。结构：入口文件——&amp;gt;一级页面——&amp;gt;二级页面。。。。启动过程：　　项目的启动文件app.js        onLaunch()只加载一次,有三大功能: 浏览器缓存进行">
 
 <link rel="canonical" href="yuwengeng.coding.me/hexo-blog/2019/07/20/miniapp/">
 
@@ -241,9 +241,9 @@
 
       
         <h2 id="小程序使用场景："><a href="#小程序使用场景：" class="headerlink" title="小程序使用场景："></a>小程序使用场景：</h2><pre><code>1. 同App进行互补，提供同app类似的功能，比app操作更加简洁的轻应用
-2. 用户使用频率不高，但又不得不用的功能软件.</code></pre><hr>
-<p>只要在脚本注册过事件的回调函数，事件发生时就会进入”任务队列”，等待主线程读取。<br>结构：入口文件——&gt;一级页面——&gt;二级页面。。。。</p>
-<p><strong>启动过程：</strong><br>　　项目的启动文件app.js<br>        onLaunch()只加载一次,有三大功能: 浏览器缓存进行存取数据；用登陆成功的回调；获取用户信息<br>　　当 app.js 执行结束后，小程序会按照开发者在 app.json 中定义的 pages 的顺序，逐一执行</p>
+2. 用户使用频率不高，但又不得不用的功能软件.</code></pre><hr><p>只要在脚本注册过事件的回调函数，事件发生时就会进入”任务队列”，等待主线程读取。<br>结构：入口文件——&gt;一级页面——&gt;二级页面。。。。</p><p><strong>启动过程：</strong><br>　　项目的启动文件app.js<br>        onLaunch()只加载一次,有三大功能: 浏览器缓存进行存取数据；用登陆成功的回调；获取用户信息<br>　　当 app.js 执行结束后，小程序会按照开发者在 app.json 中定义的 pages 的顺序，逐一执行</p><a id="more"></a>
+
+
 <p>js：import ‘相对路径’<br>    App()函数不能注册多个 App的生命周期是由微信客户端根据用户操作主动触发的 通过getApp()获取<br>　　Page（）页面构造器，逻辑层通过 Page 实例（this）的 setData方法传递数据到渲染层setData（）传递数据实际是一个异步的过程，两个线程传输</p>
 <pre><code>作用域：获取 global 变量：var app = getApp()</code></pre><ul>
 <li><code>.json</code> 后缀的 JSON 配置文件</li>
