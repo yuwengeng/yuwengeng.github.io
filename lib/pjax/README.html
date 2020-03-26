@@ -44,7 +44,7 @@ npm run build</code></pre><p>and then link a script tag to either <code>pjax.js<
 
   <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"onDomReadystuff.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
   <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span>
-<span class="javascript">    <span class="comment">// analytics</span></span>
+<span class="undefined">    // analytics</span>
 <span class="undefined">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
 <span class="tag">&lt;/<span class="name">body</span>&gt;</span>
 <span class="tag">&lt;/<span class="name">html</span>&gt;</span></code></pre><p>We want Pjax to intercept the URL <code>/about</code>, and replace <code>.the-content</code> with the resulting content of the request.</p><p>It would also be nice if we could replace the <code>&lt;nav&gt;</code> to show that the <code>/about</code> link is active, as well as update our page meta and the <code>&lt;aside&gt;</code> sidebar.</p><p>So all in all we want to update the page title and meta, header, content area, and sidebar, <strong>without reloading styles or scripts</strong>.</p><p>We can easily do this by telling Pjax to listen on all <code>a</code> tags (which is the default) and use CSS selectors defined above (without forgetting minimal meta):</p><pre><code class="javascript"><span class="keyword">var</span> pjax = <span class="keyword">new</span> Pjax({
@@ -148,7 +148,7 @@ pjax.refresh(newContent);</code></pre><h3 id="reload"><a href="#reload" class="h
     }
   }
 })</code></pre><p><em>Note that <code>remove</code> includes <code>Animated--reverse</code> which is a simple way to not have to have a duplicate transition (slideIn + reverse =&gt; slideOut).</em></p><p>Here is some css that works well with the above configuration:</p><pre><code class="css"><span class="comment">/*</span>
-<span class="comment">  <span class="doctag">Note:</span> If your content elements don't have a fixed width it can cause</span>
+<span class="comment">  Note: If your content elements don't have a fixed width it can cause</span>
 <span class="comment">  an issue when positioning absolutely</span>
 <span class="comment">*/</span>
 <span class="selector-class">.js-Pjax</span> { <span class="attribute">position</span>: relative } <span class="comment">/* parent element where switch will be made */</span>
