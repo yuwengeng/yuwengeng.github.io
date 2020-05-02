@@ -1,6 +1,499 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2"><meta name="theme-color" content="#222"><meta name="generator" content="Hexo 3.9.0"><link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png"><link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png"><link rel="mask-icon" href="/images/logo.svg" color="#222"><link rel="alternate" href="/atom.xml" title="中·庸" type="application/atom+xml"><link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css"><script id="hexo-configurations">var NexT=window.NexT||{},CONFIG={hostname:new URL("https://zfa1h8.coding-pages.com").hostname,root:"/",scheme:"Muse",version:"7.5.0",exturl:!1,sidebar:{position:"right","Muse | Mist":320,display:"post",offset:12,onmobile:!0},copycode:{enable:!0,show_result:!0,style:null},back2top:{enable:!0,sidebar:!1,scrollpercent:!1},bookmark:{enable:!1,color:"#222",save:"auto"},fancybox:!1,mediumzoom:!1,lazyload:!1,pangu:!1,algolia:{appID:"",apiKey:"",indexName:"",hits:{per_page:10},labels:{input_placeholder:"Search for Posts",hits_empty:"We didn't find any results for the search: ${query}",hits_stats:"${hits} results found in ${time} ms"}},localsearch:{enable:!1,trigger:"auto",top_n_per_article:1,unescape:!1,preload:!1},path:"",motion:{enable:!1,async:!1,transition:{post_block:"fadeIn",post_header:"slideDownIn",post_body:"slideDownIn",coll_header:"slideLeftIn",sidebar:"slideUpIn"}},sidebarPadding:40}</script><meta name="description" content="Pipfile 文件中指定使用国内源锁定依赖pipenv install创建虚拟环境创建的虚拟环境默认会在~/.virtualenvs中 pipenv –venv查看虚拟环境位置Windows下pipenv将虚环境文件的位置设置在项目根目录下: 新建一个名为“ WORKON_HOME ”值为“ PIPENV_VENV_IN_PROJECT ”"><meta name="keywords" content="随笔"><meta property="og:type" content="article"><meta property="og:title" content="python配置"><meta property="og:url" content="https://zfa1h8.coding-pages.com/2019/10/11/随笔/index.html"><meta property="og:site_name" content="中·庸"><meta property="og:description" content="Pipfile 文件中指定使用国内源锁定依赖pipenv install创建虚拟环境创建的虚拟环境默认会在~/.virtualenvs中 pipenv –venv查看虚拟环境位置Windows下pipenv将虚环境文件的位置设置在项目根目录下: 新建一个名为“ WORKON_HOME ”值为“ PIPENV_VENV_IN_PROJECT ”"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://images2017.cnblogs.com/blog/425762/201708/425762-20170811093733792-860907399.png"><meta property="og:image" content="https://images2017.cnblogs.com/blog/1184802/201712/1184802-20171205173434550-1731600766.png"><meta property="og:updated_time" content="2020-04-16T09:25:27.006Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="python配置"><meta name="twitter:description" content="Pipfile 文件中指定使用国内源锁定依赖pipenv install创建虚拟环境创建的虚拟环境默认会在~/.virtualenvs中 pipenv –venv查看虚拟环境位置Windows下pipenv将虚环境文件的位置设置在项目根目录下: 新建一个名为“ WORKON_HOME ”值为“ PIPENV_VENV_IN_PROJECT ”"><meta name="twitter:image" content="https://images2017.cnblogs.com/blog/425762/201708/425762-20170811093733792-860907399.png"><link rel="canonical" href="https://zfa1h8.coding-pages.com/2019/10/11/随笔/"><script id="page-configurations">CONFIG.page={sidebar:"",isHome:!1,isPost:!0,isPage:!1,isArchive:!1}</script><title>python配置 | 中·庸</title><noscript><style>.sidebar-inner,.use-motion .brand,.use-motion .collection-header,.use-motion .comments,.use-motion .menu-item,.use-motion .pagination,.use-motion .post-block,.use-motion .post-body,.use-motion .post-header{opacity:initial}.use-motion .site-subtitle,.use-motion .site-title{opacity:initial;top:initial}.use-motion .logo-line-before i{left:initial}.use-motion .logo-line-after i{right:initial}</style></noscript></head><body itemscope itemtype="http://schema.org/WebPage"><div class="container"><div class="headband"></div><header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="header-inner"><div class="site-brand-container"><div class="site-meta"><div><a href="/" class="brand" rel="start"><span class="logo-line-before"><i></i></span> <span class="site-title">中·庸</span> <span class="logo-line-after"><i></i></span></a></div><p class="site-subtitle">斯人若彩虹，遇上方知有</p></div><div class="site-nav-toggle"><div class="toggle" aria-label="切换导航栏"><span class="toggle-line toggle-line-first"></span> <span class="toggle-line toggle-line-middle"></span> <span class="toggle-line toggle-line-last"></span></div></div></div><nav class="site-nav"><ul id="menu" class="menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">10</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">10</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">10</span></a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a></li></ul></nav></div></header><div class="back-to-top"><i class="fa fa-arrow-up"></i> <span>0%</span></div><main class="main"><div class="main-inner"><div class="content-wrap"><div class="content"><div class="posts-expand"><article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN"><link itemprop="mainEntityOfPage" href="https://zfa1h8.coding-pages.com/2019/10/11/随笔/"><span hidden itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="image" content="/images/avatar.gif"><meta itemprop="name" content="zhiheng"><meta itemprop="description" content="programming and life"></span><span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="中·庸"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">python配置</h1><div class="post-meta"><span class="post-meta-item"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i> </span><span class="post-meta-item-text">发表于</span> <time title="创建时间：2019-10-11 23:32:20" itemprop="dateCreated datePublished" datetime="2019-10-11T23:32:20+08:00">2019-10-11</time> </span><span class="post-meta-item"><span class="post-meta-item-icon"><i class="fa fa-calendar-check-o"></i> </span><span class="post-meta-item-text">更新于</span> <time title="修改时间：2020-04-16 17:25:27" itemprop="dateModified" datetime="2020-04-16T17:25:27+08:00">2020-04-16</time> </span><span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display:none"><span class="post-meta-item-icon"><i class="fa fa-eye"></i> </span><span class="post-meta-item-text">阅读次数：</span> <span id="busuanzi_value_page_pv"></span></span></div></header><div class="post-body" itemprop="articleBody"><p>Pipfile 文件中指定使用国内源锁定依赖</p><p><code>pipenv install</code>创建虚拟环境<br>创建的虚拟环境默认会在~/.virtualenvs中 pipenv –venv查看虚拟环境位置<br>Windows下pipenv将虚环境文件的位置设置在项目根目录下: 新建一个名为“ WORKON_HOME ”值为“ PIPENV_VENV_IN_PROJECT ”</p><a id="more"></a><p>pipenv –python 3.7 #指定使用Python3.6的虚拟环境</p><pre><code>在项目目录执行 pipenv install xxx
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="alternate" href="/atom.xml" title="中·庸" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://ywg.imfast.io').hostname,
+    root: '/',
+    scheme: 'Muse',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"right","Muse | Mist":320,"display":"post","offset":12,"onmobile":true},
+    copycode: {"enable":true,"show_result":true,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="Pipfile 文件中指定使用国内源锁定依赖pipenv install创建虚拟环境    创建的虚拟环境默认会在~/.virtualenvs中  pipenv –venv查看虚拟环境位置    Windows下pipenv将虚环境文件的位置设置在项目根目录下: 新建一个名为“ WORKON_HOME ”值为“ PIPENV_VENV_IN_PROJECT ”">
+<meta name="keywords" content="随笔">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python配置">
+<meta property="og:url" content="https://ywg.imfast.io/2019/10/11/随笔/index.html">
+<meta property="og:site_name" content="中·庸">
+<meta property="og:description" content="Pipfile 文件中指定使用国内源锁定依赖pipenv install创建虚拟环境    创建的虚拟环境默认会在~/.virtualenvs中  pipenv –venv查看虚拟环境位置    Windows下pipenv将虚环境文件的位置设置在项目根目录下: 新建一个名为“ WORKON_HOME ”值为“ PIPENV_VENV_IN_PROJECT ”">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://images2017.cnblogs.com/blog/425762/201708/425762-20170811093733792-860907399.png">
+<meta property="og:image" content="https://images2017.cnblogs.com/blog/1184802/201712/1184802-20171205173434550-1731600766.png">
+<meta property="og:updated_time" content="2020-04-16T09:25:27.006Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python配置">
+<meta name="twitter:description" content="Pipfile 文件中指定使用国内源锁定依赖pipenv install创建虚拟环境    创建的虚拟环境默认会在~/.virtualenvs中  pipenv –venv查看虚拟环境位置    Windows下pipenv将虚环境文件的位置设置在项目根目录下: 新建一个名为“ WORKON_HOME ”值为“ PIPENV_VENV_IN_PROJECT ”">
+<meta name="twitter:image" content="https://images2017.cnblogs.com/blog/425762/201708/425762-20170811093733792-860907399.png">
+
+<link rel="canonical" href="https://ywg.imfast.io/2019/10/11/随笔/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>python配置 | 中·庸</title>
+  
+
+
+  <script pjax>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?5b0bac5c2f7738d023171c65307bcc43";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">中·庸</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">斯人若彩虹，遇上方知有</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">10</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">10</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">10</span></a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://ywg.imfast.io/2019/10/11/随笔/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="zhiheng">
+      <meta itemprop="description" content="programming and life">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="中·庸">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          python配置
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-10-11 23:32:20" itemprop="dateCreated datePublished" datetime="2019-10-11T23:32:20+08:00">2019-10-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-16 17:25:27" itemprop="dateModified" datetime="2020-04-16T17:25:27+08:00">2020-04-16</time>
+              </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>Pipfile 文件中指定使用国内源锁定依赖</p><p><code>pipenv install</code>创建虚拟环境<br>    创建的虚拟环境默认会在~/.virtualenvs中  pipenv –venv查看虚拟环境位置<br>    Windows下pipenv将虚环境文件的位置设置在项目根目录下: 新建一个名为“ WORKON_HOME ”值为“ PIPENV_VENV_IN_PROJECT ” </p><a id="more"></a>
+<!-- 阿里云：https://mirrors.aliyun.com/pypi/simple/   平均 = 7ms
+豆瓣：http://pypi.douban.com/simple/                   平均 = 37ms
+清华大学：https://pypi.tuna.tsinghua.edu.cn/simple/     平均 = 47ms
+中科大：https://pypi.mirrors.ustc.edu.cn/simple/        平均 = 38ms -->
+
+
+<p>pipenv –python 3.7 #指定使用Python3.6的虚拟环境</p>
+<pre><code>在项目目录执行 pipenv install xxx
           pipenv graph       #显示现有的依赖包
-          pipenv update      #更新项目中所有的包</code></pre><p>激活虚拟环境<code>pipenv shell</code></p><blockquote><p>对一个新项目来说，你不必手动创建虚拟环境。当使用pipenv install xxx直接安装依赖包时，如果当前目录不包含虚拟环境，Pipenv会自动创建一个</p></blockquote><h3 id="在部署环境安装依赖1"><a href="#在部署环境安装依赖1" class="headerlink" title="在部署环境安装依赖1"></a>在部署环境安装依赖1</h3><p>(venv)$ pip install -r requirements.txt # 安装requirement.txt中记录的依赖<br>使用Pipenv则只需要执行pipenv install，它会自动安装Pipfile中记录的依赖：</p><h3 id="开发依赖"><a href="#开发依赖" class="headerlink" title="开发依赖"></a>开发依赖</h3><p><code>pip freeze &gt; requirements.txt</code><br><code>$ pipenv install pytest --dev</code>Pipenv会自动帮你管理依赖<br>初始开发环境安装依赖时，也只需要在pipenv install命令后添加–dev选项即可一并安装开发依赖：</p><blockquote><p>Pipenv甚至提供了读取和生成requirements.txt文件的功能（在使用pipenv install命令时它会自动读取requirements.txt文件安装依赖并生成Pipfile文件）</p></blockquote><ul><li>项目目录下或python安装文件下: pip freeze &gt; requirements.txt<pre><code>pip install -r requirements.txt</code></pre>pip换源:</li></ul><ol><li>%appdata%进入文件夹</li><li>命令行pip config set global.index-url ‘<a href="https://pypi.douban.com/simple&#39;" target="_blank" rel="noopener">https://pypi.douban.com/simple&#39;</a><br>pip config set global.index-url <a href="http://mirrors.aliyun.com/pypi/simple/" target="_blank" rel="noopener">http://mirrors.aliyun.com/pypi/simple/</a><br>pip config set install.trusted-host mirrors.aliyun.com<br>pip config set install.trusted-host ‘<a href="https://pypi.douban.com&#39;" target="_blank" rel="noopener">https://pypi.douban.com&#39;</a></li></ol><p>pyenv使用:</p><ul><li><p>pyenv rehash 更新</p></li><li><p>pyenv versions 查看当前系统中包含的python 版本<br>通过pyenv global 选择 不同的python 版本： python global 3.6.0</p></li><li><p>pyenv shell 通过设置当前 shell 的 PYENV_VERSION</p></li><li><p>pyenv local 2.7.15<br>local命令用来管理Python版本，切换当前目录及其子目录的Python版本， 可以通过删除.python-version文件恢复默认Python版本。</p><blockquote><p>This command creates a .python-version file in your current directory. If you have pyenv active in your environment, this file will automatically activate this version for you.</p></blockquote></li></ul><p>pip show<br>pip freeze &gt; requirements.txt 生成requirements文件<br>pip install -r requirements.txt<br>python查看模块： help（）<br>pip list –outdate #查看哪些包有更新：<br>pip install –upgrade requests // mac,linux,unix 在命令前加 sudo -H 升级一个包：</p><p>一键搭建Http服务器<br>快速且简单地共享一个目录中的文件<br>python -m http.server 8000</p><h2 id="git"><a href="#git" class="headerlink" title="git:"></a>git:</h2><p>git实战[<a href="https://www.cnblogs.com/zmc940317/p/10543160.html#_label1]" target="_blank" rel="noopener">https://www.cnblogs.com/zmc940317/p/10543160.html#_label1]</a><br>git协同开发：[<a href="https://www.cnblogs.com/zmc940317/p/10543175.html]" target="_blank" rel="noopener">https://www.cnblogs.com/zmc940317/p/10543175.html]</a></p><p><img src="https://images2017.cnblogs.com/blog/425762/201708/425762-20170811093733792-860907399.png" alt="Git把管理的文件分为了两个区域四个状态"></p><p><img src="https://images2017.cnblogs.com/blog/1184802/201712/1184802-20171205173434550-1731600766.png" alt></p><p>ipconfig /flushdns 刷新 DNS 解析缓存</p><p>生成ssh：<br>ssh-keygen -t rsa -C “对应邮箱” -f ~/.ssh/文件名<br>测试:<br>host: git.coding.net<br>ssh -T <a href="mailto:git@git.dev.tencent.com" target="_blank" rel="noopener">git@git.dev.tencent.com</a><br>ssh -T <a href="mailto:git@gitee.com" target="_blank" rel="noopener">git@gitee.com</a> 绑定码云测试</p><h2 id="码云Pages"><a href="#码云Pages" class="headerlink" title="码云Pages"></a><a href="https://gitee.com/help/articles/4136#article-header02" target="_blank" rel="noopener">码云Pages</a></h2><p>2020.4.7</p><p><strong>把时间留给自己,重新掌握生活</strong></p><ol><li>断舍离: anything,</li><li>适应慢节奏</li></ol></div><footer class="post-footer"><div class="post-tags"><a href="/tags/随笔/" rel="tag"># 随笔</a></div><div class="post-nav"><div class="post-nav-item"><a href="/2019/07/20/miniapp/" rel="prev"><i class="fa fa-chevron-left"></i></a></div><div class="post-nav-item"><a href="/2019/11/23/语录/" rel="next" title="语录">语录 <i class="fa fa-chevron-right"></i></a></div></div></footer></article></div></div><div class="comments" id="gitalk-container"></div></div><div class="toggle sidebar-toggle"><span class="toggle-line toggle-line-first"></span> <span class="toggle-line toggle-line-middle"></span> <span class="toggle-line toggle-line-last"></span></div><aside class="sidebar"><div class="sidebar-inner"><ul class="sidebar-nav motion-element"><li class="sidebar-nav-toc">文章目录</li><li class="sidebar-nav-overview">站点概览</li></ul><div class="post-toc-wrap sidebar-panel"><div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#在部署环境安装依赖1"><span class="nav-number">1.</span> <span class="nav-text">在部署环境安装依赖1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开发依赖"><span class="nav-number">2.</span> <span class="nav-text">开发依赖</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#git"><span class="nav-number"></span> <span class="nav-text">git:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#码云Pages"><span class="nav-number"></span> <span class="nav-text">码云Pages</span></a></li></div></div><div class="site-overview-wrap sidebar-panel"><div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person"><p class="site-author-name" itemprop="name">zhiheng</p><div class="site-description" itemprop="description">programming and life</div></div><div class="site-state-wrap motion-element"><nav class="site-state"><div class="site-state-item site-state-posts"><a href="/archives/"><span class="site-state-item-count">10</span> <span class="site-state-item-name">日志</span></a></div><div class="site-state-item site-state-categories"><a href="/categories/"><span class="site-state-item-count">10</span> <span class="site-state-item-name">分类</span></a></div><div class="site-state-item site-state-tags"><a href="/tags/"><span class="site-state-item-count">10</span> <span class="site-state-item-name">标签</span></a></div></nav></div><div class="feed-link motion-element"><a href="/atom.xml" rel="alternate"><i class="fa fa-rss"></i>RSS</a></div><div class="links-of-author motion-element"><span class="links-of-author-item"><a href="https://github.com/yuwengeng" title="GitHub → https://github.com/yuwengeng" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a> </span><span class="links-of-author-item"><a href="https://www.cnblogs.com/yuwengeng/" title="博客园 → https://www.cnblogs.com/yuwengeng/" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>博客园</a> </span><span class="links-of-author-item"><a href="mailto:yuwenzhiheng95@gmail.com" title="E-Mail → mailto:yuwenzhiheng95@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a> </span><span class="links-of-author-item"><a href="https://weibo.com/yourname" title="Weibo → https://weibo.com/yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a> </span><span class="links-of-author-item"><a href="https://twitter.com/yourname" title="Twitter → https://twitter.com/yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a> </span><span class="links-of-author-item"><a href="https://instagram.com/yourname" title="Instagram → https://instagram.com/yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a></span></div></div></div></aside><div id="sidebar-dimmer"></div></div></main><footer class="footer"><div class="footer-inner"><div class="copyright">&copy; <span itemprop="copyrightYear">2020</span> <span class="with-love"><i class="fa fa-heart"></i> </span><span class="author" itemprop="copyrightHolder">zhiheng</span></div><div class="busuanzi-count"><script pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span class="post-meta-item" id="busuanzi_container_site_uv" style="display:none"><span class="post-meta-item-icon"><i class="fa fa-user"></i> </span><span class="site-uv" title="总访客量"><span id="busuanzi_value_site_uv"></span> </span></span><span class="post-meta-divider">|</span> <span class="post-meta-item" id="busuanzi_container_site_pv" style="display:none"><span class="post-meta-item-icon"><i class="fa fa-eye"></i> </span><span class="site-pv" title="总访问量"><span id="busuanzi_value_site_pv"></span></span></span></div></div></footer></div><script src="//cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script><script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script><script src="/js/utils.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script>var pjax = new Pjax({
+          pipenv update      #更新项目中所有的包</code></pre><p>激活虚拟环境<code>pipenv shell</code>   <!-- exit退出环境 --></p>
+<blockquote>
+<p>对一个新项目来说，你不必手动创建虚拟环境。当使用pipenv install xxx直接安装依赖包时，如果当前目录不包含虚拟环境，Pipenv会自动创建一个</p>
+</blockquote>
+<h3 id="在部署环境安装依赖1"><a href="#在部署环境安装依赖1" class="headerlink" title="在部署环境安装依赖1"></a>在部署环境安装依赖1</h3><p>(venv)$ pip install -r requirements.txt # 安装requirement.txt中记录的依赖<br>使用Pipenv则只需要执行pipenv install，它会自动安装Pipfile中记录的依赖：</p>
+<h3 id="开发依赖"><a href="#开发依赖" class="headerlink" title="开发依赖"></a>开发依赖</h3><p><code>pip freeze &gt; requirements.txt</code><br><code>$ pipenv install pytest --dev</code>Pipenv会自动帮你管理依赖<br>初始开发环境安装依赖时，也只需要在pipenv install命令后添加–dev选项即可一并安装开发依赖：</p>
+<blockquote>
+<p>Pipenv甚至提供了读取和生成requirements.txt文件的功能（在使用pipenv install命令时它会自动读取requirements.txt文件安装依赖并生成Pipfile文件）</p>
+</blockquote>
+<ul>
+<li>项目目录下或python安装文件下: pip freeze &gt; requirements.txt<pre><code>pip install -r requirements.txt</code></pre>pip换源:</li>
+</ul>
+<ol>
+<li>%appdata%进入文件夹</li>
+<li>命令行pip config set global.index-url ‘<a href="https://pypi.douban.com/simple&#39;" target="_blank" rel="noopener">https://pypi.douban.com/simple&#39;</a><br>pip config set global.index-url <a href="http://mirrors.aliyun.com/pypi/simple/" target="_blank" rel="noopener">http://mirrors.aliyun.com/pypi/simple/</a><br>pip config set install.trusted-host mirrors.aliyun.com<br>pip config set install.trusted-host ‘<a href="https://pypi.douban.com&#39;" target="_blank" rel="noopener">https://pypi.douban.com&#39;</a></li>
+</ol>
+<p>pyenv使用:</p>
+<ul>
+<li><p>pyenv rehash 更新</p>
+</li>
+<li><p>pyenv versions  查看当前系统中包含的python 版本<br>通过pyenv global  选择 不同的python 版本： python global 3.6.0</p>
+</li>
+<li><p>pyenv shell 通过设置当前 shell 的 PYENV_VERSION</p>
+</li>
+<li><p>pyenv local 2.7.15<br>local命令用来管理Python版本，切换当前目录及其子目录的Python版本， 可以通过删除.python-version文件恢复默认Python版本。</p>
+<blockquote>
+<p>This command creates a .python-version file in your current directory. If you have pyenv active in your environment, this file will automatically activate this version for you.</p>
+</blockquote>
+</li>
+</ul>
+<p>pip show<br>pip freeze &gt; requirements.txt  生成requirements文件<br>pip install -r requirements.txt<br>python查看模块： help（）<br>pip list –outdate #查看哪些包有更新：<br>pip install –upgrade requests  // mac,linux,unix 在命令前加 sudo -H  升级一个包：</p>
+<p>一键搭建Http服务器<br>快速且简单地共享一个目录中的文件<br>python -m http.server 8000</p>
+<h2 id="git"><a href="#git" class="headerlink" title="git:"></a>git:</h2><p>git实战[<a href="https://www.cnblogs.com/zmc940317/p/10543160.html#_label1]" target="_blank" rel="noopener">https://www.cnblogs.com/zmc940317/p/10543160.html#_label1]</a><br>git协同开发：[<a href="https://www.cnblogs.com/zmc940317/p/10543175.html]" target="_blank" rel="noopener">https://www.cnblogs.com/zmc940317/p/10543175.html]</a></p>
+<p><img src="https://images2017.cnblogs.com/blog/425762/201708/425762-20170811093733792-860907399.png" alt="Git把管理的文件分为了两个区域四个状态"></p>
+<p><img src="https://images2017.cnblogs.com/blog/1184802/201712/1184802-20171205173434550-1731600766.png" alt></p>
+<p>ipconfig /flushdns 刷新 DNS 解析缓存</p>
+<p>生成ssh：<br>ssh-keygen -t rsa -C “对应邮箱” -f ~/.ssh/文件名<br>测试:<br>host: git.coding.net<br>ssh -T <a href="mailto:git@git.dev.tencent.com" target="_blank" rel="noopener">git@git.dev.tencent.com</a><br>ssh -T <a href="mailto:git@gitee.com" target="_blank" rel="noopener">git@gitee.com</a> 绑定码云测试</p>
+<h2 id="码云Pages"><a href="#码云Pages" class="headerlink" title="码云Pages"></a><a href="https://gitee.com/help/articles/4136#article-header02" target="_blank" rel="noopener">码云Pages</a></h2><p>2020.4.7</p>
+<p> <strong>把时间留给自己,重新掌握生活</strong></p>
+<ol>
+<li>断舍离: anything,</li>
+<li>适应慢节奏</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/随笔/" rel="tag"># 随笔</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/07/20/miniapp/" rel="prev" title="">
+      <i class="fa fa-chevron-left"></i> 
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/11/23/语录/" rel="next" title="语录">
+      语录 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#在部署环境安装依赖1"><span class="nav-number">1.</span> <span class="nav-text">在部署环境安装依赖1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开发依赖"><span class="nav-number">2.</span> <span class="nav-text">开发依赖</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git"><span class="nav-number"></span> <span class="nav-text">git:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#码云Pages"><span class="nav-number"></span> <span class="nav-text">码云Pages</span></a></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">zhiheng</p>
+  <div class="site-description" itemprop="description">programming and life</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/yuwengeng" title="GitHub → https://github.com/yuwengeng" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.cnblogs.com/yuwengeng/" title="博客园 → https://www.cnblogs.com/yuwengeng/" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>博客园</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yuwenzhiheng95@gmail.com" title="E-Mail → mailto:yuwenzhiheng95@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/yourname" title="Weibo → https://weibo.com/yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/yourname" title="Twitter → https://twitter.com/yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/yourname" title="Instagram → https://instagram.com/yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zhiheng</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
+<script src="/js/utils.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+  <script>
+var pjax = new Pjax({
   selectors: [
     'head title',
     '#page-configurations',
@@ -53,7 +546,38 @@ window.addEventListener('pjax:success', () => {
       .bootstrap();
   }
   NexT.utils.updateSidebarPosition();
-});</script><div id="pjax"><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css"><script>NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+});
+</script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
     var gitalk = new Gitalk({
       clientID: '24ef63b5f7c6e9d3a198',
       clientSecret: '5cceec5609a0910c5f361eaaefdbe57ae7c5d359',
@@ -65,4 +589,9 @@ window.addEventListener('pjax:success', () => {
       distractionFreeMode: 'true'
     });
     gitalk.render('gitalk-container');
-  }, window.Gitalk);</script></div></body></html>
+  }, window.Gitalk);
+</script>
+
+    </div>
+</body>
+</html>
