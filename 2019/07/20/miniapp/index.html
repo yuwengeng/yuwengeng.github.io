@@ -9,56 +9,29 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <link rel="alternate" href="/atom.xml" title="中·庸" type="application/atom+xml">
 
 <link rel="stylesheet" href="/css/main.css">
 
 
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
-
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
 
 <script id="hexo-configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    hostname: new URL('https://ywg.imfast.io').hostname,
-    root: '/',
-    scheme: 'Muse',
-    version: '7.5.0',
-    exturl: false,
-    sidebar: {"position":"right","Muse | Mist":320,"display":"post","offset":12,"onmobile":true},
-    copycode: {"enable":true,"show_result":true,"style":null},
-    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
-    bookmark: {"enable":false,"color":"#222","save":"auto"},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
-    algolia: {
-      appID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    },
-    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: '',
-    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    sidebarPadding: 40
-  };
-</script>
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"ywg.imfast.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","Muse | Mist":320,"display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
 
-  <meta name="description" content="小程序使用场景：1. 同App进行互补，提供同app类似的功能，比app操作更加简洁的轻应用 2. 用户使用频率不高，但又不得不用的功能软件. 小程序 =&amp;gt; 相当于单页应用app">
+  <meta name="description" content="小程序使用场景：1. 同App进行互补，提供同app类似的功能，比app操作更加简洁的轻应用 2. 用户使用频率不高，但又不得不用的功能软件. 小程序 =&amp;gt; 相当于单页应用app 结构：入口文件——&amp;gt;一级页面——&amp;gt;二级页面。。。。 启动过程：　　项目的启动根文件app.js        生命周期: onLaunch()只加载一次,有三大功能: 浏览器缓存进行存取数据；用登陆成功">
 <meta name="keywords" content="python 前端">
 <meta property="og:type" content="article">
 <meta property="og:title" content="中·庸">
 <meta property="og:url" content="https://ywg.imfast.io/2019/07/20/miniapp/index.html">
 <meta property="og:site_name" content="中·庸">
-<meta property="og:description" content="小程序使用场景：1. 同App进行互补，提供同app类似的功能，比app操作更加简洁的轻应用 2. 用户使用频率不高，但又不得不用的功能软件. 小程序 =&amp;gt; 相当于单页应用app">
+<meta property="og:description" content="小程序使用场景：1. 同App进行互补，提供同app类似的功能，比app操作更加简洁的轻应用 2. 用户使用频率不高，但又不得不用的功能软件. 小程序 =&amp;gt; 相当于单页应用app 结构：入口文件——&amp;gt;一级页面——&amp;gt;二级页面。。。。 启动过程：　　项目的启动根文件app.js        生命周期: onLaunch()只加载一次,有三大功能: 浏览器缓存进行存取数据；用登陆成功">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2020-04-04T04:00:22.954Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="中·庸">
-<meta name="twitter:description" content="小程序使用场景：1. 同App进行互补，提供同app类似的功能，比app操作更加简洁的轻应用 2. 用户使用频率不高，但又不得不用的功能软件. 小程序 =&amp;gt; 相当于单页应用app">
+<meta name="twitter:description" content="小程序使用场景：1. 同App进行互补，提供同app类似的功能，比app操作更加简洁的轻应用 2. 用户使用频率不高，但又不得不用的功能软件. 小程序 =&amp;gt; 相当于单页应用app 结构：入口文件——&amp;gt;一级页面——&amp;gt;二级页面。。。。 启动过程：　　项目的启动根文件app.js        生命周期: onLaunch()只加载一次,有三大功能: 浏览器缓存进行存取数据；用登陆成功">
 
 <link rel="canonical" href="https://ywg.imfast.io/2019/07/20/miniapp/">
 
@@ -67,10 +40,9 @@
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: false,
-    isPost: true,
-    isPage: false,
-    isArchive: false
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
   };
 </script>
 
@@ -78,7 +50,7 @@
   
 
 
-  <script pjax>
+  <script data-pjax>
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
@@ -122,18 +94,6 @@
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
-  <div class="site-meta">
-
-    <div>
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">中·庸</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-        <p class="site-subtitle">斯人若彩虹，遇上方知有</p>
-  </div>
-
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏">
       <span class="toggle-line toggle-line-first"></span>
@@ -141,40 +101,59 @@
       <span class="toggle-line toggle-line-last"></span>
     </div>
   </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">中·庸</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">斯人若彩虹，遇上方知有</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
 </div>
 
 
+
+
 <nav class="site-nav">
-  
-  <ul id="menu" class="menu">
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">10</span></a>
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签<span class="badge">9</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">10</span></a>
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类<span class="badge">10</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">10</span></a>
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">10</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+    <a href="/about/" rel="section"><i class="user fa-fw"></i>关于</a>
 
   </li>
   </ul>
-
 </nav>
+
+
+
+
 </div>
     </header>
 
@@ -190,14 +169,13 @@
         <div class="content-wrap">
           
 
-          <div class="content">
+          <div class="content post posts-expand">
             
 
-  <div class="posts-expand">
-      
+    
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://ywg.imfast.io/2019/07/20/miniapp/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -217,7 +195,7 @@
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
 
@@ -225,7 +203,7 @@
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
                 <time title="修改时间：2020-04-04 12:00:22" itemprop="dateModified" datetime="2020-04-04T12:00:22+08:00">2020-04-04</time>
@@ -251,7 +229,7 @@
       
         <h2 id="小程序使用场景："><a href="#小程序使用场景：" class="headerlink" title="小程序使用场景："></a>小程序使用场景：</h2><pre><code>1. 同App进行互补，提供同app类似的功能，比app操作更加简洁的轻应用
 2. 用户使用频率不高，但又不得不用的功能软件.
-小程序 =&gt; 相当于单页应用app</code></pre><a id="more"></a><hr>
+小程序 =&gt; 相当于单页应用app</code></pre><hr>
 <p>结构：入口文件——&gt;一级页面——&gt;二级页面。。。。</p>
 <p><strong>启动过程：</strong><br>　　项目的启动根文件app.js<br>        生命周期: onLaunch()只加载一次,有三大功能: 浏览器缓存进行存取数据；用登陆成功的回调；获取用户信息<br>　　当 app.js 执行结束后，小程序会按照开发者在 app.json 中定义的 pages 的顺序，逐一执行</p>
 <p>js：模块化 import ‘相对路径’<br>    App()函数不能注册多个 App的生命周期是由微信客户端根据用户操作主动触发控制的 通过getApp()获取<br>        获取小程序的global 变量：var app = getApp()</p>
@@ -369,8 +347,8 @@ picker——选择器 --&gt;</code></pre><!-- 　　　　mode：日期data，�
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2018/11/26/Google搜索/" rel="prev" title="Google搜索">
-      <i class="fa fa-chevron-left"></i> Google搜索
+    <a href="/2018/11/26/Scrapy/" rel="prev" title="Scrapy框架">
+      <i class="fa fa-chevron-left"></i> Scrapy框架
     </a></div>
       <div class="post-nav-item">
     <a href="/2019/10/11/随笔/" rel="next" title="python配置">
@@ -384,12 +362,33 @@ picker——选择器 --&gt;</code></pre><!-- 　　　　mode：日期data，�
   
   
 
-  </div>
 
 
           </div>
           
     <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
         </div>
           
@@ -441,34 +440,29 @@ picker——选择器 --&gt;</code></pre><!-- 　　　　mode：日期data，�
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
-  <div class="feed-link motion-element">
-    <a href="/atom.xml" rel="alternate">
-      <i class="fa fa-rss"></i>RSS
-    </a>
-  </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/yuwengeng" title="GitHub → https://github.com/yuwengeng" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/yuwengeng" title="GitHub → https://github.com/yuwengeng" rel="noopener" target="_blank"><i class="github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.cnblogs.com/yuwengeng/" title="博客园 → https://www.cnblogs.com/yuwengeng/" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>博客园</a>
+        <a href="https://www.cnblogs.com/yuwengeng/" title="博客园 → https://www.cnblogs.com/yuwengeng/" rel="noopener" target="_blank"><i class="globe fa-fw"></i>博客园</a>
       </span>
       <span class="links-of-author-item">
-        <a href="mailto:yuwenzhiheng95@gmail.com" title="E-Mail → mailto:yuwenzhiheng95@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+        <a href="mailto:yuwenzhiheng95@gmail.com" title="E-Mail → mailto:yuwenzhiheng95@gmail.com" rel="noopener" target="_blank"><i class="envelope fa-fw"></i>E-Mail</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://weibo.com/yourname" title="Weibo → https://weibo.com/yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+        <a href="https://weibo.com/yourname" title="Weibo → https://weibo.com/yourname" rel="noopener" target="_blank"><i class="weibo fa-fw"></i>Weibo</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://twitter.com/yourname" title="Twitter → https://twitter.com/yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+        <a href="https://twitter.com/yourname" title="Twitter → https://twitter.com/yourname" rel="noopener" target="_blank"><i class="twitter fa-fw"></i>Twitter</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://instagram.com/yourname" title="Instagram → https://instagram.com/yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+        <a href="https://instagram.com/yourname" title="Instagram → https://instagram.com/yourname" rel="noopener" target="_blank"><i class="instagram fa-fw"></i>Instagram</a>
       </span>
   </div>
 
@@ -488,19 +482,23 @@ picker——选择器 --&gt;</code></pre><!-- 　　　　mode：日期data，�
       <div class="footer-inner">
         
 
+        
+
 <div class="copyright">
   
   &copy; 
   <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
-    <i class="fa fa-heart"></i>
+    <i class="heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">zhiheng</span>
 </div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
 
         
 <div class="busuanzi-count">
-  <script pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
       <span class="post-meta-item-icon">
         <i class="fa fa-user"></i>
@@ -527,7 +525,6 @@ picker——选择器 --&gt;</code></pre><!-- 　　　　mode：日期data，�
 
 
 
-        
       </div>
     </footer>
   </div>
@@ -545,6 +542,7 @@ var pjax = new Pjax({
     '#page-configurations',
     '.content-wrap',
     '.post-toc-wrap',
+    '.languages',
     '#pjax'
   ],
   switches: {
@@ -556,7 +554,7 @@ var pjax = new Pjax({
 });
 
 window.addEventListener('pjax:success', () => {
-  document.querySelectorAll('script[pjax], script#page-configurations, #pjax script').forEach(element => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
     var code = element.text || element.textContent || element.innerHTML || '';
     var parent = element.parentNode;
     parent.removeChild(element);
@@ -575,8 +573,8 @@ window.addEventListener('pjax:success', () => {
       // Force synchronous loading of peripheral JS.
       script.async = false;
     }
-    if (element.getAttribute('pjax') !== null) {
-      element.setAttribute('pjax', '');
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
     }
     if (code !== '') {
       script.appendChild(document.createTextNode(code));
@@ -588,6 +586,7 @@ window.addEventListener('pjax:success', () => {
   if (CONFIG.motion.enable) {
     NexT.motion.integrator
       .init()
+      .add(NexT.motion.middleWares.subMenu)
       .add(NexT.motion.middleWares.postList)
       .bootstrap();
   }
@@ -615,7 +614,6 @@ window.addEventListener('pjax:success', () => {
 
 
     <div id="pjax">
-
   
 
   
@@ -623,19 +621,21 @@ window.addEventListener('pjax:success', () => {
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
 
 <script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
   NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
     var gitalk = new Gitalk({
-      clientID: '24ef63b5f7c6e9d3a198',
+      clientID    : '24ef63b5f7c6e9d3a198',
       clientSecret: '5cceec5609a0910c5f361eaaefdbe57ae7c5d359',
-      repo: 'yuwengeng.github.io',
-      owner: 'yuwengeng',
-      admin: ['yuwengeng'],
-      id: '094a1e847a4de7433e3a4f0d5e5ba0fa',
+      repo        : 'yuwengeng.github.io',
+      owner       : 'yuwengeng',
+      admin       : ['yuwengeng'],
+      id          : '094a1e847a4de7433e3a4f0d5e5ba0fa',
         language: '',
-      distractionFreeMode: 'true'
+      distractionFreeMode: true
     });
     gitalk.render('gitalk-container');
   }, window.Gitalk);
+});
 </script>
 
     </div>
