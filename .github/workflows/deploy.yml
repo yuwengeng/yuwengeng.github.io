@@ -11,7 +11,6 @@ jobs:
       uses: actions/checkout@v1
       with:
         token: ${{ secrets.GH_TOKEN }}
-        submodules: true
         
     - name: Deploy
       id: deploy
