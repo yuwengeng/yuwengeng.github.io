@@ -11,7 +11,19 @@ jobs:
       uses: actions/checkout@v1
       with:
         token: ${{ secrets.GH_TOKEN }}
-        
+
+    - name: Cache node modules
+    uses: actions/cache@v1
+    id: cache
+    with:
+      path: node_modules
+      key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+      restore-keys: |
+        ${{ runner.os }}-node-      
+    - name: Install Dependencies
+      if: steps.cache.outputs.cache-hit != 'true'
+      run: npm ci
+      
     - name: Deploy
       id: deploy
       uses: sma11black/hexo-action@v1.0.1
