@@ -1,0 +1,128 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: 中·庸 
+# title: zhih
+subtitle: 斯人若彩虹，遇上方知有
+description: programming and life
+keywords: python 前端
+author: zhiheng
+language: zh-CN
+timezone: Asia/Chongqing
+
+sitemap:
+path: sitemap.xml
+
+# 头像设置  设置网站Logo在主题配置
+# avatar: "link" 
+baidu_push: true
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+# url: http://yuwengeng.github.io.git
+url: https://ywg.imfast.io
+# url: https://zfa1h8.coding-pages.com/
+# url: https://zhiheng.design
+root: / 
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render: CNAME
+
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link: true # Open external links in new tab
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+auto_spacing: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace:
+
+# Home page setting
+# path: Root path for your blogs index page. (default = '')
+# per_page: Posts displayed per page. (0 = disable pagination)
+# order_by: Posts order. (Order by date descending by default)
+index_generator:
+  path: ''
+  per_page: 3
+  order_by: -date
+
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 6
+pagination_dir: page
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: next
+
+# hexo优化压缩
+all_minifier: true
+
+html_minifier:
+  enable: true
+  ignore_error: false
+  exclude:
+  
+css_minifier:
+  enable: true
+  exclude: 
+    - '*.min.css'
+
+js_minifier:
+  enable: true
+  mangle: true
+  output:
+  compress:
+  exclude: 
+    - '*.min.js'
+
+image_minifier: 
+  enable: false # 图片不压缩
+  interlaced: false
+  multipass: false
+  optimizationLevel: 2
+  pngquant: false
+  progressive: false
+
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  repo: 
+    github: git@github.com:yuwengeng/yuwengeng.github.io.git
+    gitee: git@gitee.com:yuwengeng/ywg.git
+    
+  branch: master    
+
+    # coding: git@e.coding.net:yuwengeng/hexo-blog/hexo-blog.git
