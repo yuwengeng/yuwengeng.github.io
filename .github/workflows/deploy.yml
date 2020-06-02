@@ -5,13 +5,14 @@ on:
       - dev 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest #运行所需要的虚拟机环境
+    runs-on: windows-latest #运行所需要的虚拟机环境
     steps:
     - name: Checkout
       uses: actions/checkout@v2
       with:
         ref: dev
         token: ${{ secrets.GH_TOKEN }}
+        submodules: true
         
     - name: Deploy
       id: deploy
