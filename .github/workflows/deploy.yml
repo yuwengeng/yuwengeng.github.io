@@ -12,10 +12,8 @@ jobs:
       with:
         token: ${{ secrets.GH_TOKEN }}   
       
-    - name: Build and Deploy
-      uses: renzhaosy/hexo-deploy-action@master
-      env:
-        PERSONAL_TOKEN: ${{ secrets.GH_TOKEN }}
-        PUBLISH_REPOSITORY: yuwengeng/yuwengeng.github.io # The repository the action should deploy to.
-        BRANCH: master  # The branch the action should deploy to.
-        PUBLISH_DIR: ./public # The folder the action should deploy.
+    - uses: yrpang/github-actions-hexo@master
+      with:
+        deploykey: ${{secretsGH_TOKEN}}
+        username: yuwengeng
+        email: m18831909627@163.com
