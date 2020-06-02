@@ -14,6 +14,6 @@ jobs:
       
     - uses: yrpang/github-actions-hexo@master
       with:
-        deploykey: ${{secretsGH_TOKEN}}
+        deploykey: ${{secrets.GH_TOKEN}}
         username: yuwengeng
         email: m18831909627@163.com
