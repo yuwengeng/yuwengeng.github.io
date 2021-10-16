@@ -1,35 +1,38 @@
-name: blog and Deploy
+name: Hexo CICD
 on:
   push:
     branches:
-      - dev 
+    - master
 jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest #运行所需要的虚拟机环境
+  deploy:
+    name: hexo build & deploy
+    runs-on: ubuntu-18.04
     steps:
-    - name: Checkout
-      uses: actions/checkout@v1
+    - uses: actions/checkout@master
       with:
-        token: ${{ secrets.GH_TOKEN }}   
-    - name: Use Node.js 10.x
-      uses: actions/setup-node@v1
+        submodules: true
+    - uses: actions/setup-node@master
       with:
-          node-version: 10.x
-
-      # 安装 hexo-cli 与项目所需的 node_modules
-    - name: Setup Hexo env
+        node-version: 12.x         
+    - name: Installation
       run: |
-        npm install hexo-cli -g
         npm install
-        
-      # 生成静态资源
-    - name: Generate public files
-      run: |
-        hexo clean
-        hexo g
-                
-    - uses: yrpang/github-actions-hexo@master
+        npm install -g hexo-cli gulp        
+    - name: Generate
+      run: hexo clean && hexo g && gulp && hexo d
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
       with:
-        deploykey: ${{secrets.GH_TOKEN}}
-        username: yuwengeng
-        email: m18831909627@163.com
+        github_token: ${{ secrets.GH_TOKEN }}
+        publish_dir: ./public
+        cname: yuwengeng.github.io
+    - name: Create Release
+      uses: actions/create-release@latest
+      env:
+        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      with:
+        tag_name: ${{ steps.replace.outputs.tagname }}
+        release_name: ${{ steps.replace.outputs.tagname }}
+        body: Automatic generated
+        draft: false
+        prerelease: true
