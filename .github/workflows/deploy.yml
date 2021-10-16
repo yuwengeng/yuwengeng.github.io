@@ -8,15 +8,28 @@ jobs:
     runs-on: ubuntu-latest #运行所需要的虚拟机环境
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v1
       with:
-        ref: dev
-        token: ${{ secrets.GH_TOKEN }}
+        token: ${{ secrets.GH_TOKEN }}   
+    - name: Use Node.js 10.x
+      uses: actions/setup-node@v1
+      with:
+          node-version: 10.x
+
+      # 安装 hexo-cli 与项目所需的 node_modules
+    - name: Setup Hexo env
+      run: |
+        npm install hexo-cli -g
+        npm install
         
-    - name: Build and Deploy
-      uses: renzhaosy/hexo-deploy-action@master
-      env:  #该步骤所需的环境变量配置
-        PERSONAL_TOKEN: ${{ secrets.GH_TOKEN }}
-        PUBLISH_REPOSITORY: yuwengeng/yuwengeng.github.io # The repository the action should deploy to.
-        BRANCH: master # The branch the action should deploy to.
-        PUBLISH_DIR: ./public # The folder the action should deploy.
+      # 生成静态资源
+    - name: Generate public files
+      run: |
+        hexo clean
+        hexo g
+                
+    - uses: yrpang/github-actions-hexo@master
+      with:
+        deploykey: ${{secrets.GH_TOKEN}}
+        username: yuwengeng
+        email: m18831909627@163.com
