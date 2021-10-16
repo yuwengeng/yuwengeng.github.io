@@ -20,8 +20,7 @@ path: sitemap.xml
 baidu_push: true
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-# url: http://yuwengeng.github.io.git
-url: https://ywg.imfast.io
+url: https://yuwengeng.github.io/
 # url: https://zfa1h8.coding-pages.com/
 # url: https://zhiheng.design
 root: / 

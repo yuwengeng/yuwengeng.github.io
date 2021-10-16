@@ -10,9 +10,6 @@ hexo list <type> # 列出网站资料
 ### 更新hexo
 npm i hexo-cli -g
 npm update hexo -g#升级
-更新主题：
-cd 到主题文件夹，执行命令：
-`git pull`
 
 更新插件：
 npm update
