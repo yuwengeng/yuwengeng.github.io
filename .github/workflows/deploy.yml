@@ -1,8 +1,9 @@
 name: Hexo CICD
 on:
+  repository_dispatch:
   push:
     branches:
-    - master
+    - dev
 jobs:
   deploy:
     name: hexo build & deploy
