@@ -10,6 +10,9 @@ hexo list <type> # 列出网站资料
 ### 更新hexo
 npm i hexo-cli -g
 npm update hexo -g#升级
+更新主题：
+cd 到主题文件夹，执行命令：
+`git pull`
 
 更新插件：
 npm update
@@ -17,10 +20,10 @@ npm update
   <script type="text/javascript" src="../../source/image.js"></script>  
 hexo优化压缩  npm install hexo-all-minifier --save
 
-- 自定义hexo new生成md文件 选项在/scaffolds/post.md文件中添加：
+自定义hexo new生成md文件的选项在/scaffolds/post.md文件中添加：
 
-> body{ 必应图片api
-      background:url('https://api.uixsj.cn/bing/bing.php');
+ body{ 必应图片api
+    background:url('https://api.uixsj.cn/bing/bing.php');
 }
 
 

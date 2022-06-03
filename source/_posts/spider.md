@@ -13,10 +13,10 @@ categories:
      嵌套的 HTML 元素,结构化的一种文档结构 ——> W3C 针对其指定了一个标准化的模型DOM 
 ### json数据
 获取方式:
-     ajax请求接口
-     切换移动h5端
+     ajax 请求接口
+     切换手机移动h5端
      app抓包获取
-     
+     等等
 json模块：⽤于字符串和 python 数据类型间进⾏转换
      js：JSON.stringify   JSON.parse
  > 只有基本数据类型才能转换成JSON格式字符串
@@ -29,9 +29,8 @@ json模块：⽤于字符串和 python 数据类型间进⾏转换
           urlopen()函数
                urllib的params需urlencode转换类型
                data参数：请求方式变为post  get方式一般需拼接query_string
-                    bytes(urllib.parse.urlencode(form_data).encode()) 
-                    # data should be bytes, an iterable of bytes, or a file object. It cannot be of type str.  
-               超时处理：timeout
+                    urllib.parse.urlencode(form_data).encode() // POST data should be bytes, an iterable of bytes, or a file object. It cannot be of type str.
+               超时处理：设置timeout
                     read() 返回二进制代码 data=urllib.request.urlopen(url).read().decode("UTF-8","ignore")
           urlretrieve(图片的源地址,保存文件的文件名)  ——打开并保存url内容 重新请求url响应 就实现了请求图片、新建文件、写入文件三个步骤的功能。
           Request类 :构造request请求对象  (url, data=None, headers={},origin_req_host=None, unverifiable=False,method=None)
@@ -220,9 +219,8 @@ json模块：⽤于字符串和 python 数据类型间进⾏转换
 
 ## js动态渲染问题：
 
-1. 模拟Ajax异步数据爬取(返回json类型）
+### 模拟Ajax异步数据爬取 （返回json类型）
      Type：xhr
-2. 模拟浏览器运行的库，如 Selenium Splash PyV8 Ghot pyputeer等
 
 cookies池，代理池，UA（from fake_useragent import UserAgent）
 
@@ -300,5 +298,3 @@ cookies池，代理池，UA（from fake_useragent import UserAgent）
      加载等待：
           隐式等待browser.implicitly_ wait(10)
      显式等待：
-
-puppeteer && pyppeteer
