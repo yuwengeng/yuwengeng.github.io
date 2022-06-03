@@ -25,7 +25,7 @@ jobs:
           ${{ runner.os }}-node-
     - name: Install Dependencies # step3 name
       if: steps.cache.outputs.cache-hit != 'true' # 如果变量 cache-hit 不等于 true
-      run: npm ci
+      run: yarn || npm install
 
     # Deploy hexo blog website.
     - name: Deploy # step4
