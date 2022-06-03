@@ -123,6 +123,6 @@ deploy:
     github: git@github.com:yuwengeng/yuwengeng.github.io.git
 
     
-  branch: master    
+  branch: dev    
 
     # coding: git@e.coding.net:yuwengeng/hexo-blog/hexo-blog.git
